@@ -20,7 +20,7 @@ $ cd cyqlo
 
 Install dependencies in your evniorment
 ```
-$ pip install -r requirments.txt
+$ pip install -r requirements.txt
 ```
 
 Make and run [migrations](https://docs.djangoproject.com/en/1.10/topics/migrations/)
