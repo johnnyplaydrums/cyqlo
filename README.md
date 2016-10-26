@@ -2,23 +2,32 @@
 
 ## Development Setup
 
+Setup virtual environment (install [virtualenv](https://virtualenv.pypa.io/en/stable/installation/) first)
 ```
-# Setup virtual environment (install virtualenv first)
+# Create enviornment directory
 $ virtualenv cyqlo_env
 $ cd cyqlo_env
 
 # start virtual enviornment
 $ source bin/activate
+```
 
-# install dependencies in your evniorment
+Install dependencies in your evniorment
+```
 $ pip install -r requirments.txt
+```
 
-# Now let's retrieve our project and get it running
+Retrieve our project and get it running
+```
 $ git clone https://github.com/johnplaydrums/cyqlo
 $ cd cyqlo
-# make and run [migrations](https://docs.djangoproject.com/en/1.10/topics/migrations/)
+```
+Make and run [migrations](https://docs.djangoproject.com/en/1.10/topics/migrations/)
+```
 $ python manage.py makemigrations
 $ python manage.py migrate
-# start server
+```
+Start server
+```
 $ python manage.py runserver
-
+```
