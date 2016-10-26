@@ -12,16 +12,17 @@ $ cd cyqlo_env
 $ source bin/activate
 ```
 
-Install dependencies in your evniorment
-```
-$ pip install -r requirments.txt
-```
-
 Retrieve our project and get it running
 ```
 $ git clone https://github.com/johnplaydrums/cyqlo
 $ cd cyqlo
 ```
+
+Install dependencies in your evniorment
+```
+$ pip install -r requirments.txt
+```
+
 Make and run [migrations](https://docs.djangoproject.com/en/1.10/topics/migrations/)
 ```
 $ python manage.py makemigrations
