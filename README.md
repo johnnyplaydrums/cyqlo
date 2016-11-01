@@ -1,4 +1,7 @@
-### Get the Cyqlo web app running on your local machine
+# Cyqlo
+## Explore NYC on a bike
+
+### Development setup 
 
 Make sure you have Python 3.5.2 installed. We use [Conda](http://conda.pydata.org/docs/index.html) to manage different Python environments. [Virtualenv](https://virtualenv.pypa.io/en/stable/) is another more lightweight option.
 
