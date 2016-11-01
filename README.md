@@ -1,24 +1,16 @@
-# Cyqlo
+# Cyqlo - Explore NYC on a bike
 
-## Development Setup
+### Development setup 
 
-Setup virtual environment (install [virtualenv](https://virtualenv.pypa.io/en/stable/installation/) first)
-```
-# Create enviornment directory
-$ virtualenv cyqlo_env
-$ cd cyqlo_env
+Make sure you have Python 3.5.2 installed. We use [Conda](http://conda.pydata.org/docs/index.html) to manage different Python environments. [Virtualenv](https://virtualenv.pypa.io/en/stable/) is another more lightweight option.
 
-# start virtual enviornment
-$ source bin/activate
-```
-
-Retrieve our project and get it running
+Retrieve our project
 ```
 $ git clone https://github.com/johnplaydrums/cyqlo
 $ cd cyqlo
 ```
 
-Install dependencies in your evniorment
+Install dependencies in your environment
 ```
 $ pip install -r requirements.txt
 ```
@@ -28,6 +20,7 @@ Make and run [migrations](https://docs.djangoproject.com/en/1.10/topics/migratio
 $ python manage.py makemigrations
 $ python manage.py migrate
 ```
+
 Start server
 ```
 $ python manage.py runserver
