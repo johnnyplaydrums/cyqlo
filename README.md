@@ -10,7 +10,12 @@ $ git clone https://github.com/johnplaydrums/cyqlo
 $ cd cyqlo
 ```
 
-Install Postgres locally. We recommend Postgres.app(http://postgresapp.com/)
+Install dependencies in your environment
+```
+$ pip install -r requirements.txt
+```
+
+Install Postgres locally. We recommend [Postgres.app](http://postgresapp.com/)
 for mac. Make sure to set the `$PATH` variable as described in the instructions.
 Connect to Postgres via the command line to create a database and user
 ```
@@ -22,9 +27,9 @@ $ GRANT ALL PRIVILEGES ON DATEBASE cyqlo TO cyqlo;
 Copy `/main/settings_example.py` to `/main/settings.py` and change the database info
 to match your database name, user, and password.
 
-Install dependencies in your environment
+Create a Django superuser to access the /admin page
 ```
-$ pip install -r requirements.txt
+$ python manage.py createsuperuser
 ```
 
 Make and run [migrations](https://docs.djangoproject.com/en/1.10/topics/migrations/)
@@ -37,3 +42,6 @@ Start server
 ```
 $ python manage.py runserver
 ```
+
+You should be able to view the app at `localhost:8000` and log into the admin page
+at `localhost:8000/admin` with the superuser credentials you created
