@@ -1,0 +1,7 @@
+# my stuff:
+**/*.DS_STORE
+**/*.swp
+**/__pycache__
+**/*.pyc
+
+
