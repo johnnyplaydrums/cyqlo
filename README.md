@@ -17,6 +17,7 @@ Connect to Postgres via the command line to create a database and user
 $ psql postgres
 $ CREATE DATABASE cyqlo
 $ CREATE USER cyqlo WITH PASSWORD 'yourpassword'
+$ GRANT ALL PRIVILEGES ON DATEBASE cyqlo TO cyqlo;
 ```
 Copy `/main/settings_example.py` to `/main/settings.py` and change the database info
 to match your database name, user, and password.
