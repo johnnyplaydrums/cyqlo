@@ -5,4 +5,4 @@ import os
 class Command(BaseCommand):
     def handle(self, *args, **options):
         if not User.objects.filter(username="cyqlo").exists():
-            User.objects.create_superuser("admin", "cyqlo@cyqlo.io", os.environ['RDS_PASSWORD'])
+            User.objects.create_superuser("cyqlo", "cyqlo@cyqlo.io", os.environ['RDS_PASSWORD'])
