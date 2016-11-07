@@ -1,5 +1,6 @@
 #project stuff:
 db.sqlite3
+cyclo.wiki/*
 
 #my stuff:
 **/*.DS_STORE
