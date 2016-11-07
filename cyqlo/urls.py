@@ -17,6 +17,6 @@ from django.conf.urls import url, include
 from django.contrib import admin
 
 urlpatterns = [
-    url(r'cyqlo.io', include('main.urls')), #inlcude the landing page to the project urls 
+    url(r'', include('main.urls')), #inlcude the landing page to the project urls 
     url(r'^admin/', admin.site.urls),
 ]
