@@ -1,6 +1,6 @@
 #project stuff:
 db.sqlite3
-cyqlo.wiki
+cyqlo.wiki/*
 
 #my stuff:
 **/*.DS_STORE
