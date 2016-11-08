@@ -20,8 +20,8 @@ for mac. Make sure to set the `$PATH` variable as described in the instructions.
 Connect to Postgres via the command line to create a database and user
 ```
 $ psql postgres
-$ CREATE DATABASE cyqlo
-$ CREATE USER cyqlo WITH PASSWORD 'yourpassword'
+$ CREATE DATABASE cyqlo;
+$ CREATE USER cyqlo WITH PASSWORD 'yourpassword';
 $ GRANT ALL PRIVILEGES ON DATEBASE cyqlo TO cyqlo;
 ```
 
