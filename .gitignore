@@ -1,6 +1,6 @@
 # project stuff:
 db.sqlite3
-cyqlo.wiki
+cyclo.wiki/*
 cyqlo/settings.py
 
 # my stuff:
