@@ -1,12 +1,5 @@
-{%load static%}
-
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-         <title>Home</title>
-     </head>
-     <body>
-         <img src ="{% static "img/cyqlo_img1.png" %}" alt = "cyqlo_img1">
-     </body>
-</html>
+{%extends "base.html"%}
+{% block content %}
+{ % load static %}
+    <img src ="{% static "img/cyqlo_img1.png" %}" alt = "cyqlo_img1">
+{% endblock %}
