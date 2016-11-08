@@ -20,22 +20,25 @@ for mac. Make sure to set the `$PATH` variable as described in the instructions.
 Connect to Postgres via the command line to create a database and user
 ```
 $ psql postgres
-$ CREATE DATABASE cyqlo
-$ CREATE USER cyqlo WITH PASSWORD 'yourpassword'
+$ CREATE DATABASE cyqlo;
+$ CREATE USER cyqlo WITH PASSWORD 'yourpassword';
 $ GRANT ALL PRIVILEGES ON DATEBASE cyqlo TO cyqlo;
 ```
-Copy `/main/settings_example.py` to `/main/settings.py` and change the database info
-to match your database name, user, and password.
 
-Create Django superuser so you can access the admin portal
-```
-$ python manage.py createsuperuser
-```
+We will store passwords and sensitive information in our `main/settings.py` file.
+Because of this, we do not want to check in our settings.py file into git.
+We use a template for the settings file, `/main/settings_example.py`. Copy this file
+to `/main/settings.py` and change the database info to match your database name, user, and password.
 
 Make and run [migrations](https://docs.djangoproject.com/en/1.10/topics/migrations/)
 ```
 $ python manage.py makemigrations
 $ python manage.py migrate
+```
+
+Create Django superuser so you can access the admin portal
+```
+$ python manage.py createsuperuser
 ```
 
 Start server
