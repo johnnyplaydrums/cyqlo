@@ -1,4 +1,4 @@
-# Cyqlo - Explore NYC on a bike
+# Cyqlo - Explore NYC and beyond on a bike
 
 ### Development setup
 
