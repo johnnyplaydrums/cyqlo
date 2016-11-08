@@ -1,8 +1,9 @@
-#project stuff:
+# project stuff:
 db.sqlite3
 cyqlo.wiki
+cyqlo/settings.py
 
-#my stuff:
+# my stuff:
 **/*.DS_STORE
 **/*.swp
 **/__pycache__
