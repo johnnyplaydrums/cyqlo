@@ -1,0 +1,1 @@
+This directory will be used to house the stock routes that will be created. Each file in this directoy will be a Google Maps .js file. If the user input paramters match the attributes of the route, the .js file will be served. 
