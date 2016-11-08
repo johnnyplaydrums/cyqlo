@@ -15,7 +15,7 @@ Install dependencies in your environment
 $ pip install -r requirements.txt
 ```
 
-Install Postgres locally. We recommend Postgres.app(http://postgresapp.com/)
+Install Postgres locally. We recommend [Postgres.app](http://postgresapp.com/)
 for mac. Make sure to set the `$PATH` variable as described in the instructions.
 Connect to Postgres via the command line to create a database and user
 ```
