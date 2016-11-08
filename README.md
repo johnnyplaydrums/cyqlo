@@ -22,7 +22,7 @@ Connect to Postgres via the command line to create a database and user
 $ psql postgres
 $ CREATE DATABASE cyqlo;
 $ CREATE USER cyqlo WITH PASSWORD 'yourpassword';
-$ GRANT ALL PRIVILEGES ON DATEBASE cyqlo TO cyqlo;
+$ GRANT ALL PRIVILEGES ON DATABASE cyqlo TO cyqlo;
 ```
 
 We will store passwords and sensitive information in our `main/settings.py` file.
