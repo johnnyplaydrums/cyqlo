@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+       #map {
+        height: 600px;
+        width: 100%;
+       }
+    </style>
+  </head>
+  <body>
+    <h3>Marker Testing with Google Maps API</h3>
+    <div id="map"></div>
+    <script>
+      function initMap() {
+        var gw_lighthouse = {lat: 40.850089, lng: -73.946785};  
+        var battery_park = {lat: 40.703104, lng:-74.016847};
+
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 11,
+          center: gw_lighthouse
+        });
+
+        var marker = new google.maps.Marker({
+          position: battery_park,
+          label: 'Start',
+          map:map
+          
+        });
+
+        var marker = new google.maps.Marker({
+          position: gw_lighthouse,
+          label: 'End',
+          map: map
+        });
+
+        // var markers = [];
+        // var bounds = new google.maps.LatLngBounds();
+        // for (var i = 0; i < markers.length; i++) {
+        // bounds.extend(markers[i].getPosition());
+        // }
+
+        // map.fitBounds(bounds);
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAde5aRQ262GgOgdqkY8Jiu5KzYQYj2YKg&callback=initMap">
+    </script>
+  </body>
+</html>
