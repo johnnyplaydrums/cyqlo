@@ -9,21 +9,14 @@
     </style>
   </head>
   <body>
-    <h3>Marker Testing with Google Maps API</h3>
+    <h3 style ="font-family:Arial"> Cyqlo Routes: Battery Park to George Washington Bridge</h3>
     <div id="map"></div>
     <script>
       function initMap() {
         var directionsService = new google.maps.DirectionsService;
         
         var directionsDisplay = new google.maps.DirectionsRenderer;
-
-        var gw_lighthouse = google.maps.LatLng(40.850089,-73.946785);  
-        var battery_park = google.maps.LatLng(40.703104, -74.016847);
-
-        var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 11,
-          center: gw_lighthouse
-        });
+        var map = new google.maps.Map(document.getElementById('map'));
 
         directionsDisplay.setMap(map);
         calculateAndDisplayRoute(directionsService, directionsDisplay);
