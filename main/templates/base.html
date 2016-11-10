@@ -5,12 +5,18 @@
 <head>
   <title>{% block title %}Cyqlo{%endblock %}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <!-- Libraries -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"/>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
   <script rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script src="https://maps.googleapis.com/maps/api/js?callback=myMap"></script>
+
+  <!-- Cyqlo stylesheets -->
+  <link rel="stylesheet" href="{% static "stylesheets/footer.css" %}">
+
 </head>
 <body>
   {# Navigation Menu #}
@@ -44,9 +50,9 @@
      {% block content %}{% endblock %}
    </div>
    {# The Footer #}
-   <div class="footer">
+   <footer class="footer">
      <div class="container">
-       <p>Copyright Cyqlo</p>
+       <p>&copy; Cyqlo 2016</p>
      </div>
    </div>
 </body>
