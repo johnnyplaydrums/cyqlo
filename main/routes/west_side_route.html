@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
   <head>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
@@ -77,6 +78,7 @@
   </head>
   <body>
     <h3 style ="font-family:Arial"> Cyqlo Routes: Battery Park to George Washington Bridge</h3>
+    
     <div id="floating-panel">
       <strong>Start:</strong>
       <select id="start">
@@ -90,13 +92,12 @@
     </div>
     <div id="right-panel"></div>
     <div id="map"></div>
+
     <script>
       function initMap() {
         var directionsService = new google.maps.DirectionsService;
-        
         var directionsDisplay = new google.maps.DirectionsRenderer;
         var map = new google.maps.Map(document.getElementById('map'));
-
         directionsDisplay.setMap(map);
 
         directionsDisplay.setPanel(document.getElementById('right-panel'));
