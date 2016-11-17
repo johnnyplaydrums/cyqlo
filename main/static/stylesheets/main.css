@@ -14,6 +14,12 @@
     height: 94vh
 }
 
+#login-signup-banner {
+    background: url('../img/biking-banner.jpg') no-repeat fixed top center;
+    background-size: cover;
+    height: 94vh
+}
+
 /* Content block types */
 .content-margin-top {
     margin-top: 40px;
