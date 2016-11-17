@@ -20,6 +20,16 @@
     height: 94vh
 }
 
+#about-banner{
+  background: url('../img/about-banner.jpg') no-repeat fixed top center;
+  background-size: cover;
+  height: 94vh
+}
+
+.panel-primary {
+  bottom:10px
+}
+
 /* Content block types */
 .content-margin-top {
     margin-top: 40px;
