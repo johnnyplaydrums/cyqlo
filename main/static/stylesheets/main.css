@@ -1,7 +1,15 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
 /* navbar */
 .navbar {
     margin-bottom: 0;
-    background-color: rgba(248, 248, 248, 0.8)
+    background-color: rgba(248, 248, 248, 0.7);
+    position: fixed;
+    width: 100%;
 }
 
 .navbar-default .navbar-nav>li>a {
@@ -12,6 +20,40 @@
     background: url('../img/biking-banner.jpg') no-repeat fixed top center;
     background-size: cover;
     height: 94vh
+}
+
+#homepage-banner .container {
+    height: 100%;
+    text-align: center;
+}
+
+#homepage-banner .find-a-route {
+    position: relative;
+    top: 35%;
+}
+
+#homepage-banner form {
+    background-color: rgba(0,0,0,.2);
+    padding: 20px;
+    color: white;
+}
+
+#homepage-banner form .form-control {
+    width: 100%;
+}
+
+#homepage-banner form .form-group {
+    margin-right: 20px;
+    text-align: left;
+}
+
+#homepage-banner form label {
+    display: block;
+}
+
+#homepage-banner form button {
+    margin-top: 25px;
+    width: 100px;
 }
 
 #login-signup-banner {
@@ -26,13 +68,13 @@
   height: 94vh
 }
 
-.panel-primary {
-  bottom:10px
+#login-signup-banner .panel {
+    background-color: transparent;
 }
 
 /* Content block types */
 .content-margin-top {
-    margin-top: 40px;
+    margin-top: 90px;
 }
 
 
