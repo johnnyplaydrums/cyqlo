@@ -3,61 +3,73 @@
 <!DOCTYPE HTML>
 <html lang="en-us">
 <head>
-  <title>{% block title %}Cyqlo{%endblock %}</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
-  <!-- Libraries -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
-  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"/>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  <script rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?callback=myMap"></script>
-
-  <!-- Cyqlo assets -->
-  <link rel="stylesheet" href="{% static "stylesheets/footer.css" %}">
-  <link rel="stylesheet" href="{% static "stylesheets/main.css" %}">
-  <script src="{% static "javascripts/base.js" %}"></script>
-
+    <title>{% block title %}Cyqlo{% endblock title %}</title>
+    {% block head_favicon %}
+    <link rel="icon" href="{% static "img/favicon.png" %}">
+    {% endblock head_favicon %}
+    {% block head_meta %}
+        {% block head_meta_charset %}
+        <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+        {% endblock head_meta_charset %}
+        {% block head_meta_viewport %}
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        {% endblock head_meta_viewport%}
+    {% endblock head_meta%}
+    {% block head_css %}
+    <!-- Libraries -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- Cyqlo assets -->
+    <link rel="stylesheet" href="{% static "stylesheets/footer.css" %}">
+    <link rel="stylesheet" href="{% static "stylesheets/main.css" %}">
+    {% endblock head_css %}
 </head>
 <body>
-  {# Navigation Menu #}
-  <header>
-      <div class="navbar navbar-default navbar-fixed-top">
-          <div class="container">
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-              <a class="navbar-brand" href="/">Cyqlo    </a>
-              </div>
-              <div class="collapse navbar-collapse">
-                <ul class="nav navbar-nav navbar-right">
-                  {% if user.is_authenticated %}
-                    <li><a href="">Logout</a></li>
-                    <li><a href="" class="p-r-none">Accounts</a></li>
-                  {% else %}
-                    <li><a href="">Login</a></li>
-                    <li><a href="" class="p-r-none">Sign Up</a></li>
-                 {% endif %}
-               </ul>
-             </div>
-           </div>
-       </div>
-   </header>
+    {# Navigation Menu #}
+    <header>
+        <div class="navbar navbar-default navbar-static-top {% block nav-style %}{% endblock %}">
+            <div class="container p-none">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">Cyqlo</a>
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="/routes">Routes</a></li>
+                        {% if user.is_authenticated %}
+                        <li><a href="/">Logout</a></li>
+                        <li><a href="" class="p-r-none">Accounts</a></li>
+                        {% else %}
+                        <li><a href="">Login</a></li>
+                        <li><a href="" class="p-r-none">Sign Up</a></li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
 
-   {# Main Content Block #}
-   <div id="content" class="container-fluid">
-     {% block content %}{% endblock %}
-   </div>
+    {# Main content block #}
+    <div id="site-wrapper">
+    {% block content %}
+    {% endblock %}
+    </div>
 
-   {# The Footer #}
-   <footer class="footer">
-     <div class="container">
-       <p>&copy; Cyqlo 2016</p>
-     </div>
-   </div>
+    {# The Footer #}
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; Cyqlo 2016</p>
+        </div>
+    </footer>
+
+    {% block footer_javascript %}
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    {% endblock footer_javascript %}
 </body>
 </html>
