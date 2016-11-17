@@ -16,12 +16,13 @@
 
   <!-- Cyqlo stylesheets -->
   <link rel="stylesheet" href="{% static "stylesheets/footer.css" %}">
+  <link rel="stylesheet" href="{% static "stylesheets/main.css" %}">
 
 </head>
 <body>
   {# Navigation Menu #}
   <header>
-    <div class="navbar navbar-default navbar-static-top
+    <div class="navbar navbar-default navbar-fixed-top
     {% block nav-style %}{% endblock %}">
       <div class="container p-none">
         <div class="navbar-header">
@@ -46,7 +47,7 @@
        </div>
      </div>
    </header>
-   <div id="content" class="container">
+   <div id="content" class="container-fluid">
      {% block content %}{% endblock %}
    </div>
    {# The Footer #}
