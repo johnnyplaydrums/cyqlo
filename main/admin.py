@@ -1,3 +1,5 @@
+""" Custom admin code """
+
 from django.contrib import admin
 from .models import User, Route
 

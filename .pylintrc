@@ -1,0 +1,4 @@
+[MASTER]
+
+# ignore directories/files
+ignore=migrations, urls.py
