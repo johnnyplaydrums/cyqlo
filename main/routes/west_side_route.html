@@ -78,7 +78,7 @@
   </head>
   <body>
     <h3 style ="font-family:Arial"> Cyqlo Routes: Battery Park to George Washington Bridge</h3>
-
+    
     <div id="floating-panel" style="text-align:left">
       <strong>Start:</strong>
       <input id="start" value="Battery Park" readonly="readonly"/>
@@ -89,16 +89,12 @@
       </input>
       <b>Waypoints:</b> <br>
     <select multiple id="waypoints">
-      <option value="montreal, quebec">Montreal, QBC</option>
-      <option value="toronto, ont">Toronto, ONT</option>
+      <option value="40.785668, -73.984504">Boat Basin Cafe</option>
+      <option value="40.794520, -73.971377">Bike Shop</option>
       <input type="submit" id="submit">
     </select>
       <input type="button" id="buttonid" value="Go!" onclick="func()">
     </div>
-<<<<<<< HEAD
-=======
-
->>>>>>> 4261697988e8469786da2eea2a6fb0098c02bb42
     <div id="right-panel"></div>
     <div id="map"></div>
     <br>
@@ -106,7 +102,7 @@
     <script>
       // change so that the route steps dont show until 'Go' button is clicked
       // when 'Go' button is clicked zoom in on start area
-      //
+      // 
       function initMap() {
         var directionsService = new google.maps.DirectionsService;
         var directionsDisplay = new google.maps.DirectionsRenderer;
@@ -115,15 +111,16 @@
         var control = document.getElementById('floating-panel');
         control.style.display = 'block';
         map.controls[google.maps.ControlPosition.TOP_CENTER].push(control)
-
+        
         directionsDisplay.setMap(map);
-        button.addEventListener("click", function() {
+        button.addEventListener("click", function() { 
         directionsDisplay.setPanel(document.getElementById('right-panel'));
         });
 
         calculateAndDisplayRoute(directionsService, directionsDisplay);
+
         document.addEventListener("DOMConentLoaded", function() {
-          calculateAndDisplayRoute(directionsService, directionsDisplay);
+          calculateAndDisplayRoute(directionsService, directionsDisplay); 
         });
 
         document.getElementById('submit').addEventListener('click', function() {
@@ -176,3 +173,6 @@
     </script>
   </body>
 </html>
+
+
+      
