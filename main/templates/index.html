@@ -1,6 +1,6 @@
-{%extends "base.html"%}
-{%load static%}
-{% block content %}
-    <img src ="{% static "img/cyqlo_img1.png" %}" alt = "cyqlo_img1">
-{% endblock %}
+{% extends "base.html" %}
+{% load static %}
 
+{% block content %}
+    {% include "banner-img.html" %}
+{% endblock %}

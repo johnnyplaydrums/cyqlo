@@ -1,0 +1,21 @@
+/* navbar */
+.navbar {
+    margin-bottom: 0;
+    background-color: rgba(248, 248, 248, 0.8)
+}
+
+.navbar-default .navbar-nav>li>a {
+    color: black
+}
+
+#homepage-banner {
+    background: url('../img/biking-banner.jpg') no-repeat fixed top center;
+    background-size: cover;
+    height: 94vh
+}
+
+
+/* Bootstrap overrides */
+.container-fluid {
+    padding: 0;
+}

@@ -2,7 +2,6 @@
 db.sqlite3
 cyqlo.wiki
 cyqlo/settings.py
-static
 
 # my stuff:
 **/*.DS_STORE
