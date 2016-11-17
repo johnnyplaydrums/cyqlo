@@ -1,3 +1,6 @@
 from django.contrib import admin
+from .models import User, Route
 
-# Register your models here.
+#Registers models to admin site
+admin.site.register(User)
+admin.site.register(Route)
