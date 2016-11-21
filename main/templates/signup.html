@@ -28,6 +28,8 @@
                         <p class="form-group">By signing up, you agree to our <a href="#">Terms of Use</a> and <a href="#">Privacy Policy</a>.</p>
                         <hr>
                         <p>Already have an account? <a href="/login">Click Here.</a></p>
+                        {% csrf_token %}
+                        {{ form }}
                     </form>
                 </div>
             </div>
