@@ -1,12 +1,10 @@
 """ Views for the main app """
 
 from django.shortcuts import render
-from main.forms import *
-from django.views.decorators.csrf import csrf_protect
+from main.forms import RegistrationForm
 from django.http import HttpResponseRedirect
 
 # Create your views here.
-
 def index(request):
     """ Homepage """
     return render(request, 'index.html')
@@ -15,11 +13,12 @@ def login(request):
     """ User login page """
     return render(request, 'login.html')
 
-@csrf_protect
+
 def signup(request):
-    form = None
-    if request.method == 'POST':
-        form = RegistrationForm(request.POST)
+    """ User Signup page """
+    form=None #form is initially empty
+    if request.method=='POST':
+        form=RegistrationForm(request.POST)
         if form.is_valid():
             form.save()
             return HttpResponseRedirect('/')
