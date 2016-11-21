@@ -13,12 +13,11 @@ def login(request):
     """ User login page """
     return render(request, 'login.html')
 
-
 def signup(request):
     """ User Signup page """
-    form=None #form is initially empty
-    if request.method=='POST':
-        form=RegistrationForm(request.POST)
+    form = None #form is initially empty
+    if request.method == 'POST':
+        form = RegistrationForm(request.POST)
         if form.is_valid():
             form.save()
             return HttpResponseRedirect('/')
