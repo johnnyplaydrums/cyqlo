@@ -16,6 +16,10 @@
                         <div class="form-group">
                             <input type="text" maxlength="50" id="last_name" name="last_name" placeholder="Last Name" class="form-control">
                         </div>
+                        {% if form.errors.email %}
+                        <!--<p style="color:red;">Email already exists</p>-->
+                        {{ form.errors.email }}
+                        {% endif %}
                         <div class="form-group">
                             <input type="text" maxlength="50" id="email" name="email" placeholder="Email" class="form-control">
                         </div>
@@ -29,7 +33,6 @@
                         <hr>
                         <p>Already have an account? <a href="/login">Click Here.</a></p>
                         {% csrf_token %}
-                        {{ form }}
                     </form>
                 </div>
             </div>

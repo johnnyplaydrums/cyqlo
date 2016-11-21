@@ -17,14 +17,14 @@ def login(request):
 
 @csrf_protect
 def signup(request):
+    form = None
     if request.method == 'POST':
         form = RegistrationForm(request.POST)
         if form.is_valid():
-            user = User.objects.create(first_name=form.cleaned_data['first_name'], last_name=form.cleaned_data['last_name'], email=form.cleaned_data['email'], password=form.cleaned_data['password'])
+            form.save()
             return HttpResponseRedirect('/')
-    else:
-        form = RegistrationForm()
-    return render(request, 'signup.html')
+
+    return render(request, 'signup.html', {'form': form})
 
 def about(request):
     """ Cyqlo About Us page """
