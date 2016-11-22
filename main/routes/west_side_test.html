@@ -59,7 +59,7 @@
       <b>Waypoints:</b> <br>
         <select multiple id="waypoints">
           <option value="40.785668, -73.984504">Boat Basin Cafe</option>
-          <option value="40.794520, -73.971377">Bike Shop</option> 
+          <option value="40.794520, -73.971377">Bike Shop</option>
         </select>
     </select>
     <br>
@@ -73,7 +73,7 @@
       <option value="BICYCLING">Bicycling</option>
       <option value="TRANSIT">Transit</option>
     </select>
-      <input type="submit" id="submit">
+      <input type="submit" id="mode">
     </div>
     <div id="directions-panel"></div>
     </div>
@@ -86,18 +86,18 @@
           zoom: 12,
           center: {lat: 40.785668, lng: -73.984504}
         });
-        
+
         var bikeLayer = new google.maps.BicyclingLayer();
         bikeLayer.setMap(map);
         directionsDisplay.setMap(map);
-        
-        document.getElementById('mode').addEventListener('change', function() {
+
+        document.getElementById('mode').addEventListener('click', function() {
           calculateAndDisplayRoute(directionsService, directionsDisplay);
         });
 
-        document.getElementById('submit').addEventListener('click', function() {
-        calculateAndDisplayRoute(directionsService, directionsDisplay);
-        });
+        // document.getElementById('submit').addEventListener('click', function() {
+        // calculateAndDisplayRoute(directionsService, directionsDisplay);
+        // });
       }
 
       function calculateAndDisplayRoute(directionsService, directionsDisplay) {
