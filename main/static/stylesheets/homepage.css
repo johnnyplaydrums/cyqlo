@@ -1,0 +1,37 @@
+#homepage-banner {
+    background: url('../img/biking-banner.jpg') no-repeat fixed top center;
+    background-size: cover;
+    height: 94vh
+}
+
+#homepage-banner .container {
+    height: 100%;
+    text-align: center;
+}
+
+#homepage-banner .find-a-route {
+    position: relative;
+    top: 35%;
+}
+
+#homepage-banner form {
+    padding: 20px;
+}
+
+#homepage-banner form .form-control {
+    width: 100%;
+}
+
+#homepage-banner form .form-group {
+    margin-right: 20px;
+    text-align: left;
+}
+
+#homepage-banner form label {
+    display: block;
+}
+
+#homepage-banner form button {
+    margin-top: 25px;
+    width: 100px;
+}
