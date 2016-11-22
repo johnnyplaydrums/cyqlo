@@ -27,3 +27,7 @@ def signup(request):
 def about(request):
     """ Cyqlo About Us page """
     return render(request, 'about.html')
+
+def routes(request):
+    """ Routes listing page """
+    return render(request, 'routes.html')
