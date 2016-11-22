@@ -1,8 +1,8 @@
 """ Views for the main app """
 
 from django.shortcuts import render
-from main.forms import RegistrationForm
 from django.http import HttpResponseRedirect
+from main.forms import RegistrationForm
 
 # Create your views here.
 
