@@ -73,7 +73,7 @@
       <option value="BICYCLING">Bicycling</option>
       <option value="TRANSIT">Transit</option>
     </select>
-      <input type="submit" id="mode">
+      <input type="submit" id="submit">
     </div>
     <div id="directions-panel"></div>
     </div>
@@ -91,13 +91,13 @@
         bikeLayer.setMap(map);
         directionsDisplay.setMap(map);
 
-        document.getElementById('mode').addEventListener('click', function() {
-          calculateAndDisplayRoute(directionsService, directionsDisplay);
-        });
-
-        // document.getElementById('submit').addEventListener('click', function() {
-        // calculateAndDisplayRoute(directionsService, directionsDisplay);
+        // document.getElementById('mode').addEventListener('click', function() {
+        //   calculateAndDisplayRoute(directionsService, directionsDisplay);
         // });
+
+        document.getElementById('submit').addEventListener('click', function() {
+        calculateAndDisplayRoute(directionsService, directionsDisplay);
+        });
       }
 
       function calculateAndDisplayRoute(directionsService, directionsDisplay) {
@@ -118,7 +118,7 @@
           destination: document.getElementById('end').value,
           waypoints: waypts,
           optimizeWaypoints: true,
-          travelMode: google.maps.TravelMode[selectedMode]
+          travelMode: 'BICYCLING'
         }, function(response, status) {
           if (status === 'OK') {
             directionsDisplay.setDirections(response);
