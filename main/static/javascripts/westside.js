@@ -59,7 +59,3 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
     }
   });
 }
-
-<script async defer
-src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAde5aRQ262GgOgdqkY8Jiu5KzYQYj2YKg&callback=initMap">
-</script>

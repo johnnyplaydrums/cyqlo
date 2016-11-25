@@ -1,12 +1,13 @@
-<!DOCTYPE html>
-<html>
-<head>
+{% extends "base.html" %}
   {%load static %}
+
   <link rel="stylesheet" href="{% static "stylesheets/westside.css" %}">
+  <script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAde5aRQ262GgOgdqkY8Jiu5KzYQYj2YKg&callback=initMap">
+  </script>
   <script rel ="javascript" src="{% static "javascripts/westside.js" %}"></script>
-  <title>Cyqlo</title>
-</head>
-  <body>
+
+  {%block content%}
       <div id="right-panel"></div>
       <div id="map"></div>
         <div id="floating-panel" style="text-align:left">
@@ -25,5 +26,4 @@
           <input type="button" id="buttonid" value="Go!" onclick="func()">
         </div>
       <br>
-  </body>
-</html>
+{% endblock content %}
