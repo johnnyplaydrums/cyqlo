@@ -1,4 +1,3 @@
-
 <script>
     function initMap() {
       var directionsService = new google.maps.DirectionsService;
