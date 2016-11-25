@@ -1,103 +1,29 @@
 <!DOCTYPE html>
-  <html>
-  <head>
-      {%load static %}
-      <link rel="stylesheet" href="{% static "stylesheets/westside.css" %}">
-      <script rel ="javascript" src="{% static "javascripts/westside.js" %}"></script>
-      <title>Cyqlo</title>
-  </head>
-
-<body>
-{%block content%}
-    <div id="right-panel"></div>
-    <div id="map"></div>
-      <div id="floating-panel" style="text-align:left">
-          <strong>Start:</strong>
-            <input id="start" value="Battery Park" readonly="readonly"/></input>
-          <br>
-          <strong>End:</strong>
-            <input id="end" value="George Washington Bridge "/> <br></input>
-        <b>Waypoints:</b> <br>
-          <select multiple id="waypoints">
-            <option value="40.785668, -73.984504">Boat Basin Cafe</option>
-            <option value="40.794520, -73.971377">Bike Shop</option>
-            <option value="40.764437, -73.998921">Intrepid Museum</option>
-            <input type="button" value="Add Stops" id="submit">
-          </select>
-        <input type="button" id="buttonid" value="Go!" onclick="func()">
-      </div>
-    <br>
-    {%endblock%}
-
-  {%block js%}
-    <script>
-        function initMap() {
-          var directionsService = new google.maps.DirectionsService;
-          var directionsDisplay = new google.maps.DirectionsRenderer;
-          var map = new google.maps.Map(document.getElementById('map'));
-          directionsDisplay.setMap(map);
-
-          var button = document.getElementById("buttonid");
-          var control = document.getElementById('floating-panel');
-          control.style.display = 'block';
-          map.controls[google.maps.ControlPosition.TOP_LEFT].push(control);
-
-          button.addEventListener("click", function() {
-          directionsDisplay.setPanel(document.getElementById('right-panel'));
-          });
-
-          calculateAndDisplayRoute(directionsService, directionsDisplay);
-          document.getElementById('submit').addEventListener('click', function() {
-          calculateAndDisplayRoute(directionsService, directionsDisplay);
-          });
-        }
-
-          function calculateAndDisplayRoute(directionsService, directionsDisplay) {
-
-          var waypts = [];
-          var checkboxArray = document.getElementById('waypoints');
-          for (var i = 0; i < checkboxArray.length; i++) {
-            if (checkboxArray.options[i].selected) {
-              waypts.push({
-                location: checkboxArray[i].value,
-                stopover: true
-              });
-            }
-          }
-
-            directionsService.route({
-            origin: {lat:40.703104, lng:-74.016847},
-            destination: {lat: 40.850089, lng:-73.946785},
-            waypoints:waypts,
-            optimizeWaypoints:true,
-            travelMode:'BICYCLING'
-
-
-          }, function(response, status) {
-            if (status === 'OK') {
-              directionsDisplay.setDirections(response);
-              var route = response.routes[0];
-              var summaryPanel = document.getElementById('directions-panel');
-              summaryPanel.innerHTML = '';
-              // For each route, display summary information.
-              for (var i = 0; i < route.legs.length; i++) {
-                var routeSegment = i + 1;
-                summaryPanel.innerHTML += '<b>Route Segment: ' + routeSegment +
-                    '</b><br>';
-                summaryPanel.innerHTML += route.legs[i].start_address + ' to ';
-                summaryPanel.innerHTML += route.legs[i].end_address + '<br>';
-                summaryPanel.innerHTML += route.legs[i].distance.text + '<br><br>';
-              }
-            } else {
-              window.alert('Directions request failed due to ' + status);
-            }
-          });
-        }
-
-      </script>
-      <script async defer
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAde5aRQ262GgOgdqkY8Jiu5KzYQYj2YKg&callback=initMap">
-      </script>
-      {% endblock js %}
-</body>
+<html>
+<head>
+  {%load static %}
+  <link rel="stylesheet" href="{% static "stylesheets/westside.css" %}">
+  <script rel ="javascript" src="{% static "javascripts/westside.js" %}"></script>
+  <title>Cyqlo</title>
+</head>
+  <body>
+      <div id="right-panel"></div>
+      <div id="map"></div>
+        <div id="floating-panel" style="text-align:left">
+            <strong>Start:</strong>
+              <input id="start" value="Battery Park" readonly="readonly"/></input>
+            <br>
+            <strong>End:</strong>
+              <input id="end" value="George Washington Bridge "/> <br></input>
+          <b>Waypoints:</b> <br>
+            <select multiple id="waypoints">
+              <option value="40.785668, -73.984504">Boat Basin Cafe</option>
+              <option value="40.794520, -73.971377">Bike Shop</option>
+              <option value="40.764437, -73.998921">Intrepid Museum</option>
+              <input type="button" value="Add Stops" id="submit">
+            </select>
+          <input type="button" id="buttonid" value="Go!" onclick="func()">
+        </div>
+      <br>
+  </body>
 </html>
