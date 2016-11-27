@@ -1,6 +1,6 @@
 # Cyqlo - Exploring NYC and beyond on a bike
 
-### Development setup
+## Development setup
 
 Make sure you have Python 3.5.2 installed. We use [Conda](http://conda.pydata.org/docs/index.html) to manage different Python environments. [Virtualenv](https://virtualenv.pypa.io/en/stable/) is another more lightweight option.
 
@@ -44,4 +44,28 @@ $ python manage.py createsuperuser
 Start server
 ```
 $ python manage.py runserver
+```
+
+## Development Workflow
+
+### Tests & pull requests
+
+Any well built app needs to have an expansive testing suite. When you create a pull request, there should one of the following included in the code or documentation of the PR:
+ - a specific test for the code you wrote
+ - an explanation of what tests already cover your code
+ - an explanation of why your code might not need tests
+
+Any code you write and submit in a PR should pass all the tests in Cyqlo's testing suite.
+
+To run Cyqlo's existing tests:
+```
+$ python manage.py test main.tests
+```
+
+### Pylint
+
+Pylint is code analysis for Python. Along with syntax checking, Pylint checks that your code is well formatted, free of duplicated or unused lines, and generally conforms to PEP 8 guidelines. Cyqlo strives to have a perfect Pylint score (10/10). Any PR you submit should, at the very least, not degrade the current Pylint score of the master branch. If you notice the score has dipped below 10 (before your PR), reach out to others to understand why that's the case.
+Run Pylint on our main app:
+```
+$ pylint main
 ```
