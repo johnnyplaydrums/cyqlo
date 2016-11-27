@@ -1,14 +1,12 @@
 {% extends "base.html" %}
-  {%load static %}
+{%load static %}
 
-  <link rel="stylesheet" href="{% static "stylesheets/westside.css" %}">
-  <script async defer
+{%block content%}
+<script rel ="javascript" src="{% static "javascripts/westside.js" %}"></script>
+<script async defer
   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAde5aRQ262GgOgdqkY8Jiu5KzYQYj2YKg&callback=initMap">
-  </script>
-  <script rel ="javascript" src="{% static "javascripts/westside.js" %}"></script>
-
-  {%block content%}
-      <div id="right-panel"></div>
+</script>
+    <div id="right-panel"></div>
       <div id="map"></div>
         <div id="floating-panel" style="text-align:left">
             <strong>Start:</strong>
