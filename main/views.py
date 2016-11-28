@@ -32,3 +32,7 @@ def about(request):
 def routes(request):
     """ Routes listing page """
     return render(request, 'routes.html')
+
+def west_side_route(request):
+    """ Serve the West Side Route"""
+    return render(request,  'west_side_route.html')
