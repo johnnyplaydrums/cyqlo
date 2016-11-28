@@ -10,18 +10,20 @@
       <div id="map"></div>
         <div id="floating-panel">
             <strong>Start:</strong>
-              <input id="start" value="Battery Park" readonly="readonly"/></input>
+              <input id="start" type="text" value="Battery Park" readonly="readonly"/></input>
             <br>
             <strong>End:</strong>
-              <input id="end" value="George Washington Bridge "/> <br></input>
+              <input id="end" type="text" value="George Washington Bridge"readonly="readonly"/></input>
+              <br>
+
           <b>Waypoints:</b> <br>
             <select multiple id="waypoints">
               <option value="40.785668, -73.984504">Boat Basin Cafe</option>
               <option value="40.794520, -73.971377">Bike Shop</option>
               <option value="40.764437, -73.998921">Intrepid Museum</option>
-              <input type="button" value="Add Stops" id="submit">
+              <input class="sign-up-cta btn btn-primary" type="button" value="Add Stops" id="submit">
             </select>
-          <input type="button" id="buttonid" value="Go!" onclick="func()">
+          <input class="sign-up-cta btn btn-primary" type="button" id="buttonid" value="Go!" onclick="func()">
         </div>
       <br>
 {% endblock content %}
