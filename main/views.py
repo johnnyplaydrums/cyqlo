@@ -36,3 +36,7 @@ def routes(request):
 def west_side_route(request):
     """ Serve the West Side Route"""
     return render(request,  'west_side_route.html')
+
+def shore_parkway_route(request):
+    """ Serve the Shore Parkway Route """
+    return render(request, 'shore_parkway_route.html')
