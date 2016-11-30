@@ -17,7 +17,8 @@
     {% endblock head_meta%}
     {% block head_css %}
     <!-- Libraries -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="{% static "boot.css" %}">
     <!-- Cyqlo assets -->
     <link rel="stylesheet" href="{% static "stylesheets/footer.css" %}">
     <link rel="stylesheet" href="{% static "stylesheets/main.css" %}">
@@ -66,9 +67,11 @@
 
     {% block footer_javascript %}
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> -->
+    <script src="{% static "jquery.js" %}"></script>
     <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+    <script src="{% static "boot.js" %}"></script>
     {% endblock footer_javascript %}
 </body>
 </html>
