@@ -4,8 +4,8 @@ from main.forms import RegistrationForm
 class FormsTestPage(TestCase):
 
     def test_Melissa_form(self):
-        form = RegistrationForm({'first_name': 'Melissa', 'last_name': 'Banks', 'email': 'mbanks@email.com',
-                'password': 'mbanks123'})
+        form = RegistrationForm({'first_name': 'Melissa', 'last_name': 'Banks',
+            'email': 'mbanks@email.com', 'password': 'mbanks123'})
         self.assertTrue(form.is_valid())
         register = form.save()
         self.assertEqual(register.first_name, 'Melissa')
@@ -14,8 +14,8 @@ class FormsTestPage(TestCase):
         self.assertEqual(register.password, 'mbanks123')
 
     def test_Tom_form(self):
-        form = RegistrationForm({'first_name': 'Tom', 'last_name': 'Barnett', 'email': 'tbarnett@email.com',
-                'password': 'tbarnett123'})
+        form = RegistrationForm({'first_name': 'Tom', 'last_name': 'Barnett',
+            'email': 'tbarnett@email.com', 'password': 'tbarnett123'})
         self.assertTrue(form.is_valid())
         register = form.save()
         self.assertEqual(register.first_name, 'Tom')
