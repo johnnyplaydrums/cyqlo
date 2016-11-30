@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{%load static %}
+
+{%block content%}
+<script rel ="javascript" src="{% static "javascripts/shoreparkway.js" %}"></script>
+<script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAde5aRQ262GgOgdqkY8Jiu5KzYQYj2YKg&callback=initMap">
+</script>
+    <div id="right-panel"></div>
+      <div id="map"></div>
+        <div id="floating-panel">
+            <strong>Start:</strong>
+              <input id="start" type="text" value="Shore Parkway Start" readonly="readonly"/></input>
+            <br>
+            <strong>End:</strong>
+              <input id="end" type="text" value="Shore Parkway End"readonly="readonly"/></input>
+              <br>
+
+          <b>Waypoints:</b> <br>
+            <select multiple id="waypoints">
+              <!-- Add waypoints here -->
+              <input class="sign-up-cta btn btn-primary" type="button" value="Add Stops" id="submit">
+            </select>
+          <input class="sign-up-cta btn btn-primary" type="button" id="buttonid" value="Go!" onclick="func()">
+        </div>
+      <br>
+{% endblock content %}

@@ -1,0 +1,40 @@
+#map {
+  height: 600px;
+  width: 800px;
+  text-align: center;
+  margin-left: 0px;
+  margin: 0px;
+  padding: 50px
+  }
+
+#floating-panel {
+  position: absolute;
+  top: 10px;
+  left: 25%;
+  width: auto;
+  z-index: 5;
+  background-color: #fff;
+  padding: 5px;
+  border: 1px solid #999;
+  text-align: left;
+  line-height: 30px;
+  padding-left: 10px;
+}
+
+#right-panel {
+  line-height: 30px;
+  padding-left: 0px;
+  padding: 50px;
+  height: 100%;
+  float: right;
+  width: 35%;
+  overflow: auto;
+}
+
+
+input[type="text"] {
+     width: 100%;
+     box-sizing: border-box;
+     -webkit-box-sizing:border-box;
+     -moz-box-sizing: border-box;
+}
