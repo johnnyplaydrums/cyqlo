@@ -10,6 +10,7 @@ function initMap() {
   map.controls[google.maps.ControlPosition.TOP_LEFT].push(control);
 
   button.addEventListener("click", function() {
+    calculateAndDisplayRoute(directionsService, directionsDisplay);
   directionsDisplay.setPanel(document.getElementById('right-panel'));
   });
 
