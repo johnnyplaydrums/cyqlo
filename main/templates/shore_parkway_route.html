@@ -6,6 +6,11 @@
 <script async defer
   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAde5aRQ262GgOgdqkY8Jiu5KzYQYj2YKg&callback=initMap">
 </script>
+<div id = routeheader> <h2>Shore Road Greenway</h2> </div>
+<div id ="routecopy">Take a trip to historic Bay Ridge and ride along the Shore Road Parkway. Catch
+  stunning views of the worlds longest (and most expensive) suspension bridge and even fish off of
+  one of the many piers. Dont forget to work up an appetite and grab some of Brooklyn's famous
+  L&B pizza. </div>
     <div id="right-panel"></div>
       <div id="map"></div>
         <div id="floating-panel">
@@ -18,7 +23,10 @@
 
           <b>Waypoints:</b> <br>
             <select multiple id="waypoints">
-              <!-- Add waypoints here -->
+              <option value="40.636948, -74.036726">Narrows Botanical Garden</option>
+              <option value="40.639952, -74.032252">Owl's Head Park</option>
+              <option value="40.594467, -73.981479">L&B Spumoni Gardens </option>
+              <option value="40.620974, -74.032084">Bike Shop</option>
               <input class="sign-up-cta btn btn-primary" type="button" value="Add Stops" id="submit">
             </select>
           <input class="sign-up-cta btn btn-primary" type="button" id="buttonid" value="Go!" onclick="func()">

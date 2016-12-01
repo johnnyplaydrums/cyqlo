@@ -1,16 +1,17 @@
 #map {
-  height: 600px;
-  width: 800px;
+  height: 95vh;
+  width: 70%;    /*or auto;*/
   text-align: center;
   margin-left: 0px;
   margin: 0px;
-  padding: 50px
-  }
+  padding: 0px;
+}
+
 
 #floating-panel {
   position: absolute;
-  top: 10px;
-  left: 25%;
+  top: 50px !important;
+  left: 10px !important;
   width: auto;
   z-index: 5;
   background-color: #fff;
@@ -24,10 +25,10 @@
 #right-panel {
   line-height: 30px;
   padding-left: 0px;
-  padding: 50px;
+  padding: 0px;
   height: 100%;
   float: right;
-  width: 35%;
+  width: 25%;
   overflow: auto;
 }
 
@@ -37,4 +38,18 @@ input[type="text"] {
      box-sizing: border-box;
      -webkit-box-sizing:border-box;
      -moz-box-sizing: border-box;
+}
+
+#routeheader {
+  display:inline-block;
+  padding-left: 20px;
+  padding-top: 50px;
+
+}
+
+#routecopy {
+  padding-left: 20px;
+  padding-bottom: 10px;
+  width: 70%;
+  font-size: 16px;
 }
