@@ -5,6 +5,7 @@
     <h3 class="text-center title">Explore some cycling routes</h3>
     {% for route in routes %}
     <div class="route col-sm-6 col-md-4" style="height: 200px;">
+      <div class="route-name bg-black-transparent">{{ route.route_name }}</div>
       <a href= "{{ route.template }}"><img src="{% static route.image  %}" style="width: 100%;"></a>
     </div>
     {% endfor %}

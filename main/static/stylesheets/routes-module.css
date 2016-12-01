@@ -3,5 +3,10 @@
 }
 
 .route {
-  margin-bottom: 50px;
+  margin-bottom: 90px;
+}
+
+.route-name {
+  width: 100%;
+  text-align: center;
 }
