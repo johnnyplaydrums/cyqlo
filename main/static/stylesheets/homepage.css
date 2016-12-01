@@ -1,5 +1,5 @@
 #homepage-banner {
-    background: url('../img/biking-banner.jpg') no-repeat fixed top center;
+    background: url('../img/bike-trains.jpg') no-repeat fixed top center;
     background-size: cover;
     height: 100vh
 }
@@ -12,10 +12,11 @@
 }
 
 #homepage-banner h2 {
+  color: white;
   margin-bottom: 30px;
 }
 
-#homepage-banner button {
-  font-size: 20px;
+#homepage-banner .btn {
+  font-size: 22px;
   padding: 8px 30px;
 }
