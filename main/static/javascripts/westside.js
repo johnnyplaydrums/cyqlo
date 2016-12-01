@@ -31,14 +31,12 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
     }
   }
 
-    directionsService.route({
+  directionsService.route({
     origin: {lat:40.703104, lng:-74.016847},
     destination: {lat: 40.850089, lng:-73.946785},
-    waypoints:waypts,
-    optimizeWaypoints:true,
-    travelMode:'BICYCLING'
-
-
+    waypoints: waypts,
+    optimizeWaypoints: true,
+    travelMode: 'BICYCLING'
   }, function(response, status) {
     if (status === 'OK') {
       directionsDisplay.setDirections(response);

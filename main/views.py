@@ -3,12 +3,14 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from main.forms import RegistrationForm
+from main.models import Route
 
 # Create your views here.
 
 def index(request):
     """ Homepage """
-    return render(request, 'index.html')
+    routes = Route.objects.all()
+    return render(request, 'index.html', {'routes': routes})
 
 def login(request):
     """ User login page """
