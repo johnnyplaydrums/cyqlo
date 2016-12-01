@@ -1,3 +1,7 @@
 #themed-routes {
   min-height: 500px;
 }
+
+.route {
+  margin-bottom: 50px;
+}
