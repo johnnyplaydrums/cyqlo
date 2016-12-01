@@ -6,7 +6,7 @@ function initMap() {
     zoom: 12
   });
   directionsDisplay.setMap(map);
-  var infoWindow = new google.maps.InfoWindow({map: map});
+  //var infoWindow = new google.maps.InfoWindow({map: map});
 
   // Try HTML5 geolocation.
   if (navigator.geolocation) {
@@ -15,9 +15,16 @@ function initMap() {
         lat: position.coords.latitude,
         lng: position.coords.longitude
       };
+      var im = 'http://www.robotwoods.com/dev/misc/bluecircle.png';
+      // var im = '/static/img/currentlocation.png';
+      var userMarker = new google.maps.Marker({
+            position: pos,
+            map: map,
+            icon: im
+        });
 
-      infoWindow.setPosition(pos);
-      infoWindow.setContent('Current Location');
+      //infoWindow.setPosition(pos);
+      //infoWindow.setContent('Current Location');
       map.setCenter(pos);
     }, function() {
       handleLocationError(true, infoWindow, map.getCenter());
@@ -58,11 +65,12 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
           location: checkboxArray[i].value,
           stopover: true
         });
+        var finaldestination = checkboxArray[i].value;
       }
     }
         directionsService.route({
           origin: {lat: position.coords.latitude, lng: position.coords.longitude},
-          destination: {lat: position.coords.latitude, lng: position.coords.longitude},
+          destination: finaldestination,
           waypoints:waypts,
           optimizeWaypoints:true,
           travelMode: 'BICYCLING'
