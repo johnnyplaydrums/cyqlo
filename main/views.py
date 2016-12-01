@@ -46,6 +46,10 @@ def shore_parkway_route(request):
 def greenBronx_route(request):
     """ Serve the greenBronx Route """
     return render(request, 'greenBronx_route.html')
+def pizza_tour_route(request):
+    """ Serve the Pizza Tour Route """
+    return render(request, 'pizza_tour_route.html')
+
 def columbuscircle_bearmtn_route(request):
     """ Serve the Manhattan to Bear Mountain Route """
     return render(request, 'columbuscircle_bearmtn_route.html')

@@ -13,5 +13,7 @@ urlpatterns = [
     url(r'^greenBronx_route', views.greenBronx_route, name='greenBronx_route'),
     url(r'^shore_parkway_route', views.shore_parkway_route, name='shore_parkway_route')
     url(r'^shore_parkway_route', views.shore_parkway_route, name='shore_parkway_route'),
+    url(r'^pizza_tour_route', views.pizza_tour_route, name='pizza_tour_route'),
     url(r'^columbuscircle_bearmtn_route', views.columbuscircle_bearmtn_route, name='columbuscircle_bearmtn_route')
+    
 ]
