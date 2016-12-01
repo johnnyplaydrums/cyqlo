@@ -42,5 +42,5 @@ def shore_parkway_route(request):
     return render(request, 'shore_parkway_route.html')
 
 def columbuscircle_bearmtn_route(request):
-    """ Serve the Central Park Route/Loop """
+    """ Serve the Manhattan to Bear Mountain Route """
     return render(request, 'columbuscircle_bearmtn_route.html')
