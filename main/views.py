@@ -40,3 +40,7 @@ def west_side_route(request):
 def shore_parkway_route(request):
     """ Serve the Shore Parkway Route """
     return render(request, 'shore_parkway_route.html')
+
+def columbuscircle_bearmtn_route(request):
+    """ Serve the Central Park Route/Loop """
+    return render(request, 'columbuscircle_bearmtn_route.html')
