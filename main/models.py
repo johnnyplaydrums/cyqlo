@@ -27,6 +27,8 @@ class Route(models.Model):
     destination = ArrayField(models.FloatField(null=False, blank=False), size=2)
     # [location1, location2, location3, ...]
     waypoints = ArrayField(models.CharField(max_length=256, null=False, blank=False))
+    # route image
+    image = models.CharField(max_length=50, null=True, blank=False)
 
     def __str__(self):
         #Route objects are represented by name
