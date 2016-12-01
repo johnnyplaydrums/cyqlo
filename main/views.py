@@ -40,3 +40,7 @@ def west_side_route(request):
 def shore_parkway_route(request):
     """ Serve the Shore Parkway Route """
     return render(request, 'shore_parkway_route.html')
+
+def greenBronx_route(request):
+    """ Serve the greenBronx Route """
+    return render(request, 'greenBronx_route.html')
