@@ -40,11 +40,11 @@ function initMap() {
 
   button.addEventListener("click", function() {
     calculateAndDisplayRoute(directionsService, directionsDisplay);
-  directionsDisplay.setPanel(document.getElementById('right-panel'));
+    directionsDisplay.setPanel(document.getElementById('right-panel'));
   });
 
   document.getElementById('submit').addEventListener('click', function() {
-  calculateAndDisplayRoute(directionsService, directionsDisplay);
+    calculateAndDisplayRoute(directionsService, directionsDisplay);
   });
 }
 
@@ -69,7 +69,7 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
           location: checkboxArray[i].value,
           stopover: true
         });
-        var end = i=1;
+        var end = i-1;
         var finaldestination = checkboxArray[end].value;
       }
     }
