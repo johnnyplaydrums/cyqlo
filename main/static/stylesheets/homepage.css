@@ -1,17 +1,12 @@
 #homepage-banner {
     background: url('../img/biking-banner.jpg') no-repeat fixed top center;
     background-size: cover;
-    height: 94vh
+    height: 100vh
 }
 
 #homepage-banner .container {
     height: 100%;
     text-align: center;
-}
-
-#homepage-banner .find-a-route {
-    position: relative;
-    top: 35%;
 }
 
 #homepage-banner form {

@@ -1,0 +1,65 @@
+#map {
+  height: 95vh;
+  width: 70%;    /*or auto;*/
+  text-align: center;
+  margin-left: 0px;
+  margin: 0px;
+  padding-top: 20px;
+
+}
+
+
+#floating-panel {
+  position: absolute;
+  top: 50px !important;
+  left: 10px !important;
+  width: auto;
+  z-index: 5;
+  background-color: #fff;
+  padding: 5px;
+  border: 1px solid #999;
+  text-align: left;
+  line-height: 30px;
+  padding-left: 10px;
+}
+
+#right-panel {
+  line-height: 30px;
+  padding-left: 0px;
+  padding: 0px;
+  height: 400px;
+  float: right;
+  width: 25%;
+  overflow: auto;
+}
+
+
+input[type="text"] {
+     width: 100%;
+     box-sizing: border-box;
+     -webkit-box-sizing:border-box;
+     -moz-box-sizing: border-box;
+}
+
+#routeheader {
+  display:inline-block;
+  padding-left: 10px;
+  padding-top: 50px;
+  padding-bottom: 10px;
+
+}
+
+#routecopy {
+  padding-left: 10px;
+  padding-bottom: 20px;
+  width: 70%;
+  font-size: 16px;
+}
+
+/*Override table-responsive class*/
+
+.table-responsive {
+  width: 70%;
+  border: 1px solid black;
+  border-radius: 5px;
+}
