@@ -3,10 +3,6 @@ from django.test import Client
 from django.core.urlresolvers import reverse
 import main.views
 
-class TestPage(TestCase):
-    def setUp(self):
-        self.client = Client()
-
 """
 The reverse() allows the unit testing to not compromise Don't Repeat Yourself
 or DRY when editting our code.  In the event of changes to the url.py this
@@ -18,6 +14,10 @@ the client request.
 The assertTemplateUsed() checks for asserts that the template with the given
 name was used in rendering the response.
 """
+
+class TestPage(TestCase):
+    def setUp(self):
+        self.client = Client()
 
     def test_index_page(self):
         url = reverse('index')

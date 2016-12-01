@@ -3,12 +3,14 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from main.forms import RegistrationForm
+from main.models import Route
 
 # Create your views here.
 
 def index(request):
     """ Homepage """
-    return render(request, 'index.html')
+    routes = Route.objects.all()
+    return render(request, 'index.html', {'routes': routes})
 
 def login(request):
     """ User login page """
@@ -31,7 +33,7 @@ def about(request):
 
 def routes(request):
     """ Routes listing page """
-    return render(request, 'routes.html')
+    return render(request, 'routes-page.html')
 
 def west_side_route(request):
     """ Serve the West Side Route"""
@@ -44,3 +46,6 @@ def shore_parkway_route(request):
 def greenBronx_route(request):
     """ Serve the greenBronx Route """
     return render(request, 'greenBronx_route.html')
+def columbuscircle_bearmtn_route(request):
+    """ Serve the Manhattan to Bear Mountain Route """
+    return render(request, 'columbuscircle_bearmtn_route.html')
