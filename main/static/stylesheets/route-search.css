@@ -1,0 +1,18 @@
+#route-search {
+  padding: 15px;
+}
+
+#route-search #route-search-text {
+  padding-top: 3px;
+  font-size: 20px;
+}
+
+#route-search button {
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  #route-search .form-group {
+    margin-bottom: 0;
+  }
+}

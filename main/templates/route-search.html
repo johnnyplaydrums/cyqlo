@@ -1,0 +1,22 @@
+{% load static %}
+<div id="route-search" class="container-fluid">
+  <form>
+      <div class="col-xs-12 col-sm-2" id="route-search-text">Find a route</div>
+      <div class="form-group col-xs-12 col-sm-2 col-md-3">
+          <input class="form-control" id="Distance" placeholder="Distance (miles)">
+      </div>
+      <div class="form-group col-xs-12 col-sm-2 col-md-3">
+          <input class="form-control" id="TIme" placeholder="Time (hours)">
+      </div>
+      <div class="form-group col-xs-12 col-sm-2 col-md-2">
+          <select class="form-control" id="Difficulty" placeholder="Difficulty">
+              <option>Beginner</option>
+              <option>Intermediate</option>
+              <option>Advanced</option>
+          </select>
+      </div>
+      <div class="form-group col-xs-12 col-sm-2">
+        <button class="btn btn-default" type="submit">Search</button>
+      </div>
+  </form>
+</div>
