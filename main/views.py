@@ -31,7 +31,7 @@ def about(request):
 
 def routes(request):
     """ Routes listing page """
-    return render(request, 'routes.html')
+    return render(request, 'routes-page.html')
 
 def west_side_route(request):
     """ Serve the West Side Route"""
@@ -44,3 +44,7 @@ def shore_parkway_route(request):
 def pizza_tour_route(request):
     """ Serve the Pizza Tour Route """
     return render(request, 'pizza_tour_route.html')
+
+def columbuscircle_bearmtn_route(request):
+    """ Serve the Manhattan to Bear Mountain Route """
+    return render(request, 'columbuscircle_bearmtn_route.html')

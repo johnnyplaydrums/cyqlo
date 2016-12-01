@@ -1,32 +1,22 @@
 #homepage-banner {
-    background: url('../img/biking-banner.jpg') no-repeat fixed top center;
+    background: url('../img/bike-trains.jpg') no-repeat fixed top center;
     background-size: cover;
     height: 100vh
 }
 
 #homepage-banner .container {
+    position: relative;
+    top: 35%;
     height: 100%;
     text-align: center;
 }
 
-#homepage-banner form {
-    padding: 20px;
+#homepage-banner h2 {
+  color: white;
+  margin-bottom: 30px;
 }
 
-#homepage-banner form .form-control {
-    width: 100%;
-}
-
-#homepage-banner form .form-group {
-    margin-right: 20px;
-    text-align: left;
-}
-
-#homepage-banner form label {
-    display: block;
-}
-
-#homepage-banner form button {
-    margin-top: 25px;
-    width: 100px;
+#homepage-banner .btn {
+  font-size: 22px;
+  padding: 8px 30px;
 }

@@ -4,6 +4,7 @@
 @import url('homepage.css');
 @import url('routes.css');
 @import url('route-search.css');
+@import url('routes-module.css');
 
 body {
     font-family: 'Open Sans', sans-serif;

@@ -1,8 +1,6 @@
-{% extends "base.html" %}
 {% load static %}
 
-{% block content %}
-<div class="container">
+<div id="routes" class="container">
   <div class="row content-margin-top">
     <h3 class="text-center title">Explore some bike routes</h3>
     <div class="route col-sm-6 col-md-4" style="height: 200px;">
@@ -16,16 +14,16 @@
     <div class="route col-sm-6 col-md-4" style="height: 200px;">
       <img src="{% static "img/liberty_state_park.jpg" %}" style="height:200px; width: 100%;">
     </div>
-    <!-- <div class="route col-sm-6 col-md-4" style="height: 200px;">
-      <img src="{% static "img/shore_parkway.jpg" %}" style="height:200px; width: 100%;">
-    </div> -->
+      <div class="route col-sm-6 col-md-4" style="height: 200px; padding-top:20px;">
+      <a href = "columbuscircle_bearmtn_route"><img src="{% static "img/bearmtn.jpg" %}" style="width: 100%;"></a>
+    </div>
   </div>
   <div>
-  <h3 class="text-center title">Explore our featured routes</h3>
+    <br>
+  <h3 class="text-center title">Explore our themed routes</h3>
   <div class="route col-sm-6 col-md-4" style="height: 200px;">
     <a href = "pizza_tour_route">
       <img src="{% static "img/pizzabike2.gif" %}" style="width: 100%;"></a>
   </div>
 </div>
 </div>
-{% endblock content %}
