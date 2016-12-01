@@ -1,5 +1,7 @@
 $(function() {
 
-    // FIX ME
-    // Hack to make navbar work on mobile. Bootstrap should do this for us.
+    // Animation for homepage
+    $('#find-a-route').click(function() {
+        $('body').animate({scrollTop: $("#find-a-route").offset().top + 360}, 500);
+    });
 });
