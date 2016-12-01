@@ -37,7 +37,11 @@ function initMap() {
   var control = document.getElementById('floating-panel');
   control.style.display = 'block';
   map.controls[google.maps.ControlPosition.TOP_LEFT].push(control);
-  //calculateAndDisplayRoute(directionsService, directionsDisplay);
+
+  button.addEventListener("click", function() {
+    calculateAndDisplayRoute(directionsService, directionsDisplay);
+  directionsDisplay.setPanel(document.getElementById('right-panel'));
+  });
 
   document.getElementById('submit').addEventListener('click', function() {
   calculateAndDisplayRoute(directionsService, directionsDisplay);
@@ -65,7 +69,8 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
           location: checkboxArray[i].value,
           stopover: true
         });
-        var finaldestination = checkboxArray[i].value;
+        var end = i=1;
+        var finaldestination = checkboxArray[end].value;
       }
     }
         directionsService.route({
