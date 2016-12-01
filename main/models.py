@@ -23,9 +23,9 @@ class Route(models.Model):
     duration = models.DurationField(null=False, blank=False)
     # [lat,lng]
     origin = ArrayField(models.FloatField(null=False, blank=False), size=2)
-    #[lat,lng]
+    # [lat,lng]
     destination = ArrayField(models.FloatField(null=False, blank=False), size=2)
-    #[location1, location2, location3, ...]
+    # [location1, location2, location3, ...]
     waypoints = ArrayField(models.CharField(max_length=256, null=False, blank=False))
 
     def __str__(self):
