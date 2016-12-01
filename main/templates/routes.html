@@ -2,23 +2,15 @@
 
 <div id="routes" class="container">
   <div class="row content-margin-top">
-    <h3 class="text-center title">Explore some bike routes</h3>
+    <h3 class="text-center title">Explore some cycling routes</h3>
+    {% for route in routes %}
     <div class="route col-sm-6 col-md-4" style="height: 200px;">
-      <a href= "west_side_route">
-        <img src="{% static "img/west_side.jpg" %}" style="height:200px; width: 100%;"></a>
+      <a href= "{{ route.template }}"><img src="{% static route.image  %}" style="width: 100%;"></a>
     </div>
-    <div class="route col-sm-6 col-md-4" style="height: 200px;">
-      <a href = "shore_parkway_route">
-        <img src="{% static "img/shore_park.jpg" %}" style="height:200px; width: 100%;"></a>
-    </div>
-    <div class="route col-sm-6 col-md-4" style="height: 200px;">
-      <img src="{% static "img/liberty_state_park.jpg" %}" style="height:200px; width: 100%;">
-    </div>
-      <div class="route col-sm-6 col-md-4" style="height: 200px; padding-top:20px;">
-      <a href = "columbuscircle_bearmtn_route"><img src="{% static "img/bearmtn.jpg" %}" style="width: 100%;"></a>
-    </div>
+    {% endfor %}
   </div>
-  <div>
+</div>
+  <div id="themed-routes" class="container">
     <br>
   <h3 class="text-center title">Explore our themed routes</h3>
   <div class="route col-sm-6 col-md-4" style="height: 200px;">

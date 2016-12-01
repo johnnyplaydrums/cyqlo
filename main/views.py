@@ -33,7 +33,8 @@ def about(request):
 
 def routes(request):
     """ Routes listing page """
-    return render(request, 'routes-page.html')
+    routes = Route.objects.all()
+    return render(request, 'routes-page.html', {'routes': routes})
 
 def west_side_route(request):
     """ Serve the West Side Route"""
