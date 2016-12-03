@@ -39,10 +39,10 @@
                     <li><a href="/about">About</a></li>
                     <li><a href="/routes_page">Routes</a></li>
                     {% if user.is_authenticated %}
-                    <li><a href="/">Logout</a></li>
+                    <li><a href="/logout_view">Logout</a></li>
                     <li><a href="" class="p-r-none">Accounts</a></li>
                     {% else %}
-                    <li><a href="/login">Login</a></li>
+                    <li><a href="/login_view">Login</a></li>
                     <li><a href="/signup" class="p-r-none">Sign Up</a></li>
                     {% endif %}
                 </ul>
