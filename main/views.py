@@ -33,7 +33,7 @@ def signup(request):
 def logout_view(request):
     """ User logout page """
     logout(request)
-    return render(request, '/')
+    return HttpResponseRedirect('/')
 
 def about(request):
     """ Cyqlo About Us page """
