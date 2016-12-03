@@ -2,6 +2,7 @@
 
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
+from django.contrib.auth import logout
 from main.forms import RegistrationForm
 from main.models import Route
 
@@ -12,7 +13,8 @@ def index(request):
     routes = Route.objects.all()
     return render(request, 'index.html', {'routes': routes})
 
-def login(request):
+# Django already have builtin login function, can't reuse login
+def login_view(request):
     """ User login page """
     return render(request, 'login.html')
 
@@ -26,6 +28,12 @@ def signup(request):
             form.save()
             return HttpResponseRedirect('/')
     return render(request, 'signup.html', {'form': form})
+
+# Django already have builtin logout function, can't reuse logout
+def logout_view(request):
+    """ User logout page """
+    logout(request)
+    return render(request, '/')
 
 def about(request):
     """ Cyqlo About Us page """
