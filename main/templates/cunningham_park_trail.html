@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{%load static %}
+
+{%block content%}
+<script rel ="javascript" src="{% static "javascripts/cunningham_park.js" %}"></script>
+<script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAde5aRQ262GgOgdqkY8Jiu5KzYQYj2YKg&callback=initMap">
+</script>
+<div id = routeheader> <h2>CunningHam Park Mountain Bike Tral</h2> </div>
+<div id ="routecopy"><!-- Add copy here --></div>
+  <div class="table-responsive">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Location</th>
+          <th>Distance (Miles)</th>
+          <th>Est. Duration</th>
+          <th>Difficulty</th>
+          <th>Lane Type</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Queens</td>
+          <td>1</td>
+          <td>10 mins</td>
+          <td class="alert alert-success">Easy</td>
+          <td class="alert alert-success">Trail</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+    <div id="right-panel"></div>
+      <div id="map"></div>
+        <div id="floating-panel">
+            <strong>Start:</strong>
+              <input id="start" type="text" value="Cunningham Park Mtb Trailhead" readonly="readonly"/></input>
+            <br>
+            <strong>End:</strong>
+              <input id="end" type="text" value="Cunningham Park" readonly="readonly"/></input>
+              <br>
+
+          <b>Waypoints:</b> <br>
+            <select multiple id="waypoints">
+              <!-- Add waypoints here -->
+              <input class="sign-up-cta btn btn-primary" type="button" value="Add Stops" id="submit">
+            </select>
+          <input class="sign-up-cta btn btn-primary" type="button" id="buttonid" value="Go!" onclick="func()">
+        </div>
+      <br>
+{% endblock content %}
