@@ -68,3 +68,7 @@ def pizza_tour_route(request):
 def columbuscircle_bearmtn_route(request):
     """ Serve the Manhattan to Bear Mountain Route """
     return render(request, 'columbuscircle_bearmtn_route.html')
+
+def cunningham_park_trail(request):
+    """ Serve the Cunningham Park Mountain Bike Trail """
+    return render(request, 'cunningham_park_trail.html')

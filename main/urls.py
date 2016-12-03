@@ -15,5 +15,6 @@ urlpatterns = [
     url(r'^green_bronx_route', views.green_bronx_route, name='green_bronx_route'),
     url(r'^shore_parkway_route', views.shore_parkway_route, name='shore_parkway_route'),
     url(r'^pizza_tour_route', views.pizza_tour_route, name='pizza_tour_route'),
+    url(r'^cunningham_park_trail', views.cunningham_park_trail, name='cunningham_park_trail'),
     url(r'^columbuscircle_bearmtn_route', views.columbuscircle_bearmtn_route, name='columbuscircle_bearmtn_route')
 ]
