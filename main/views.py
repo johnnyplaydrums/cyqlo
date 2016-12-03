@@ -36,7 +36,7 @@ def logout_view(request):
     logout(request)
     return HttpResponseRedirect('/')
 
-@login_required
+@login_required(login_url='/login_view')
 def profile(request):
     return render(request, 'profile.html')
 
