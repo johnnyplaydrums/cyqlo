@@ -8,6 +8,7 @@ urlpatterns = [
     url(r'^login_view', views.login_view, name='login_view'),
     url(r'^signup', views.signup, name='signup'),
     url(r'^logout_view', views.logout_view, name='logout_view'),
+    url(r'^profile', views.profile, name='profile'),
     url(r'^about', views.about, name='about'),
     url(r'^routes_page', views.routes_page, name='routes_page'),
     url(r'^west_side_route', views.west_side_route, name='west_side_route'),
@@ -15,5 +16,4 @@ urlpatterns = [
     url(r'^shore_parkway_route', views.shore_parkway_route, name='shore_parkway_route'),
     url(r'^pizza_tour_route', views.pizza_tour_route, name='pizza_tour_route'),
     url(r'^columbuscircle_bearmtn_route', views.columbuscircle_bearmtn_route, name='columbuscircle_bearmtn_route')
-
 ]
