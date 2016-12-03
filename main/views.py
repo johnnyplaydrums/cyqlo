@@ -38,6 +38,7 @@ def logout_view(request):
 
 @login_required(login_url='/login_view')
 def profile(request):
+    """ User profile page """
     return render(request, 'profile.html')
 
 def about(request):
