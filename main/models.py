@@ -3,19 +3,6 @@
 from django.db import models
 from django.contrib.postgres.fields import ArrayField
 
-'''
-#Data representation of a user
-class User(models.Model):
-    """ Cyqlo user model """
-    first_name = models.CharField(max_length=50, null=False, blank=False)
-    last_name = models.CharField(max_length=50, null=False, blank=False)
-    email = models.EmailField(max_length=50, null=False, blank=False, unique=True)
-    password = models.CharField(max_length=256, null=False, blank=False)
-
-    def __str__(self):
-        #User objects are represented by first and last name
-        return self.first_name + " " + self.last_name
-'''
 #Data representation of a route
 class Route(models.Model):
     """ Route model """

@@ -2,7 +2,7 @@
 
 from django.shortcuts import render, HttpResponse
 from django.http import HttpResponseRedirect
-from django.contrib.auth import logout, login, authenticate
+from django.contrib.auth import logout, authenticate
 from django.contrib import auth
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
@@ -37,17 +37,7 @@ def login_view(request):
     return render(request, 'login.html', {'form':form})
 
 def signup(request):
-    """ User Signup page """
-    '''
-    # Form is initially empty
-    form = None
-    if request.method == 'POST':
-        form = RegistrationForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return HttpResponseRedirect('/')
-    return render(request, 'signup.html', {'form': form})
-    '''
+    """ User signup page """
     if request.method == 'POST':
         form = RegistrationForm(request.POST)
         if form.is_valid():
@@ -58,8 +48,6 @@ def signup(request):
                 return HttpResponse('<h1>Username already exists</h1>')
             else:
                 user = User.objects.create_user(username, email, password)
-                #user.is_superuser = True
-                #user.is_staff = True
                 user.save()
                 user = authenticate(username=username, password=password)
                 auth.login(request, user)
