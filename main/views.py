@@ -45,7 +45,8 @@ def signup(request):
             password = form.cleaned_data['password']
             email = form.cleaned_data['email']
             if User.objects.filter(username=username):
-                return HttpResponse('<h1>Username already exists</h1>')
+                form = RegistrationForm()
+                return render(request, 'signup.html', {'form':form})
             else:
                 user = User.objects.create_user(username, email, password)
                 user.save()
