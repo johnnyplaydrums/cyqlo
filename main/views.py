@@ -42,12 +42,12 @@ def signup(request):
                 return HttpResponse('<h1>Username already exists</h1>')
             else:
                 user = User.objects.create_user(username, email, password)
-                user.is_superuser = True
-                user.is_staff = True
+                #user.is_superuser = True
+                #user.is_staff = True
                 user.save()
                 user = authenticate(username=username, password=password)
                 login(request, user)
-                return render(request, 'profile.html')
+                return HttpResponseRedirect('profile')
     else:
         form = RegistrationForm()
     return render(request, 'signup.html', {'form':form})
