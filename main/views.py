@@ -3,6 +3,7 @@
 from django.shortcuts import render, HttpResponse
 from django.http import HttpResponseRedirect
 from django.contrib.auth import logout, login, authenticate
+from django.contrib import auth
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from main.forms import RegistrationForm, LoginForm
@@ -18,7 +19,22 @@ def index(request):
 # Django already have builtin login function, can't reuse login
 def login_view(request):
     """ User login page """
-    return render(request, 'login.html')
+    form = LoginForm()
+    if request.method == 'POST':
+        form = LoginForm(request.POST)
+        if form.is_valid():
+            username = form.cleaned_data['username']
+            password = form.cleaned_data['password']
+            user = authenticate(username=username, password=password)
+            if User.objects.filter(username=username):
+                if user is not None:
+                    auth.login(request, user)
+                    return HttpResponseRedirect('profile')
+            else:
+                return render(request, 'login.html', {'form':form})
+    else:
+        return render(request, 'login.html', {'form':form})
+    return render(request, 'login.html', {'form':form})
 
 def signup(request):
     """ User Signup page """
@@ -46,7 +62,7 @@ def signup(request):
                 #user.is_staff = True
                 user.save()
                 user = authenticate(username=username, password=password)
-                login(request, user)
+                auth.login(request, user)
                 return HttpResponseRedirect('profile')
     else:
         form = RegistrationForm()
