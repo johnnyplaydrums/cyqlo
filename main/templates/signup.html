@@ -6,20 +6,10 @@
         <div class="row content-margin-top">
             <div class="panel panel-primary" style="width:40%">
                 <div class="panel-body" style="width:80%">
-                    <form method="POST" action="#" role="form">
+                    <form method="POST" action="" role="form">
                         <div class="form-group">
                             <h2>Sign Up</h2>
                         </div>
-<!--
-                        {% if form.errors.first_name %}
-                        <div class="alert alert-danger", style="padding:1px" role="alert">
-                            {{ form.errors.first_name }}
-                        </div>
-                        {% endif %}
-                        <div class="form-group">
-                            <input type="text" maxlength="50" id="first_name" name="first_name" placeholder="First Name" class="form-control">
-                        </div>
--->
                         {% if form.errors.username %}
                         <div class="alert alert-danger", style="padding:1px" role="alert">
                             {{ form.errors.username }}
