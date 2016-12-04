@@ -10,13 +10,13 @@
     					<div class="form-group">
     						<h2>Log In</h2>
     					</div>
-                        {% if form.errors.email %}
+                        {% if form.errors.username %}
                         <div class="alert alert-danger", style="padding:1px" role="alert">
-                            {{ form.errors.email }}
+                            {{ form.errors.Username }}
                         </div>
                         {% endif %}
                         <div class="form-group">
-                            <input type="text" maxlength="50" id="email" name="email" placeholder="Email" class="form-control">
+                            <input type="text" maxlength="50" id="username" name="username" placeholder="Username" class="form-control">
                         </div>
 
                         {% if form.errors.password %}
@@ -31,6 +31,7 @@
     						<button id="login-button" type="submit" class="login-cta btn btn-primary">Log In</button>
                         </div>
                         <div class='reset-password'><a href="">Forgot your password?</a></div>
+                        {% csrf_token %}
                     </form>
                 </div>
             </div>

@@ -10,6 +10,7 @@
                         <div class="form-group">
                             <h2>Sign Up</h2>
                         </div>
+<!--
                         {% if form.errors.first_name %}
                         <div class="alert alert-danger", style="padding:1px" role="alert">
                             {{ form.errors.first_name }}
@@ -18,13 +19,14 @@
                         <div class="form-group">
                             <input type="text" maxlength="50" id="first_name" name="first_name" placeholder="First Name" class="form-control">
                         </div>
-                        {% if form.errors.last_name %}
+-->
+                        {% if form.errors.username %}
                         <div class="alert alert-danger", style="padding:1px" role="alert">
-                            {{ form.errors.last_name }}
+                            {{ form.errors.username }}
                         </div>
                         {% endif %}
                         <div class="form-group">
-                            <input type="text" maxlength="50" id="last_name" name="last_name" placeholder="Last Name" class="form-control">
+                            <input type="text" maxlength="50" id="username" name="username" placeholder="Username" class="form-control">
                         </div>
                         {% if form.errors.email %}
                         <div class="alert alert-danger", style="padding:1px" role="alert">

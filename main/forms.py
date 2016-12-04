@@ -7,10 +7,11 @@ from django.contrib.auth.models import User
 
 class RegistrationForm(forms.Form):
     """ Registration form for registering users """
-    username = forms.CharField(label="Username")
+    username = forms.CharField(label="Username", widget=forms.TextInput())
+    email = forms.EmailField(label="Email", widget=forms.TextInput())
     password = forms.CharField(label="Password", widget=forms.PasswordInput())
 
-    class Meta:
-        """ A meta class that get the fields from user models """
-        model = User
-        fields = ['first_name', 'last_name', 'email', 'password']
+class LoginForm(forms.Form):
+    """ Registration form for registering users """
+    username = forms.CharField(label="Username", widget=forms.TextInput())
+    password = forms.CharField(label="Password", widget=forms.PasswordInput())

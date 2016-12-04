@@ -1,10 +1,11 @@
 """ Views for the main app """
 
-from django.shortcuts import render
+from django.shortcuts import render, HttpResponse
 from django.http import HttpResponseRedirect
-from django.contrib.auth import logout
+from django.contrib.auth import logout, login, authenticate
+from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
-from main.forms import RegistrationForm
+from main.forms import RegistrationForm, LoginForm
 from main.models import Route
 
 # Create your views here.
@@ -21,6 +22,7 @@ def login_view(request):
 
 def signup(request):
     """ User Signup page """
+    '''
     # Form is initially empty
     form = None
     if request.method == 'POST':
@@ -29,6 +31,26 @@ def signup(request):
             form.save()
             return HttpResponseRedirect('/')
     return render(request, 'signup.html', {'form': form})
+    '''
+    if request.method == 'POST':
+        form = RegistrationForm(request.POST)
+        if form.is_valid():
+            username = form.cleaned_data['username']
+            password = form.cleaned_data['password']
+            email = form.cleaned_data['email']
+            if User.objects.filter(username=username):
+                return HttpResponse('<h1>Username already exists</h1>')
+            else:
+                user = User.objects.create_user(username, email, password)
+                user.is_superuser = True
+                user.is_staff = True
+                user.save()
+                user = authenticate(username=username, password=password)
+                login(request, user)
+                return render(request, 'profile.html')
+    else:
+        form = RegistrationForm()
+    return render(request, 'signup.html', {'form':form})
 
 # Django already have builtin logout function, can't reuse logout
 def logout_view(request):
