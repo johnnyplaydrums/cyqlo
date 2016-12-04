@@ -1,6 +1,6 @@
 """ Views for the main app """
 
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from django.contrib.auth import logout, authenticate
 from django.contrib import auth
