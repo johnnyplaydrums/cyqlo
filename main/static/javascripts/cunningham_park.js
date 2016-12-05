@@ -10,7 +10,6 @@ function initMap() {
   map.controls[google.maps.ControlPosition.TOP_LEFT].push(control);
 
   button.addEventListener("click", function() {
-    calculateAndDisplayRoute(directionsService, directionsDisplay);
   directionsDisplay.setPanel(document.getElementById('right-panel'));
   });
 
@@ -32,17 +31,30 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
     }
   }
 
-  directionsService.route({
-    origin: {lat:40.703104, lng:-74.016847},
-    destination: {lat: 40.850089, lng:-73.946785},
-    waypoints: waypts,
-    optimizeWaypoints: true,
-    travelMode: 'BICYCLING'
+    directionsService.route({
+    origin: {lat:40.742406, lng:-73.765203},
+    destination: {lat:40.741053, lng:-73.774528},
+    waypoints:waypts,
+    optimizeWaypoints:true,
+    travelMode:'BICYCLING'
+
+
   }, function(response, status) {
     if (status === 'OK') {
       directionsDisplay.setDirections(response);
-    }
-    else {
+      var route = response.routes[0];
+      var summaryPanel = document.getElementById('directions-panel');
+      summaryPanel.innerHTML = '';
+      // For each route, display summary information.
+      for (var i = 0; i < route.legs.length; i++) {
+        var routeSegment = i + 1;
+        summaryPanel.innerHTML += '<b>Route Segment: ' + routeSegment +
+            '</b><br>';
+        summaryPanel.innerHTML += route.legs[i].start_address + ' to ';
+        summaryPanel.innerHTML += route.legs[i].end_address + '<br>';
+        summaryPanel.innerHTML += route.legs[i].distance.text + '<br><br>';
+      }
+    } else {
       window.alert('Directions request failed due to ' + status);
     }
   });
