@@ -5,12 +5,6 @@ from django.db import models
 from django.contrib.auth.models import AbstractBaseUser
 from django.contrib.postgres.fields import ArrayField
 
-#Data representation of a user
-class User(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
-
-    """ Cyqlo user model """
-
 #Data representation of a route
 class Route(models.Model):
     """ Route model """

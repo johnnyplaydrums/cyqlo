@@ -6,25 +6,23 @@
         <div class="row content-margin-top">
             <div class="panel panel-primary" style="width:40%">
                 <div class="panel-body" style="width:80%">
+<<<<<<< HEAD
                     <form method="POST" action="#" role="form"> 
                         {%csrf_token%}
+=======
+                    <form method="POST" action="" role="form">
+>>>>>>> bd38cf13f533b916b05a7ad690fb4013fc203d1b
     					<div class="form-group">
     						<h2>Log In</h2>
     					</div>
-                        {% if form.errors.email %}
+                        {% if form.errors %}
                         <div class="alert alert-danger", style="padding:1px" role="alert">
-                            {{ form.errors.email }}
+                            {{ form.non_field_errors }}
                         </div>
                         {% endif %}
                         <div class="form-group">
-                            <input type="text" maxlength="50" id="email" name="email" placeholder="Email" class="form-control">
+                            <input type="text" maxlength="50" id="username" name="username" placeholder="Username" class="form-control">
                         </div>
-
-                        {% if form.errors.password %}
-                        <div class="alert alert-danger", style="padding:1px" role="alert">
-                            {{ form.errors.password }}
-                        </div>
-                        {% endif %}
                         <div class="form-group">
                             <input type="password" maxlength="50" id="password" name="password" placeholder="Password" class="form-control">
                         </div>
@@ -32,6 +30,7 @@
     						<button id="login-button" type="submit" class="login-cta btn btn-primary">Log In</button>
                         </div>
                         <div class='reset-password'><a href="">Forgot your password?</a></div>
+                        {% csrf_token %}
                     </form>
                 </div>
             </div>
