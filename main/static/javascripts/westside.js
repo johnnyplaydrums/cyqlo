@@ -32,6 +32,34 @@ function initMap() {
 
 }
 
+function calculateAndDisplayRoute(directionsService, directionsDisplay) {
+  var waypts = [];
+  var checkboxArray = document.getElementById('waypoints');
+  for (var i = 0; i < checkboxArray.length; i++) {
+    if (checkboxArray.options[i].selected) {
+      waypts.push({
+        location: checkboxArray[i].value,
+        stopover: true
+      });
+    }
+  }
+
+  directionsService.route({
+    origin: {lat:40.703104, lng:-74.016847},
+    destination: {lat: 40.850089, lng:-73.946785},
+    waypoints: waypts,
+    optimizeWaypoints: true,
+    travelMode: 'BICYCLING'
+  }, function(response, status) {
+    if (status === 'OK') {
+      directionsDisplay.setDirections(response);
+    }
+    else {
+      window.alert('Directions request failed due to ' + status);
+    }
+  });
+}
+
 function createMarkers(points) {
     var image = new google.maps.MarkerImage("/static/img/blue-dot.png",
       new google.maps.Size(16, 16), // size
@@ -79,31 +107,3 @@ function createMarkers(points) {
       infowindow.open(marker.get('map'), this);
     });
   }
-
-function calculateAndDisplayRoute(directionsService, directionsDisplay) {
-  var waypts = [];
-  var checkboxArray = document.getElementById('waypoints');
-  for (var i = 0; i < checkboxArray.length; i++) {
-    if (checkboxArray.options[i].selected) {
-      waypts.push({
-        location: checkboxArray[i].value,
-        stopover: true
-      });
-    }
-  }
-
-  directionsService.route({
-    origin: {lat:40.703104, lng:-74.016847},
-    destination: {lat: 40.850089, lng:-73.946785},
-    waypoints: waypts,
-    optimizeWaypoints: true,
-    travelMode: 'BICYCLING'
-  }, function(response, status) {
-    if (status === 'OK') {
-      directionsDisplay.setDirections(response);
-    }
-    else {
-      window.alert('Directions request failed due to ' + status);
-    }
-  });
-}
