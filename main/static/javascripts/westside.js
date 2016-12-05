@@ -9,7 +9,7 @@ function initMap() {
       { url: "/static/img/blue2.png", width: 55, height: 56, textSize: 11, textColor: '#fff' },
       { url: "/static/img/blue3.png", width: 65, height: 66, textSize: 12, textColor: '#fff' }
     ],
-    mcOptions = { maxZoom: 16, gridSize: 81, batchSize: 5000, batchSizeIE: 400, styles: mcStyles },
+    mcOptions = { gridSize: 81, batchSize: 5000, batchSizeIE: 400, styles: mcStyles },
     mc = new MarkerClusterer(map, markers, mcOptions);
 
   directionsDisplay.setMap(map);
