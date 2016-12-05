@@ -69,8 +69,7 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
           location: checkboxArray[i].value,
           stopover: true
         });
-        var end = i-1;
-        var finaldestination = checkboxArray[end].value;
+        var finaldestination = checkboxArray[i].value;
       }
     }
         directionsService.route({
