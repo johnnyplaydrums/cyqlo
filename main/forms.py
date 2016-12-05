@@ -15,6 +15,17 @@ class RegistrationForm(forms.ModelForm):
         model = User
         fields = ['username', 'email', 'password']
 
+    #checks for email validation
+    def clean_email(self):
+        email = self.cleaned_data.get("email")
+        try:
+            email_exists = User.objects.get(email__exact=email)
+        except User.DoesNotExist:
+            #email does not exists return cleaned data
+            return self.cleaned_data.get("email")
+        #email exists
+        raise forms.ValidationError(ugettext("Invalid email"))
+
 class LoginForm(forms.ModelForm):
     """ Login form form for users login """
     username = forms.CharField(label="Username", widget=forms.TextInput())
@@ -29,12 +40,8 @@ class LoginForm(forms.ModelForm):
         """ Validate login and check for errors """
         username = self.cleaned_data.get("username")
         password = self.cleaned_data.get("password")
-        email = self.cleaned_data.get("email")
-
-         
+        
         user = authenticate(username=username, password=password)
-        email = User.objects.get(email__exact=email)
-
         if user is None:
             raise forms.ValidationError(ugettext("Invalid username or password"))
         return self.cleaned_data
