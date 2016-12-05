@@ -1,6 +1,8 @@
 """ Models for our main app """
 
+from django.contrib.auth.models import User
 from django.db import models
+from django.contrib.auth.models import AbstractBaseUser
 from django.contrib.postgres.fields import ArrayField
 
 #Data representation of a route
