@@ -33,7 +33,7 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
 
     directionsService.route({
     origin: {lat:40.89, lng:-73.896389},
-    destination: {lat:40.89, lng:-73.896389},
+    destination: {lat:40.8657484, lng:-73.794132},
     waypoints:waypts,
     optimizeWaypoints:true,
     travelMode:'BICYCLING'
