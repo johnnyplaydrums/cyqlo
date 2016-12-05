@@ -34,4 +34,3 @@ class LoginForm(forms.ModelForm):
         if user is None:
             raise forms.ValidationError(ugettext("Invalid username or password"))
         return self.cleaned_data
->>>>>>> bd38cf13f533b916b05a7ad690fb4013fc203d1b
