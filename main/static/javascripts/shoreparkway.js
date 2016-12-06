@@ -11,7 +11,7 @@ function initMap() {
     ],
     mcOptions = { gridSize: 81, batchSize: 5000, batchSizeIE: 400, styles: mcStyles },
     mc = new MarkerClusterer(map, markers, mcOptions);
-    
+
   directionsDisplay.setMap(map);
 
   var button = document.getElementById("buttonid");
@@ -97,14 +97,14 @@ function createMarkers(points) {
     return markers;
   };
 
-  function makeInfowindow(marker, content) {
-    google.maps.event.addListener(marker, 'click', function() {
-      if (infowindow) {
-        infowindow.close();
-      }
-      infowindow = new google.maps.InfoWindow({
-        content: content
-      });
-      infowindow.open(marker.get('map'), this);
+function makeInfowindow(marker, content) {
+  google.maps.event.addListener(marker, 'click', function() {
+    if (infowindow) {
+      infowindow.close();
+    }
+    infowindow = new google.maps.InfoWindow({
+      content: content
     });
-  }
+    infowindow.open(marker.get('map'), this);
+  });
+}

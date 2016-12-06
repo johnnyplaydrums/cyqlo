@@ -97,7 +97,7 @@ function createMarkers(points) {
     return markers;
   };
 
-  function makeInfowindow(marker, content) {
+function makeInfowindow(marker, content) {
     google.maps.event.addListener(marker, 'click', function() {
       if (infowindow) {
         infowindow.close();
