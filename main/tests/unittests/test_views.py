@@ -36,13 +36,13 @@ class TestPage(TestCase):
         self.assertContains(response, '<a href="/login_view">Login</a>')
         self.assertTemplateUsed(response, 'login.html')
 
-    """
+    '''
     def test_logout_page(self):
         response = self.client.get('/logout_view')
         self.assertEqual(response.status_code, 200)
         self.assertContains(response, '<a href="/logout_view">Logout</a>')
-        self.assertTemplateUsed(response, '')
-    """
+        self.assertTemplateUsed(response, 'index.html')
+   '''
 
     def test_signup_page(self):
         response = self.client.get('/signup')
@@ -62,3 +62,12 @@ class TestPage(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertContains(response, '<a href="/routes_page">Routes</a>')
         self.assertTemplateUsed(response, 'routes.html')
+
+   '''
+    def test_profile_page(self):
+        response = self.client.get('/profile')
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response,
+            '<a href="/profile" class="p-r-none">Home</a>')
+        self.assertTemplateUsed(response, 'profile.html')
+    '''
