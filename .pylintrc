@@ -6,4 +6,4 @@ ignore=migrations, urls.py
 min-public-methods=0
 
 [TYPECHECK]
-generated-members=objects,_meta,id, User
+generated-members=objects,_meta,id, DoesNotExist

@@ -18,4 +18,5 @@ urlpatterns = [
     url(r'^cunningham_park_trail', views.cunningham_park_trail, name='cunningham_park_trail'),
     url(r'^columbuscircle_bearmtn_route', views.columbuscircle_bearmtn_route, name='columbuscircle_bearmtn_route'),
     url(r'^harlem_soulfood_tour', views.soulfood_harlem, name='soulfoodHarlem'),
+    url(r'^hamilton_tour', views.hamilton_tour, name='hamilton_tour'),
 ]
