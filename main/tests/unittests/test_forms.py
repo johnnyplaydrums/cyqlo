@@ -30,7 +30,4 @@ class FormsTestPage(TestCase):
             'password' : ['This field is required.']
         })
 
-    def test_Melissa_LoginForm(self):
-        #This should be correct.
-        form = LoginForm({'username': 'mbanks' , 'password': 'mbanks123'})
-        self.assertFalse(form.is_valid())
+        # Next test will be to try out LoginForm correctly.
