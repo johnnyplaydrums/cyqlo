@@ -6,6 +6,8 @@
 <script async defer
   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAde5aRQ262GgOgdqkY8Jiu5KzYQYj2YKg&callback=initMap">
 </script>
+<script rel ="javascript" src="{% static "javascripts/cityracks.js" %}"></script>
+<script rel ="javascript" src="{% static "javascripts/markerclustererplus_packed.js" %}"></script>
 <div id = routeheader> <h2>CunningHam Park Mountain Bike Tral</h2> </div>
 <div id ="routecopy"><!-- Add copy here --></div>
   <div class="table-responsive">
@@ -34,7 +36,7 @@
       <div id="map"></div>
         <div id="floating-panel">
             <strong>Start:</strong>
-              <input id="start" type="text" value="Cunningham Park Mtb Trailhead" readonly="readonly"/></input>
+              <input id="start" type="text" value="Cunningham Park Trailhead" readonly="readonly"/></input>
             <br>
             <strong>End:</strong>
               <input id="end" type="text" value="Cunningham Park" readonly="readonly"/></input>
