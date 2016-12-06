@@ -2,6 +2,7 @@
 db.sqlite3
 cyqlo.wiki
 cyqlo/settings.py
+main/migrations/*
 
 # my stuff:
 **/*.DS_STORE

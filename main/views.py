@@ -85,9 +85,9 @@ def shore_parkway_route(request):
     """ Serve the Shore Parkway Route """
     return render(request, 'shore_parkway_route.html')
 
-def green_bronx_route(request):
-    """ Serve the greenBronx Route """
-    return render(request, 'green_bronx_route.html')
+def bronx_green_lands(request):
+    """ Serve the route to Van Cortlandt House Museum to Orchard Beach """
+    return render(request, 'bronx_green_lands.html')
 
 def pizza_tour_route(request):
     """ Serve the Pizza Tour Route """
