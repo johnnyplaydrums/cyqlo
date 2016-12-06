@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{%load static %}
+
+{%block content%}
+<script rel ="javascript" src="{% static "javascripts/soulfood.js" %}"></script>
+<script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAde5aRQ262GgOgdqkY8Jiu5KzYQYj2YKg&callback=initMap">
+</script>
+<script rel ="javascript" src="{% static "javascripts/cityracks.js" %}"></script>
+<script rel ="javascript" src="{% static "javascripts/markerclustererplus_packed.js" %}"></script>
+
+<!-- <div class="row content-margin-top"> -->
+<div id = routeheader>
+  <h2><img src="{% static "/img/soulfood.jpeg" %}"> Cyqlo's Harlem SoulFood Tour </h2>
+</div>
+<div id ="routecopy"> Taste the cultural dishes of Harlem and enjoy some of the worlds most famous street arts
+</div>
+<!-- </div> -->
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Location</th>
+              <th>Distance (Miles)</th>
+              <th>Est. Duration</th>
+              <th>Difficulty</th>
+              <th>Lane Type</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Harlem/NYC</td>
+              <td>Dependent</td>
+              <td>Easy</td>
+              <td class="alert alert-success">Flavorful</td>
+              <td class="alert alert-warning">Variable</td>
+            </tr>
+          </tbody>
+        </table>
+        </div>
+    <div id="right-panel"></div>
+      <div id="map"></div>
+        <div id="floating-panel">
+            <strong>Start:</strong>
+              <input id="start" type="text" value="Current Location" readonly="readonly"/></input>
+            <br>
+          <b>Waypoints:</b> <br>
+            <select multiple id="waypoints">
+              <option value="40.8025539,-73.9524566">Amy Ruth's</option>
+              <option value="40.806203,-73.9554712">B2 Harlem</option>
+              <option value="40.803102,-73.9587545">Melba's</option>
+              <option value="40.8055025,-73.9426174">Manna's</option>
+              <option value="40.8217512,-73.9451764">Jacob Buffet</option>
+              <option value="40.8184133,-73.9404458">Sweet Mama's</option>
+              <option value="40.8086445,-73.9488564">Sylvia's</option>
+              <input class="sign-up-cta btn btn-primary" type="button" value="Add Stops" id="submit">
+            </select>
+          <input class="sign-up-cta btn btn-primary" type="button" id="buttonid" value="Go!" >
+        </div>
+      <br>
+{% endblock content %}
