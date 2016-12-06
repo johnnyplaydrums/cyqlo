@@ -17,14 +17,15 @@ class RegistrationForm(forms.ModelForm):
 
     #checks for email validation
     def clean_email(self):
+        """ Validate email and check for errors """
         email = self.cleaned_data.get("email")
         try:
-            email_exists = User.objects.get(email__exact=email)
+            User.objects.get(email__exact=email)
         except User.DoesNotExist:
             #email does not exists return cleaned data
             return self.cleaned_data.get("email")
         #email exists
-        raise forms.ValidationError(ugettext("Invalid email"))
+        raise forms.ValidationError(ugettext("A user with that email already exists."))
 
 class LoginForm(forms.ModelForm):
     """ Login form form for users login """
@@ -40,7 +41,7 @@ class LoginForm(forms.ModelForm):
         """ Validate login and check for errors """
         username = self.cleaned_data.get("username")
         password = self.cleaned_data.get("password")
-        
+
         user = authenticate(username=username, password=password)
         if user is None:
             raise forms.ValidationError(ugettext("Invalid username or password"))
