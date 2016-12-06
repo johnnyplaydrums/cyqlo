@@ -2,7 +2,7 @@
 {%load static %}
 
 {%block content%}
-<script rel ="javascript" src="{% static "javascripts/soulfood.js" %}"></script>
+<script rel ="javascript" src="{% static "javascripts/pizza.js" %}"></script>
 <script async defer
   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAde5aRQ262GgOgdqkY8Jiu5KzYQYj2YKg&callback=initMap">
 </script>
@@ -11,9 +11,12 @@
 
 <!-- <div class="row content-margin-top"> -->
 <div id = routeheader>
-  <h2>Cyqlo's Harlem Soul Food Tour <img src="{% static "/img/soulfood.jpeg" %}"></h2>
+  <h2>Cyqlo's Pizza Tour <img src="{% static "img/pizza_slice.png" %}"> </h2>
 </div>
-<div id ="routecopy"> Taste the cultural dishes of Harlem and enjoy some of the worlds most famous street arts
+<div id ="routecopy"> Explore all of NYC's finest doughy, saucey, and cheesey
+  establishments by building the Pizza Tour that's just right for you and your friends.
+  Remember, "carb-loading" is an essential part of long rides, so dig in! <br> <br>
+  P.S. achieve GOAT status by visiting every pizza place on the list.
 </div>
 <!-- </div> -->
       <div class="table-responsive">
@@ -29,11 +32,11 @@
           </thead>
           <tbody>
             <tr>
-              <td>Harlem/NYC</td>
-              <td>Dependent</td>
-              <td>Easy</td>
-              <td class="alert alert-success">Flavorful</td>
-              <td class="alert alert-warning">Bike Lanes</td>
+              <td>NYC</td>
+              <td>Depends on Pizza</td>
+              <td>Pizza Time</td>
+              <td class="alert alert-success">Delicious</td>
+              <td class="alert alert-warning">Variable</td>
             </tr>
           </tbody>
         </table>
@@ -46,13 +49,14 @@
             <br>
           <b>Waypoints:</b> <br>
             <select multiple id="waypoints">
-              <option value="40.8025539,-73.9524566">Amy Ruth's</option>
-              <option value="40.806203,-73.9554712">B2 Harlem</option>
-              <option value="40.803102,-73.9587545">Melba's</option>
-              <option value="40.8055025,-73.9426174">Manna's</option>
-              <option value="40.8217512,-73.9451764">Jacob Buffet</option>
-              <option value="40.8184133,-73.9404458">Sweet Mama's</option>
-              <option value="40.8086445,-73.9488564">Sylvia's</option>
+              <option value="40.62501, -73.96143">Di Fara Pizza</option>
+              <option value="40.59473, -73.98128">L&B Spumoni Garden</option>
+                <option value="40.70262, -73.9932">Grimaldi's</option>
+              <option value="40.73171, -73.9839">Artichoke Basille</option>
+              <option value="40.70507, -73.93359">Roberta's</option>
+              <option value="40.66164, -73.99341">Luigi's Pizza</option>
+              <option value="40.83826, -73.82864">Louie & Ernie's</option>
+                <option value="40.83826, -73.82864">Sal and Carmine</option>
               <input class="sign-up-cta btn btn-primary" type="button" value="Add Stops" id="submit">
             </select>
           <input class="sign-up-cta btn btn-primary" type="button" id="buttonid" value="Go!" >
