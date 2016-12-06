@@ -100,3 +100,7 @@ def columbuscircle_bearmtn_route(request):
 def cunningham_park_trail(request):
     """ Serve the Cunningham Park Mountain Bike Trail """
     return render(request, 'cunningham_park_trail.html')
+
+def soulfoodHarlem(request):
+    """ Serve the Harlem Soul Food tour """
+    return render(request, 'harlem_soulfood_tour.html')
