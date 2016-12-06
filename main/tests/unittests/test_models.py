@@ -1,40 +1,5 @@
 from django.test import TestCase
-from main.models import User, Route
-
-""" User Model Tests """
-class UserTestCase(TestCase):
-    def setUp(self):
-        self.mBanks=User.objects.create(first_name ="Melissa", last_name="Banks", email="mbanks@email.com",
-                password="mbanks123")
-        self.tBarnett=User.objects.create(first_name="Tom", last_name="Barnett", email="tbarnett@email.com",
-                password="tbarnett123")
-        self.mLee=User.objects.create(first_name="Mark", last_name="Lee", email="mlee@email.com",
-                password="mlee123")
-
-    def tearDown(self):
-        pass
-
-    def test_user_created(self):
-        """
-        Asserts that User Melissa Banks was created
-        """
-        self.assertIsNotNone(self.mBanks)
-
-    def test_username_exists(self):
-        """
-        Asserts that user Tom Barnett exists in the database
-        """
-        tBarnett = User.objects.get(email="tbarnett@email.com")
-        self.assertEqual(self.tBarnett, tBarnett) 
-        
-    def test_password_length(self):
-
-        """
-        Asserts that password length is less than the limit '256'
-        """
-        self.assertLess(len(self.mBanks.password), 256)
-        self.assertLess(len(self.tBarnett.password), 256)
-        self.assertLess(len(self.mLee.password), 256)
+from main.models import Route
 
 """ Route Model Tests """
 class RouteTestCase(TestCase):
