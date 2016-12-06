@@ -1,9 +1,9 @@
 from django.test import TestCase
-from main.forms import RegistrationForm
+from main.forms import *
 
 class FormsTestPage(TestCase):
 
-    def test_Melissa_form(self):
+    def test_Melissa_RegistrationForm(self):
         form = RegistrationForm({'username': 'mbanks',
             'email': 'mbanks@email.com', 'password': 'mbanks123'})
         self.assertTrue(form.is_valid())
@@ -12,7 +12,7 @@ class FormsTestPage(TestCase):
         self.assertEqual(register.email, 'mbanks@email.com')
         self.assertEqual(register.password, 'mbanks123')
 
-    def test_Tom_form(self):
+    def test_Tom_RegistrationForm(self):
         form = RegistrationForm({'username': 'tbarnett',
             'email': 'tbarnett@email.com', 'password': 'tbarnett123'})
         self.assertTrue(form.is_valid())
@@ -21,7 +21,7 @@ class FormsTestPage(TestCase):
         self.assertEqual(register.email, 'tbarnett@email.com')
         self.assertEqual(register.password, 'tbarnett123')
 
-    def test_blank_form(self):
+    def test_blank_Registrationform(self):
         form = RegistrationForm({})
         self.assertFalse(form.is_valid())
         self.assertEqual(form.errors, {
@@ -29,3 +29,8 @@ class FormsTestPage(TestCase):
             'email' : ['This field is required.'],
             'password' : ['This field is required.']
         })
+
+    def test_Melissa_LoginForm(self):
+        #This should be correct.
+        form = LoginForm({'username': 'mbanks' , 'password': 'mbanks123'})
+        self.assertFalse(form.is_valid())
