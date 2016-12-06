@@ -20,8 +20,8 @@ class RegistrationForm(forms.ModelForm):
         """ Validate email and check for errors """
         email = self.cleaned_data.get("email")
         try:
-            email_exists = User.objects.get(email__exact=email)
-        except email_exists.DoesNotExist:
+            User.objects.get(email__exact=email)
+        except User.DoesNotExist:
             #email does not exists return cleaned data
             return self.cleaned_data.get("email")
         #email exists
