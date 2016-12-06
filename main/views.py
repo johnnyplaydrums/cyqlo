@@ -104,3 +104,7 @@ def cunningham_park_trail(request):
 def soulfood_harlem(request):
     """ Serve the Harlem Soul Food tour """
     return render(request, 'harlem_soulfood_tour.html')
+
+def hamilton_tour(request):
+    """ Serve the Hamilton historic tour """
+    return render(request, 'hamilton_tour.html')
