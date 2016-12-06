@@ -25,7 +25,7 @@ class RegistrationForm(forms.ModelForm):
             #email does not exists return cleaned data
             return self.cleaned_data.get("email")
         #email exists
-        raise forms.ValidationError(ugettext("Invalid email"))
+        raise forms.ValidationError(ugettext("A user with that email already exists."))
 
 class LoginForm(forms.ModelForm):
     """ Login form form for users login """
