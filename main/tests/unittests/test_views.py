@@ -4,55 +4,61 @@ from django.core.urlresolvers import reverse
 import main.views
 
 """
-The reverse() allows the unit testing to not compromise Don't Repeat Yourself
-or DRY when editting our code.  In the event of changes to the url.py this
-unit test allows us to grab the intended url and checks its name attribute.
+To run this test do the following :
+python manage.py test tests.unittests.test_views
+
+Updated!
+We still use client but set it for response = self.client.get()
+This is as close as we can get to pure unit testing with most recent
+pull (12/6/2015).
 
 The response.status_code checks if the url is 200 was successful in grabbing
-the client request.
+the client response.
+
+The assertContains is checking the base.html''s body for the following
+<a href=""></a> and checks if the response has the information we are looking
+at in the test.
 
 The assertTemplateUsed() checks for asserts that the template with the given
 name was used in rendering the response.
 """
 
 class TestPage(TestCase):
-    def setUp(self):
-        self.client = Client()
-
+    #Homepage
     def test_index_page(self):
-        url = reverse('index')
-        response = self.client.get(url)
+        response = self.client.get('/')
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'index.html')
-        #self.assertContains(response, 'Cyqlo')
 
     def test_login_page(self):
-        url = reverse('login')
-        response = self.client.get(url)
+        response = self.client.get('/login_view')
         self.assertEqual(response.status_code, 200)
+        self.assertContains(response, '<a href="/login_view">Login</a>')
         self.assertTemplateUsed(response, 'login.html')
-        #self.assertContains(response, 'Cyqlo')
+
+    """
+    def test_logout_page(self):
+        response = self.client.get('/logout_view')
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, '<a href="/logout_view">Logout</a>')
+        self.assertTemplateUsed(response, '')
+    """
 
     def test_signup_page(self):
-        url = reverse('signup')
-        response = self.client.get(url)
+        response = self.client.get('/signup')
         self.assertEqual(response.status_code, 200)
+        self.assertContains(response,
+            '<a href="/signup" class="p-r-none">Sign Up</a>')
         self.assertTemplateUsed(response, 'signup.html')
 
     def test_about_page(self):
-        url = reverse('about')
-        response = self.client.get(url)
+        response = self.client.get('/about')
         self.assertEqual(response.status_code, 200)
+        self.assertContains(response, '<a href="/about">About</a>')
         self.assertTemplateUsed(response, 'about.html')
 
     def test_route_page(self):
-        url = reverse('routes')
-        response = self.client.get(url)
+        response = self.client.get('/routes_page')
         self.assertEqual(response.status_code, 200)
+        self.assertContains(response, '<a href="/routes_page">Routes</a>')
         self.assertTemplateUsed(response, 'routes.html')
-
-    def test_west_side(self):
-        url = reverse('west_side_route')
-        response = self.client.get(url)
-        self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, 'west_side_route.html')
