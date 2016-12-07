@@ -59,4 +59,6 @@ class TestPage(TestCase):
         self.assertContains(response, '<a href="/routes_page">Routes</a>')
         self.assertTemplateUsed(response, 'routes.html')
 
-    #Implement profile test
+    def test_profile_page(self):
+        response = self.client.get('/profile')
+        self.assertRedirects(response, '/login_view?next=/profile')
