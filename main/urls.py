@@ -9,7 +9,7 @@ urlpatterns = [
     url(r'^login_view', views.login_view, name='login_view'),
     url(r'^signup', views.signup, name='signup'),
     url(r'^logout_view', views.logout_view, name='logout_view'),
-    url(r'^profile', views.profile, name='profile'),
+    url(r'^profile/(?P<username>[\w-]+)', views.profile, name='profile'),
 
     # Cyqlo cycling routes
     url(r'^routes_page', views.routes_page, name='routes_page'),

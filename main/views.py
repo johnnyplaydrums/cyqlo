@@ -1,6 +1,6 @@
 """ Views for the main app """
 
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponseRedirect
 from django.contrib.auth import logout, authenticate
 from django.contrib import auth
@@ -73,9 +73,10 @@ def logout_view(request):
     return HttpResponseRedirect('/')
 
 @login_required(login_url='/login_view')
-def profile(request):
+def profile(request, username):
     """ User profile page """
-    return render(request, 'profile.html')
+    username = get_object_or_404(User, username=request.user)
+    return render(request, 'profile.html', {'username':username})
 
 # Cyqlo cycling routes
 def west_side_route(request):
