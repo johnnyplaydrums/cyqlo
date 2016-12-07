@@ -2,7 +2,7 @@
 {%load static %}
 
 {%block content%}
-<script rel ="javascript" src="{% static "javascripts/pizza.js" %}"></script>
+<script rel ="javascript" src="{% static "javascripts/ramen.js" %}"></script>
 <script async defer
   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAde5aRQ262GgOgdqkY8Jiu5KzYQYj2YKg&callback=initMap">
 </script>
@@ -11,12 +11,9 @@
 
 <!-- <div class="row content-margin-top"> -->
 <div id = routeheader>
-  <h2>Cyqlo's Pizza Tour <img src="{% static "img/pizza_slice.png" %}"> </h2>
+  <h2>Cyqlo's Ramen Tour <img src="{% static "img/ramen_cartoon.jpg" %}"> </h2>
 </div>
-<div id ="routecopy"> Explore all of NYC's finest doughy, saucey, and cheesey
-  establishments by building the Pizza Tour that's just right for you and your friends.
-  Remember, "carb-loading" is an essential part of long rides, so dig in! <br> <br>
-  P.S. achieve GOAT status by visiting every pizza place on the list.
+<div id ="routecopy">
 </div>
 <!-- </div> -->
       <div class="table-responsive">
@@ -33,8 +30,8 @@
           <tbody>
             <tr>
               <td>NYC</td>
-              <td>~40</td>
-              <td>Pizza Time</td>
+              <td>~30</td>
+              <td>Ramen Time</td>
               <td class="alert alert-warning">Challenging</td>
               <td class="alert alert-warning">Variable</td>
             </tr>
@@ -49,14 +46,12 @@
             <br>
           <b>Waypoints:</b> <br>
             <select multiple id="waypoints">
-              <option value="40.62501, -73.96143">Di Fara Pizza</option>
-              <option value="40.59473, -73.98128">L&B Spumoni Garden</option>
-              <option value="40.70262, -73.9932">Grimaldi's</option>
-              <option value="40.73171, -73.9839">Artichoke Basille</option>
-              <option value="40.70507, -73.93359">Roberta's</option>
-              <option value="40.66164, -73.99341">Luigi's Pizza</option>
-              <option value="40.83826, -73.82864">Louie & Ernie's</option>
-                <option value="40.83826, -73.82864">Sal and Carmine</option>
+              <option value="40.7211814, -73.9969139">Nakamura</option>
+              <option value="40.730948, -73.990287">Ippudo NY</option>
+              <option value="40.7643401, -73.9876628">Totto Ramen</option>
+              <option value="40.8131939, -73.9839077">Jin Ramen</option>
+              <option value="40.8131939, -73.9839077">Mu Ramen</option>
+              <option value="40.7073797, -73.9332299">ICHIRAN</option>
               <input class="sign-up-cta btn btn-primary" type="button" value="Add Stops" id="submit">
             </select>
           <input class="sign-up-cta btn btn-primary" type="button" id="buttonid" value="Go!" >
