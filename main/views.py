@@ -73,10 +73,9 @@ def logout_view(request):
     return HttpResponseRedirect('/')
 
 @login_required(login_url='/login_view')
-def profile(request, username):
+def profile(request):
     """ User profile page """
-    username = get_object_or_404(User, username=request.user)
-    return render(request, 'profile.html', {'username':username})
+    return render(request, 'profile.html')
 
 # Cyqlo cycling routes
 def west_side_route(request):
