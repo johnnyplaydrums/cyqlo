@@ -6,7 +6,7 @@
     {% for route in routes %}
     <div class="route col-sm-6 col-md-4" style="height: 200px;">
       <div class="route-name bg-black-transparent">{{ route.route_name }}</div>
-      <a href= "{{ route.template }}"><img src="{% static route.image  %}" style="width: 100%;"></a>
+      <a href= "{{ route.template }}"><img src="{% static route.image  %}" style="width:100%;"></a>
     </div>
     {% endfor %}
   </div>
@@ -27,7 +27,12 @@
   <div class="route col-sm-6 col-md-4" style="height: 200px;">
     <div class="route-name bg-black-transparent">Hamilton History Tour</div>
     <a href = "hamilton_tour">
-      <img src="{% static "img/hamilton.jpg" %}" style="width: 100%;"></a>
+      <img src="{% static "img/hamilton.jpg" %}" style="width :100%;"></a>
+  </div>
+  <div class="route col-sm-6 col-md-4" style="height: 200px;">
+    <div class="route-name bg-black-transparent">NYC Ramen Tour</div>
+    <a href = "ramen_tour">
+      <img src="{% static "img/ramen.gif" %}" style="width: 100%;"></a>
   </div>
 </div>
 </div>

@@ -22,5 +22,6 @@ urlpatterns = [
     # Cyqlo themed routes
     url(r'^pizza_tour_route', views.pizza_tour_route, name='pizza_tour_route'),
     url(r'^harlem_soulfood_tour', views.soulfood_harlem, name='soulfoodHarlem'),
+    url(r'^ramen_tour', views.ramen_tour, name='ramen_tour'),
     url(r'^hamilton_tour', views.hamilton_tour, name='hamilton_tour'),
 ]
