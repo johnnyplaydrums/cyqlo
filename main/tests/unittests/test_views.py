@@ -60,5 +60,6 @@ class TestPage(TestCase):
         self.assertTemplateUsed(response, 'routes.html')
 
     def test_profile_page(self):
-        response = self.client.get('/profile')
-        self.assertRedirects(response, '/login_view?next=/profile')
+        response = self.client.get('/login_view?next=/profile')
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'base.html')
