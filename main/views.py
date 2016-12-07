@@ -1,6 +1,6 @@
 """ Views for the main app """
 
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponseRedirect
 from django.contrib.auth import logout, authenticate
 from django.contrib import auth
@@ -15,6 +15,15 @@ def index(request):
     """ Homepage """
     routes = Route.objects.all()
     return render(request, 'index.html', {'routes': routes})
+
+def about(request):
+    """ Cyqlo About Us page """
+    return render(request, 'about.html')
+
+def routes_page(request):
+    """ Routes listing page """
+    routes = Route.objects.all()
+    return render(request, 'routes-page.html', {'routes': routes})
 
 # Django already have builtin login function, can't reuse login
 def login_view(request):
@@ -64,19 +73,12 @@ def logout_view(request):
     return HttpResponseRedirect('/')
 
 @login_required(login_url='/login_view')
-def profile(request):
+def profile(request, username):
     """ User profile page """
-    return render(request, 'profile.html')
+    username = get_object_or_404(User, username=request.user)
+    return render(request, 'profile.html', {'username':username})
 
-def about(request):
-    """ Cyqlo About Us page """
-    return render(request, 'about.html')
-
-def routes_page(request):
-    """ Routes listing page """
-    routes = Route.objects.all()
-    return render(request, 'routes-page.html', {'routes': routes})
-
+# Cyqlo cycling routes
 def west_side_route(request):
     """ Serve the West Side Route"""
     return render(request, 'west_side_route.html')
@@ -89,10 +91,6 @@ def bronx_green_lands(request):
     """ Serve the route to Van Cortlandt House Museum to Orchard Beach """
     return render(request, 'bronx_green_lands.html')
 
-def pizza_tour_route(request):
-    """ Serve the Pizza Tour Route """
-    return render(request, 'pizza_tour_route.html')
-
 def columbuscircle_bearmtn_route(request):
     """ Serve the Manhattan to Bear Mountain Route """
     return render(request, 'columbuscircle_bearmtn_route.html')
@@ -101,6 +99,19 @@ def cunningham_park_trail(request):
     """ Serve the Cunningham Park Mountain Bike Trail """
     return render(request, 'cunningham_park_trail.html')
 
+# Cyqlo themed routes
+def pizza_tour_route(request):
+    """ Serve the Pizza Tour Route """
+    return render(request, 'pizza_tour_route.html')
+
 def soulfood_harlem(request):
     """ Serve the Harlem Soul Food tour """
     return render(request, 'harlem_soulfood_tour.html')
+
+def hamilton_tour(request):
+    """ Serve the Hamilton historic tour """
+    return render(request, 'hamilton_tour.html')
+
+def ramen_tour(request):
+    """ Serve the Ramen Tour """
+    return render(request, 'ramen_tour.html')
