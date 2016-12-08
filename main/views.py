@@ -110,6 +110,10 @@ def profile(request):
     """ User profile page """
     return render(request, 'profile.html')
 
+def team(request):
+    """ Cqylo team page """
+    return render(request, 'team.html')
+
 # Cyqlo cycling routes
 def west_side_route(request):
     """ Serve the West Side Route"""
