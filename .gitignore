@@ -3,6 +3,7 @@ db.sqlite3
 cyqlo.wiki
 cyqlo/settings.py
 main/migrations
+.coverage
 
 # my stuff:
 **/*.DS_STORE
