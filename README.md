@@ -61,6 +61,14 @@ To run Cyqlo's existing tests:
 ```
 $ python manage.py test main.tests
 ```
+To better gauge our overall coverage of testing, it is no surprise that Coverage.py is of use.
+```
+$ pip install coverage
+```
+To check for Cyqlo's test coverage simply run:
+```
+$ coverage run manage.py test main.tests
+```
 
 ### Pylint
 
