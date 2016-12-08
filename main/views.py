@@ -27,9 +27,18 @@ def routes_page(request):
 
 def route_search(request):
     """ Route search query """
-    routes = Route.objects.all()
     query = request.POST
-    return render(request, 'routes-page.html', {'routes': routes})
+    duration = int(query.__getitem__('time'))
+    durationDiff = duration * .3
+    distance = int(query.__getitem__('time'))
+    distanceDiff = distance * .3
+    routes = Route.objects.filter(duration__range=(duration - durationDiff, duration + durationDiff))
+    if (len(routes) == 0):
+        no_results = True
+        routes = Route.objects.all()
+    else:
+        no_results = False
+    return render(request, 'routes-page.html', {'routes': routes, 'no_results':no_results})
 
 # Django already have builtin login function, can't reuse login
 def login_view(request):

@@ -2,7 +2,14 @@
 
 <div id="routes" class="container">
   <div class="row content-margin-top">
-    <h3 class="text-center title">Explore some cycling routes</h3>
+    {% if no_results %}
+      <h4 class="text-center title text-danger">
+        We couldn't find any routes to match your request.
+        In the meantime, check out these other awesome routes!
+      </h4>
+    {% else %}
+      <h3 class="text-center title">Explore some cycling routes</h3>
+    {% endif %}
     {% for route in routes %}
     <div class="route col-sm-6 col-md-4" style="height: 200px;">
       <div class="route-name bg-black-transparent">{{ route.route_name }}</div>

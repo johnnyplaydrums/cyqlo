@@ -7,8 +7,12 @@ from django.contrib.postgres.fields import ArrayField
 class Route(models.Model):
     """ Route model """
     route_name = models.CharField(max_length=50, null=False, blank=False)
-    # uses postgres interval format '# day hr:min:sec', for ex, 1 day is '1 day 00:00:00'
-    duration = models.DurationField(null=False, blank=False)
+    # duration of bike trip, in minutes
+    duration = models.IntegerField(null=True, blank=False)
+    # distance of bike trip
+    distance = models.FloatField(null=True, blank=False)
+    # difficult = {'beg', 'med', 'adv'}
+    difficulty = models.CharField(max_length=3, null=True, blank=True)
     # [lat,lng]
     origin = ArrayField(models.FloatField(null=False, blank=False), size=2)
     # [lat,lng]
