@@ -1,6 +1,8 @@
 from django.test import TestCase
 from main.models import Route
 
+""" We omit User Model Tests because we are using Django's built-in User Model"""
+
 """ Route Model Tests """
 class RouteTestCase(TestCase):
     def setUp(self):
