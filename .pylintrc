@@ -3,7 +3,9 @@
 # ignore directories/files
 ignore=migrations, urls.py
 
+disable=line-too-long
 min-public-methods=0
+
 
 [TYPECHECK]
 generated-members=objects,_meta,id, DoesNotExist
