@@ -34,11 +34,20 @@ def route_search(request):
     durationDiff = duration * .3
     distance = int(query.__getitem__('distance'))
     distanceDiff = distance * .3
-    routes = Route.objects.filter(
-        duration__range=(duration - durationDiff, duration + durationDiff),
-        distance__range=(distance - distanceDiff, distance + distanceDiff),
-        tags__contained_by=['']
-    )
+    difficulty = query.__getitem__('difficulty')
+    if difficulty == 'any':
+        routes = Route.objects.filter(
+            duration__range=(duration - durationDiff, duration + durationDiff),
+            distance__range=(distance - distanceDiff, distance + distanceDiff),
+            tags__contained_by=['']
+        )
+    else:
+        routes = Route.objects.filter(
+            duration__range=(duration - durationDiff, duration + durationDiff),
+            distance__range=(distance - distanceDiff, distance + distanceDiff),
+            difficulty=difficulty,
+            tags__contained_by=['']
+        )
     if (len(routes) == 0):
         no_results = True
         routes = Route.objects.filter(tags__contained_by=[''])
