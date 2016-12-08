@@ -62,7 +62,7 @@ class TestCase(unittest.TestCase):
             self.assertEqual(wsr_response.url, '/west_side_route')
 
         @unittest.mock.patch.object(views, 'bronx_green_lands')
-        def test_west_side_route(self, mock_bronx_green_land):
+        def test_bronx_green_lands(self, mock_bronx_green_land):
             bgr_response = unittest.mock.Mock(status_code= 200, url="/bronx_green_lands")
             self.assertEqual(bgr_response.status_code, 200)
             self.assertEqual(bgr_response.url, '/bronx_green_lands')
@@ -74,7 +74,7 @@ class TestCase(unittest.TestCase):
 
         @unittest.mock.patch.object(views, 'pizza_tour_route')
         def test_pizza_tour_route(self, mock_pizza_tour_route):
-            pt_response = unittest.mock.Mock(status_code= 200, url="pizza_tour_route")
+            pt_response = unittest.mock.Mock(status_code= 200, url="/pizza_tour_route")
             self.assertEqual(pt_response.url, '/pizza_tour_route')
 
         @unittest.mock.patch.object(views, 'cunningham_park_trail')
@@ -88,7 +88,7 @@ class TestCase(unittest.TestCase):
             self.assertEqual(cbr_response.url, '/columbuscircle_bearmtn_route')
             
         @unittest.mock.patch.object(views, 'soulfood_harlem')
-        def test_pizza_tour_route(self, mock_harlsoulfood_route):
+        def test_soulfood_harlem(self, mock_harlsoulfood_route):
             hsf_response = unittest.mock.Mock(status_code= 200, url="soulfood_harlem")
             self.assertEqual(hsf_response.url, 'soulfood_harlem')
 

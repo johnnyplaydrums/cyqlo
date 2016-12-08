@@ -59,4 +59,3 @@ class TestPage(TestCase):
         self.assertContains(response, '<a href="/routes_page">Routes</a>')
         self.assertTemplateUsed(response, 'routes.html')
 
-    #Implement profile test
