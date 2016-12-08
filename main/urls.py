@@ -11,6 +11,7 @@ urlpatterns = [
     url(r'^logout_view', views.logout_view, name='logout_view'),
     url(r'^profile', views.profile, name='profile'),
     url(r'^route_search', views.route_search, name='route_search'),
+    url(r'^team', views.team, name='team'),
 
     # Cyqlo cycling routes
     url(r'^routes_page', views.routes_page, name='routes_page'),
