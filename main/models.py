@@ -23,6 +23,8 @@ class Route(models.Model):
     image = models.CharField(max_length=50, null=True, blank=False)
     # template name
     template = models.CharField(max_length=50, null=True, blank=False)
+    # array of strings, tags are ways to describe the route
+    tags = ArrayField(models.CharField(max_length=256, null=True, blank=True), blank=True)
 
     def __str__(self):
         #Route objects are represented by name
