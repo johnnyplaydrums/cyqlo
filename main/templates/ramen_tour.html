@@ -2,7 +2,7 @@
 {%load static %}
 
 {%block content%}
-<script rel ="javascript" src="{% static "javascripts/pizza.js" %}"></script>
+<script rel ="javascript" src="{% static "javascripts/ramen.js" %}"></script>
 <script async defer
   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAde5aRQ262GgOgdqkY8Jiu5KzYQYj2YKg&callback=initMap">
 </script>
@@ -11,14 +11,9 @@
 
 <!-- <div class="row content-margin-top"> -->
 <div id = routeheader>
-  <h2>Cyqlo's Historic Hamilton Tour <img src="{% static "img/hamhead.jpg" %}"> </h2>
+  <h2>Cyqlo's Ramen Tour <img src="{% static "img/ramen_cartoon.jpg" %}"> </h2>
 </div>
-<div id ="routecopy"> Do you really want to mortgage your house to go see Hamilton on broadway a
-  year from now? Of course not! Get your Hamilton fix by exploring all of Alexander Hamilton's NYC
-  stomping grounds. Hamilton's house? Check. Hamilton's church? You bet.
-  Hamilton's watering hole? Duh! What about the place Hamilton got shot by Burr? OF COURSE!
-  This ride is sure to leave you feeling satisfied. Dont forget to keep your friends
-  by your side, and remember it's quiet uptown!
+<div id ="routecopy">
 </div>
 <!-- </div> -->
       <div class="table-responsive">
@@ -35,8 +30,8 @@
           <tbody>
             <tr>
               <td>NYC</td>
-              <td>~25 (all stops)</td>
-              <td>3-4 hours</td>
+              <td>~30</td>
+              <td>Ramen Time</td>
               <td class="alert alert-warning">Challenging</td>
               <td class="alert alert-warning">Variable</td>
             </tr>
@@ -51,15 +46,12 @@
             <br>
           <b>Waypoints:</b> <br>
             <select multiple id="waypoints">
-              <option value="40.8210305,-73.9474058">Hamilton Grange</option>
-              <option value="40.7080842,-74.0123767">Trinity Church</option>
-                <option value="40.8221884,-73.9479472">Hamilton Statue - St. Lukes</option>
-              <option value="40.8068467,-73.9638895">Hamilton Hall Columbia</option>
-              <option value="40.7033762,-74.0135619">Fraunces Tavern & Museum</option>
-              <option value="40.7685612,-74.0180774">Weehawken Dueling Grounds</option>
-              <option value="40.737961,-74.0094257">Death Bed</option>
-              <option value="40.7805816,-73.9654611">Central Park Statue</option>
-              <option value="40.8225397,-73.9494055">The Grange Bar</option>
+              <option value="40.7211814, -73.9969139">Nakamura</option>
+              <option value="40.730948, -73.990287">Ippudo NY</option>
+              <option value="40.7643401, -73.9876628">Totto Ramen</option>
+              <option value="40.8131939, -73.9839077">Jin Ramen</option>
+              <option value="40.8131939, -73.9839077">Mu Ramen</option>
+              <option value="40.7073797, -73.9332299">ICHIRAN</option>
               <input class="sign-up-cta btn btn-primary" type="button" value="Add Stops" id="submit">
             </select>
           <input class="sign-up-cta btn btn-primary" type="button" id="buttonid" value="Go!" >

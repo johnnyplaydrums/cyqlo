@@ -96,3 +96,4 @@ class TestPage(unittest.TestCase):
         def test_hamilton_tour(self, mock_hamilton_tour):
             ht_response = unittest.mock.Mock(status_code= 200, url="/hamilton_tour")
             self.assertEqual(ht_response.url, '/hamilton_tour')
+
