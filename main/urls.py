@@ -10,6 +10,7 @@ urlpatterns = [
     url(r'^signup', views.signup, name='signup'),
     url(r'^logout_view', views.logout_view, name='logout_view'),
     url(r'^profile', views.profile, name='profile'),
+    url(r'^route_search', views.route_search, name='route_search'),
 
     # Cyqlo cycling routes
     url(r'^routes_page', views.routes_page, name='routes_page'),

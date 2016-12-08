@@ -1,15 +1,17 @@
 {% load static %}
 <div id="route-search" class="container-fluid">
-  <form>
+  <form method="POST" action="route_search">
+      {% csrf_token %}
       <div class="col-xs-12 col-sm-2" id="route-search-text">Find a route</div>
       <div class="form-group col-xs-12 col-sm-2 col-md-3">
-          <input class="form-control" id="Distance" placeholder="Distance (miles)">
+          <input class="form-control" id="Distance" name="distance" placeholder="Distance (miles)">
       </div>
       <div class="form-group col-xs-12 col-sm-2 col-md-3">
-          <input class="form-control" id="TIme" placeholder="Time (hours)">
+          <input class="form-control" id="Time" name="time" placeholder="Time (hours)">
       </div>
       <div class="form-group col-xs-12 col-sm-2 col-md-2">
-          <select class="form-control" id="Difficulty" placeholder="Difficulty">
+          <select class="form-control" id="Difficulty" name="difficulty" placeholder="Difficulty">
+              <option>Any</option>
               <option>Beginner</option>
               <option>Intermediate</option>
               <option>Advanced</option>

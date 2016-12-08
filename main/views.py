@@ -25,6 +25,12 @@ def routes_page(request):
     routes = Route.objects.all()
     return render(request, 'routes-page.html', {'routes': routes})
 
+def route_search(request):
+    """ Route search query """
+    routes = Route.objects.all()
+    query = request.POST
+    return render(request, 'routes-page.html', {'routes': routes})
+
 # Django already have builtin login function, can't reuse login
 def login_view(request):
     """ User login page """
