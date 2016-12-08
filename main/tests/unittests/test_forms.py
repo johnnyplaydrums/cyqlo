@@ -1,7 +1,7 @@
 import unittest
 from main.forms import *
 
-""" Simple Unittest for form Resgistration and Login """
+""" Simple Unittest for Resgistration and Login defined in forms """
 class TestPage(unittest.TestCase):
         def setUp(self):
             pass

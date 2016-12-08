@@ -1,7 +1,7 @@
 import unittest
 from main import models
 
-""" Simple Unittest for fields defind in the Routes Model """
+""" Simple Unittest for fields defined in the Routes models """
 class RouteTestCase(unittest.TestCase):
     def setUp(self):
         pass
