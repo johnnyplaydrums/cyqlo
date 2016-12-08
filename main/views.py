@@ -98,6 +98,10 @@ def cunningham_park_trail(request):
     """ Serve the Cunningham Park Mountain Bike Trail """
     return render(request, 'cunningham_park_trail.html')
 
+def prospect_coneyisland_route(request):
+    """ Serve the Prospect Park to Coney Island Beach Route """
+    return render(request, 'prospect_coneyisland_route.html')
+
 # Cyqlo themed routes
 def pizza_tour_route(request):
     """ Serve the Pizza Tour Route """
