@@ -31,9 +31,9 @@ def route_search(request):
     """ Route search query """
     query = request.POST
     duration = int(query.__getitem__('time'))
-    durationDiff = duration * .3
+    durationDiff = duration * .4
     distance = int(query.__getitem__('distance'))
-    distanceDiff = distance * .3
+    distanceDiff = distance * .4
     difficulty = query.__getitem__('difficulty')
     if difficulty == 'any':
         routes = Route.objects.filter(
