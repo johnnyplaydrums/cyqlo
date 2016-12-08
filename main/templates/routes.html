@@ -1,12 +1,14 @@
 {% load static %}
 
 <div id="routes" class="container">
-  <div class="row content-margin-top">
+  <div class="row">
     {% if no_results %}
       <h4 class="text-center title text-danger">
         We couldn't find any routes to match your request.
         In the meantime, check out these other awesome routes!
       </h4>
+    {% elif no_results == False %}
+      <h3 class="text-center title">We found some routes for you</h3>
     {% else %}
       <h3 class="text-center title">Explore some cycling routes</h3>
     {% endif %}
@@ -20,8 +22,15 @@
 </div>
   <div id="themed-routes" class="container">
     <br>
-  <h3 class="text-center title">Explore our themed routes</h3>
-  <div class="route col-sm-6 col-md-4" style="height: 200px;">
+    <h3 class="text-center title">Explore our themed routes</h3>
+    {% for theme in themed %}
+    <div class="route col-sm-6 col-md-4" style="height: 200px;">
+      <div class="route-name bg-black-transparent">{{ theme.route_name }}</div>
+      <a href= "{{ theme.template }}"><img src="{% static theme.image  %}" style="width:100%; height:100%;"></a>
+    </div>
+    {% endfor %}
+
+  <!-- <div class="route col-sm-6 col-md-4" style="height: 200px;">
     <div class="route-name bg-black-transparent">NYC Pizza Tour</div>
     <a href = "pizza_tour_route">
       <img src="{% static "img/pizzabike2.gif" %}" style="width:100%; height:100%;"></a>
@@ -40,6 +49,6 @@
     <div class="route-name bg-black-transparent">NYC Ramen Tour</div>
     <a href = "ramen_tour">
       <img src="{% static "img/ramen.gif" %}" style="width:100%; height:100%;"></a>
-  </div>
+  </div> -->
 </div>
 </div>
