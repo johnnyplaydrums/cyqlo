@@ -10,6 +10,10 @@ body {
     font-family: 'Open Sans', sans-serif;
 }
 
+#site-wrapper {
+  padding-top: 50px;
+}
+
 /* Stock class */
 
 .bg-black-transparent {

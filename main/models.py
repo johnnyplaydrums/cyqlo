@@ -7,18 +7,24 @@ from django.contrib.postgres.fields import ArrayField
 class Route(models.Model):
     """ Route model """
     route_name = models.CharField(max_length=50, null=False, blank=False)
-    # uses postgres interval format '# day hr:min:sec', for ex, 1 day is '1 day 00:00:00'
-    duration = models.DurationField(null=False, blank=False)
+    # duration of bike trip, in minutes
+    duration = models.IntegerField(null=True, blank=True)
+    # distance of bike trip
+    distance = models.FloatField(null=True, blank=True)
+    # difficult = {'beg', 'med', 'adv'}
+    difficulty = models.CharField(max_length=3, null=True, blank=True)
     # [lat,lng]
-    origin = ArrayField(models.FloatField(null=False, blank=False), size=2)
+    origin = ArrayField(models.FloatField(null=False), blank=True, size=2)
     # [lat,lng]
-    destination = ArrayField(models.FloatField(null=False, blank=False), size=2)
+    destination = ArrayField(models.FloatField(null=False), blank=True, size=2)
     # [location1, location2, location3, ...]
-    waypoints = ArrayField(models.CharField(max_length=256, null=False, blank=True))
+    waypoints = ArrayField(models.CharField(max_length=256, null=False), blank=True)
     # route image
     image = models.CharField(max_length=50, null=True, blank=False)
     # template name
     template = models.CharField(max_length=50, null=True, blank=False)
+    # array of strings, tags are ways to describe the route
+    tags = ArrayField(models.CharField(max_length=256, null=True, blank=True), blank=True)
 
     def __str__(self):
         #Route objects are represented by name

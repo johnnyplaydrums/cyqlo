@@ -13,8 +13,9 @@ from main.models import Route
 
 def index(request):
     """ Homepage """
-    routes = Route.objects.all()
-    return render(request, 'index.html', {'routes': routes})
+    routes = Route.objects.filter(tags__contained_by=[''])
+    themed = Route.objects.filter(tags__contains=['themed'])
+    return render(request, 'index.html', {'routes': routes, 'themed': themed})
 
 def about(request):
     """ Cyqlo About Us page """
@@ -22,8 +23,39 @@ def about(request):
 
 def routes_page(request):
     """ Routes listing page """
-    routes = Route.objects.all()
-    return render(request, 'routes-page.html', {'routes': routes})
+    routes = Route.objects.filter(tags__contained_by=[''])
+    themed = Route.objects.filter(tags__contains=['themed'])
+    return render(request, 'routes-page.html', {'routes': routes, 'themed': themed})
+
+def route_search(request):
+    """ Route search query """
+    query = request.POST
+    duration = int(query.__getitem__('time'))
+    durationDiff = duration * .4
+    distance = int(query.__getitem__('distance'))
+    distanceDiff = distance * .4
+    difficulty = query.__getitem__('difficulty')
+    if difficulty == 'any':
+        routes = Route.objects.filter(
+            duration__range=(duration - durationDiff, duration + durationDiff),
+            distance__range=(distance - distanceDiff, distance + distanceDiff),
+            tags__contained_by=['']
+        )
+    else:
+        routes = Route.objects.filter(
+            duration__range=(duration - durationDiff, duration + durationDiff),
+            distance__range=(distance - distanceDiff, distance + distanceDiff),
+            difficulty=difficulty,
+            tags__contained_by=['']
+        )
+    if (len(routes) == 0):
+        no_results = True
+        routes = Route.objects.filter(tags__contained_by=[''])
+    else:
+        no_results = False
+
+    themed = Route.objects.filter(tags__contains=['themed'])
+    return render(request, 'routes-page.html', {'routes': routes, 'no_results':no_results, 'themed': themed})
 
 # Django already have builtin login function, can't reuse login
 def login_view(request):
