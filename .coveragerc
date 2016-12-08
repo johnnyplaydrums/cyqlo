@@ -1,0 +1,21 @@
+# coverage config file
+
+[run]
+omit =
+    *__init__*
+    *manage.py*
+    *cyqlo/settings.py*
+    *cyqlo/settings_example.py*
+    *cyqlo/urls.py*
+    *cyqlo/wsgi.py*
+    *main/management\commands\createsu.py*
+
+[report]
+omit =
+    *__init__*
+    *manage.py*
+    *cyqlo/settings.py*
+    *cyqlo/settings_example.py*
+    *cyqlo/urls.py*
+    *cyqlo/wsgi.py*
+    *main/management\commands\createsu.py*
