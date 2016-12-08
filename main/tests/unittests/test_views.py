@@ -2,7 +2,7 @@ import unittest
 from main import views
 
 """ Simple Unittest to guage url, 202, and 404 responses """
-class TestPage(unittest.TestCase):
+class TestCase(unittest.TestCase):
         def setUp(self):
             pass
 
