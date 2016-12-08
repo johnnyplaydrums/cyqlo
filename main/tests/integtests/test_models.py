@@ -28,7 +28,7 @@ class RouteTestCase(TestCase):
     def tearDown(self):
         pass
 
-#TestCase for West SIde Route
+#TestCase for West Side Route
     def test_route_created(self):
         """
         Asserts west side route has been created
