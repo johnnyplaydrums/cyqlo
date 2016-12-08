@@ -68,6 +68,7 @@ $ pip install coverage
 To check for Cyqlo's test coverage simply run:
 ```
 $ coverage run manage.py test main.tests
+$ coverage report -m
 ```
 
 ### Pylint

@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{%load static %}
+
+{%block content%}
+<script rel ="javascript" src="{% static "javascripts/parkbeach.js" %}"></script>
+<script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAde5aRQ262GgOgdqkY8Jiu5KzYQYj2YKg&callback=initMap">
+</script>
+<script rel ="javascript" src="{% static "javascripts/cityracks.js" %}"></script>
+<script rel ="javascript" src="{% static "javascripts/markerclustererplus_packed.js" %}"></script>
+
+<div id = routeheader> <h2>Prospect Park to Coney Island Beach</h2> </div>
+<div id ="routecopy"><!-- Copy goes here --></div>
+  <div class="table-responsive">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Location</th>
+          <th>Distance (Miles)</th>
+          <th>Est. Duration</th>
+          <th>Difficulty</th>
+          <th>Lane Type</th>
+          <th>Bike Rack</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Brooklyn</td>
+          <td>9</td>
+          <td>60 minutes</td>
+          <td class="alert alert-success">Easy</td>
+          <td class="alert alert-success">Bike Path</td>
+          <td><img src="{% static "img/rackicon.png" %}"></td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+    <div id="right-panel"></div>
+      <div id="map"></div>
+        <div id="floating-panel">
+            <strong>Start:</strong>
+              <input id="start" type="text" value="Shore Parkway Start" readonly="readonly"/></input>
+            <br>
+            <strong>End:</strong>
+              <input id="end" type="text" value="Shore Parkway End"readonly="readonly"/></input>
+              <br>
+
+          <b>Waypoints:</b> <br>
+            <select multiple id="waypoints">
+              <option value="40.59473, -73.98128">L&B Spumoni Garden</option>
+              <input class="sign-up-cta btn btn-primary" type="button" value="Add Stops" id="submit">
+            </select>
+          <input class="sign-up-cta btn btn-primary" type="button" id="buttonid" value="Go!" >
+        </div>
+      <br>
+{% endblock content %}
