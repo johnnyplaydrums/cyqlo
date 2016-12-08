@@ -31,24 +31,25 @@ def route_search(request):
     """ Route search query """
     query = request.POST
     duration = int(query.__getitem__('time'))
-    durationDiff = duration * .4
+    durationdiff = duration * .4
     distance = int(query.__getitem__('distance'))
-    distanceDiff = distance * .4
+    distancediff = distance * .4
     difficulty = query.__getitem__('difficulty')
     if difficulty == 'any':
         routes = Route.objects.filter(
-            duration__range=(duration - durationDiff, duration + durationDiff),
-            distance__range=(distance - distanceDiff, distance + distanceDiff),
+            duration__range=(duration - durationdiff, duration + durationdiff),
+            distance__range=(distance - distancediff, distance + distancediff),
             tags__contained_by=['']
         )
     else:
         routes = Route.objects.filter(
-            duration__range=(duration - durationDiff, duration + durationDiff),
-            distance__range=(distance - distanceDiff, distance + distanceDiff),
+            duration__range=(duration - durationdiff, duration + durationdiff),
+            distance__range=(distance - distancediff, distance + distancediff),
             difficulty=difficulty,
             tags__contained_by=['']
         )
-    if (len(routes) == 0):
+
+    if len(routes) == 0:
         no_results = True
         routes = Route.objects.filter(tags__contained_by=[''])
     else:
