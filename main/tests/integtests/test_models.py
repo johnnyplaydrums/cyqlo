@@ -4,28 +4,23 @@ from main.models import Route
 """ We omit User Model Tests because we are using Django's built-in User Model"""
 
 """ Route Model Tests """
-class RouteTestCase(TestCase):
+class Test_West_Side_Route(TestCase):
     def setUp(self):
       name = "west_side_route"  
-      dur = '01:03:00'
+      dur = 63
+      dist=11.2
+      diff= 'med'
       pointA = [40.703104, -74.016847]
       pointB = [40.850089, -73.946785]
       nearby = ["Boat Basin Cafe", "Bike Shop"]
       img = "west_side.jpg"
       temp = "west_side_route.html" 
+      tag = []
       self.west_side_route=Route.objects.create(route_name=name, duration=dur, 
-              origin=pointA, destination=pointB, waypoints=nearby, image=img, template=temp)
+              distance=dist, difficulty=diff, origin=pointA, destination=pointB,
+              waypoints=nearby, image=img, template=temp, tags=tag)
         
-      name = "harlem_soulfood_tour"  
-      dur = '00:30:00'
-      curr = [40.8200471,-73.9492724]
-      dest = [40.8200471,-73.9492724]
-      interests = ["Amy Ruth's", "B2 Harlem", "Sweet Mama's"]
-      img = "soulfood.jpeg"
-      temp = "harlem_soulfood_tour.html" 
-      self.harlem_soulfood_tour=Route.objects.create(route_name=name, duration=dur, 
-              origin=curr, destination=dest, waypoints=interests, image=img, template=temp)
-        
+              
 
     def tearDown(self):
         pass
@@ -41,7 +36,7 @@ class RouteTestCase(TestCase):
         """
         Assert duration of the west side route is the same as initially created
         """
-        self.assertEqual(self.west_side_route.duration, '01:03:00')
+        self.assertEqual(self.west_side_route.duration, 63)
 
     def test_origin(self):
         """
@@ -74,6 +69,25 @@ class RouteTestCase(TestCase):
         self.assertEqual(self.west_side_route.template, "west_side_route.html")
 
 #TestCase for Harlem Soul Food Tour 
+class Harlem_SoulFood_Tour(TestCase):
+    def setUp(self):
+        name = "harlem_soulfood_tour"  
+        dur = 30
+        dist=18
+        diff=120
+        curr = [40.8200471,-73.9492724]
+        dest = [40.8200471,-73.9492724]
+        interests = ["Amy Ruth's", "B2 Harlem", "Sweet Mama's"]
+        img = "soulfood.jpeg"
+        temp = "harlem_soulfood_tour.html" 
+        tag = ['themed']
+        self.harlem_soulfood_tour=Route.objects.create(route_name=name, duration=dur, 
+              distance=18, difficulty=diff, origin=curr, destination=dest,
+              waypoints=interests, image=img, template=temp, tags=tag)
+
+    def tearDown(self):
+        pass
+
     def test_route_created(self):
         """
         Asserts harlem soulfood tour has been created
