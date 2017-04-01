@@ -1,10 +1,7 @@
 function initMap() {
   var directionsService = new google.maps.DirectionsService;
   var directionsDisplay = new google.maps.DirectionsRenderer;
-  var map = new google.maps.Map(document.getElementById('map'), {
-    center: {lat: 40.774022, lng: -73.970599},
-    zoom: 12
-  });
+  var map = new google.maps.Map(document.getElementById('map'));
 
   var markers = createMarkers(cityracks),
     mcStyles = [
@@ -16,125 +13,90 @@ function initMap() {
     mc = new MarkerClusterer(map, markers, mcOptions);
 
   directionsDisplay.setMap(map);
-  //var infoWindow = new google.maps.InfoWindow({map: map});
 
-  // Try HTML5 geolocation.
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(function(position) {
-      var pos = {
-        lat: position.coords.latitude,
-        lng: position.coords.longitude
-      };
-      var im = 'http://www.robotwoods.com/dev/misc/bluecircle.png';
-      // var im = '/static/img/currentlocation.png';
-      var userMarker = new google.maps.Marker({
-            position: pos,
-            map: map,
-            icon: im
-        });
-
-      //infoWindow.setPosition(pos);
-      //infoWindow.setContent('Current Location');
-      map.setCenter(pos);
-    }, function() {
-      handleLocationError(true, infoWindow, map.getCenter());
-    });
-  } else {
-    // Browser doesn't support Geolocation
-    handleLocationError(false, infoWindow, map.getCenter());
-  }
   var button = document.getElementById("buttonid");
   var control = document.getElementById('floating-panel');
   control.style.display = 'block';
-  map.controls[google.maps.ControlPosition.TOP_LEFT].push(control);
 
   button.addEventListener("click", function() {
-    calculateAndDisplayRoute(directionsService, directionsDisplay);
-    directionsDisplay.setPanel(document.getElementById('right-panel'));
-  });
+      calculateAndDisplayRoute(directionsService, directionsDisplay);
+      directionsDisplay.setPanel(document.getElementById('right-panel'));
+      });
 
-  document.getElementById('submit').addEventListener('click', function() {
-    calculateAndDisplayRoute(directionsService, directionsDisplay);
-  });
+  calculateAndDisplayRoute(directionsService, directionsDisplay);
+
+  var button = document.getElementById("gobutton");
+        button.onclick = function() {
+            var center = map.getCenter();
+            window.open('http://bit.ly/2np8Vee');
+        }
 }
-
-function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-  infoWindow.setPosition(pos);
-  infoWindow.setContent(browserHasGeolocation ?
-                        'Error: The Geolocation service failed.' :
-                        'Error: Your browser doesn\'t support geolocation.');
-}
-
 
 function calculateAndDisplayRoute(directionsService, directionsDisplay) {
-
-  navigator.geolocation.getCurrentPosition(function(position) {
-    var pos = { lat: position.coords.latitude, lng: position.coords.longitude };
-
-    var waypts = [];
-    var checkboxArray = document.getElementById('waypoints');
-    for (var i = 0; i < checkboxArray.length; i++) {
-      if (checkboxArray.options[i].selected) {
-        waypts.push({
-          location: checkboxArray[i].value,
-          stopover: true
-        });
-        var finaldestination = checkboxArray[i].value;
-      }
+  var waypts = [];
+  var checkboxArray = document.getElementById('waypoints');
+  for (var i = 0; i < checkboxArray.length; i++) {
+    if (checkboxArray.options[i].selected) {
+      waypts.push({
+        location: checkboxArray[i].value,
+        stopover: true
+      });
     }
-        directionsService.route({
-          origin: {lat: position.coords.latitude, lng: position.coords.longitude},
-          destination: finaldestination,
-          waypoints:waypts,
-          optimizeWaypoints:true,
-          travelMode: 'BICYCLING'
-        }, function(response, status) {
-          if (status === 'OK') {
-            directionsDisplay.setDirections(response);
-          } else {
-            window.alert('Directions request failed due to ' + status);
-          }
-        });
-      })
+  }
+
+  directionsService.route({
+    origin: {lat:40.7535965,lng:-73.9832326},
+    destination: {lat: 40.6191502, lng:-74.0322862},
+    waypoints: waypts,
+    optimizeWaypoints: true,
+    travelMode: 'BICYCLING'
+  }, function(response, status) {
+    if (status === 'OK') {
+      directionsDisplay.setDirections(response);
     }
+    else {
+      window.alert('Directions request failed due to ' + status);
+    }
+  });
+}
 
 var infowindow;
 
 function createMarkers(points) {
-  var image = new google.maps.MarkerImage("/static/img/blue-dot.png",
-    new google.maps.Size(16, 16), // size
-    new google.maps.Point(0, 0), // origin
-    new google.maps.Point(8, 7) // anchor
-  ),
-    shape = {coords: [5,0,24,19], type: 'rect'},
-    i = points.length - 1,
-    point,
-    markers = [];
-  do {
-    point = points[i];
-    latlng = new google.maps.LatLng(point[0], point[1]);
-    var marker = new google.maps.Marker({
-      position: latlng,
-      icon: image,
-      shape: shape,
-      title: point[2]
-    });
+    var image = new google.maps.MarkerImage("/static/img/blue-dot.png",
+      new google.maps.Size(16, 16), // size
+      new google.maps.Point(0, 0), // origin
+      new google.maps.Point(8, 7) // anchor
+    ),
+      shape = {coords: [5,0,24,19], type: 'rect'},
+      i = points.length - 1,
+      point,
+      markers = [];
+    do {
+      point = points[i];
+      latlng = new google.maps.LatLng(point[0], point[1]);
+      var marker = new google.maps.Marker({
+        position: latlng,
+        icon: image,
+        shape: shape,
+        title: point[2]
+      });
 
-    var content = '<strong>' + point[2] + '</strong><br>';
+      var content = '<strong>' + point[2] + '</strong><br>';
 
-    // infowindow
-    if (point[3] == 1) {
-      content = content + 'one rack';
-    } else {
-      content = content + point[3] + ' racks';
-    }
+      // infowindow
+      if (point[3] == 1) {
+        content = content + 'one rack';
+      } else {
+        content = content + point[3] + ' racks';
+      }
 
-    makeInfowindow(marker, content);
+      makeInfowindow(marker, content);
 
-    markers.push(marker);
-  } while (--i >= 0);
-  return markers;
-};
+      markers.push(marker);
+    } while (--i >= 0);
+    return markers;
+  };
 
 function makeInfowindow(marker, content) {
   google.maps.event.addListener(marker, 'click', function() {
