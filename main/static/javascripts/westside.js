@@ -17,18 +17,19 @@ function initMap() {
   var button = document.getElementById("buttonid");
   var control = document.getElementById('floating-panel');
   control.style.display = 'block';
-  map.controls[google.maps.ControlPosition.TOP_LEFT].push(control);
 
   button.addEventListener("click", function() {
-    calculateAndDisplayRoute(directionsService, directionsDisplay);
-  directionsDisplay.setPanel(document.getElementById('right-panel'));
-  });
+      calculateAndDisplayRoute(directionsService, directionsDisplay);
+      directionsDisplay.setPanel(document.getElementById('right-panel'));
+      });
 
   calculateAndDisplayRoute(directionsService, directionsDisplay);
-  document.getElementById('submit').addEventListener('click', function() {
-  calculateAndDisplayRoute(directionsService, directionsDisplay);
-  });
 
+  var button = document.getElementById("gobutton");
+        button.onclick = function() {
+            var center = map.getCenter();
+            window.open('http://bit.ly/2np8Vee');
+        }
 }
 
 function calculateAndDisplayRoute(directionsService, directionsDisplay) {
