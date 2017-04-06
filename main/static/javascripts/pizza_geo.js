@@ -10,8 +10,8 @@ function initMap() {
   var markers = createMarkers(cityracks),
     mcStyles = [
       { url: "/static/img/blue1.png", width: 45, height: 46, textSize: 10, textColor: '#fff' },
-      { url: "/static/img/blue2.png", width: 55, height: 56, textSize: 11, textColor: '#fff' },
-      { url: "/static/img/blue3.png", width: 65, height: 66, textSize: 12, textColor: '#fff' }
+      // { url: "/static/img/blue2.png", width: 55, height: 56, textSize: 11, textColor: '#fff' },
+      // { url: "/static/img/blue3.png", width: 65, height: 66, textSize: 12, textColor: '#fff' }
     ],
     mcOptions = { gridSize: 81, batchSize: 5000, batchSizeIE: 400, styles: mcStyles },
     mc = new MarkerClusterer(map, markers, mcOptions);
