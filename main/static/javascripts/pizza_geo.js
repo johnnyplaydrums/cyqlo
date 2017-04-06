@@ -1,4 +1,5 @@
 function initMap() {
+
   var directionsService = new google.maps.DirectionsService;
   var directionsDisplay = new google.maps.DirectionsRenderer;
   var map = new google.maps.Map(document.getElementById('map'), {
@@ -33,7 +34,7 @@ function initMap() {
             icon: im
         });
 
-      map.setCenter(pos);
+map.setCenter(pos);
     }, function() {
       handleLocationError(true, infoWindow, map.getCenter());
     });
@@ -83,10 +84,10 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
       }
     }
         directionsService.route({
-          // origin: {lat: position.coords.latitude, lng: position.coords.longitude},
-          origin: {lat:40.7535965,lng:-73.9832326},
-          destination: {lat: 40.6191502, lng:-74.0322862},
-          // destination: finaldestination,
+          origin: {lat: position.coords.latitude, lng: position.coords.longitude},
+          // origin: {lat:40.7535965,lng:-73.9832326},
+          // destination: {lat: 40.6191502, lng:-74.0322862},
+          destination: finaldestination,
           waypoints:waypts,
           optimizeWaypoints:true,
           travelMode: 'BICYCLING'

@@ -14,10 +14,10 @@ function initMap() {
 
   directionsDisplay.setMap(map);
 
-  var button = document.getElementById("buttonid");
   var control = document.getElementById('floating-panel');
   control.style.display = 'block';
 
+  var button = document.getElementById("buttonid");
   button.addEventListener("click", function() {
       calculateAndDisplayRoute(directionsService, directionsDisplay);
       directionsDisplay.setPanel(document.getElementById('right-panel'));
@@ -25,11 +25,11 @@ function initMap() {
 
   calculateAndDisplayRoute(directionsService, directionsDisplay);
 
-  var button = document.getElementById("gobutton");
-        button.onclick = function() {
-            var center = map.getCenter();
-            window.open('http://bit.ly/2np8Vee');
-        }
+  var gobutton = document.getElementById("gobutton");
+      gobutton.onclick = function() {
+          var center = map.getCenter();
+          window.open('http://bit.ly/2ncaf97');
+      }
 }
 
 function calculateAndDisplayRoute(directionsService, directionsDisplay) {
@@ -45,7 +45,7 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
   }
 
   directionsService.route({
-    origin: {lat:40.7535965,lng:-73.9832326},
+    origin: {lat:40.7614677,lng:-74.0026867},
     destination: {lat: 40.6191502, lng:-74.0322862},
     waypoints: waypts,
     optimizeWaypoints: true,
