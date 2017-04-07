@@ -21,8 +21,8 @@
           <thead>
             <tr>
               <th>Location</th>
-              <th>Distance (Miles)</th>
-              <th>Est. Duration</th>
+              <th>Distance</th>
+              <th>Duration</th>
               <th>Difficulty</th>
               <th>Lane Type</th>
               <th>Bike Rack</th>
@@ -40,8 +40,6 @@
           </tbody>
         </table>
         </div>
-    <div id="right-panel"></div>
-      <div id="map"></div>
         <div id="floating-panel">
             <strong>Start:</strong>
               <input id="start" type="text" value="Current Location" readonly="readonly"/></input>
@@ -54,9 +52,11 @@
               <option value="40.8131939, -73.9839077">Jin Ramen</option>
               <option value="40.8131939, -73.9839077">Mu Ramen</option>
               <option value="40.7073797, -73.9332299">ICHIRAN</option>
-              <input class="sign-up-cta btn btn-primary" type="button" value="Add Stops" id="submit">
             </select>
-          <input class="sign-up-cta btn btn-primary" type="button" id="buttonid" value="Go!" >
-        </div>
+        <input class="sign-up-cta btn btn-primary" type="button" id="buttonid" value="Directions">
+        <input class="sign-up-cta btn btn-primary" type="button" id="gobutton" value="Turn-by-turn"</button>
+      </div>
+        <div id="map"></div>
+        <div id="right-panel"></div>
       <br>
 {% endblock content %}

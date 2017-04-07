@@ -43,20 +43,23 @@ function initMap() {
     // Browser doesn't support Geolocation
     handleLocationError(false, infoWindow, map.getCenter());
   }
+
   var button = document.getElementById("buttonid");
   var control = document.getElementById('floating-panel');
   control.style.display = 'block';
-  map.controls[google.maps.ControlPosition.TOP_LEFT].push(control);
-
   button.addEventListener("click", function() {
-    calculateAndDisplayRoute(directionsService, directionsDisplay);
-    directionsDisplay.setPanel(document.getElementById('right-panel'));
-  });
+      calculateAndDisplayRoute(directionsService, directionsDisplay);
+      directionsDisplay.setPanel(document.getElementById('right-panel'));
+      });
 
-  document.getElementById('submit').addEventListener('click', function() {
-    calculateAndDisplayRoute(directionsService, directionsDisplay);
-  });
-}
+  calculateAndDisplayRoute(directionsService, directionsDisplay);
+
+  var button = document.getElementById("gobutton");
+        button.onclick = function() {
+            var center = map.getCenter();
+            window.open('http://bit.ly/2oaUyxC');
+        }
+  }
 
 function handleLocationError(browserHasGeolocation, infoWindow, pos) {
   infoWindow.setPosition(pos);
