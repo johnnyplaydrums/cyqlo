@@ -2,7 +2,7 @@
 {%load static %}
 
 {%block content%}
-<script rel ="javascript" src="{% static "javascripts/pizza.js" %}"></script>
+<script rel ="javascript" src="{% static "javascripts/pizza_geo.js" %}"></script>
 <script async defer
   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAde5aRQ262GgOgdqkY8Jiu5KzYQYj2YKg&callback=initMap">
 </script>
@@ -24,8 +24,8 @@
           <thead>
             <tr>
               <th>Location</th>
-              <th>Distance (Miles)</th>
-              <th>Est. Duration</th>
+              <th>Distance</th>
+              <th>Duration</th>
               <th>Difficulty</th>
               <th>Lane Type</th>
               <th>Bike Rack</th>
@@ -34,7 +34,7 @@
           <tbody>
             <tr>
               <td>NYC</td>
-              <td>~40</td>
+              <td>~17 miles</td>
               <td>Pizza Time</td>
               <td class="alert alert-warning">Challenging</td>
               <td class="alert alert-warning">Variable</td>
@@ -43,25 +43,30 @@
           </tbody>
         </table>
         </div>
-    <div id="right-panel"></div>
-      <div id="map"></div>
+        <br>
         <div id="floating-panel">
             <strong>Start:</strong>
-              <input id="start" type="text" value="Current Location" readonly="readonly"/></input>
+              <input id="start" type="text" value="Pier 83 - West Side Greenway" readonly="readonly"/></input>
             <br>
-          <b>Waypoints:</b> <br>
-            <select multiple id="waypoints">
-              <option value="40.62501, -73.96143">Di Fara Pizza</option>
-              <option value="40.59473, -73.98128">L&B Spumoni Garden</option>
-              <option value="40.70262, -73.9932">Grimaldi's</option>
-              <option value="40.73171, -73.9839">Artichoke Basille</option>
-              <option value="40.70507, -73.93359">Roberta's</option>
-              <option value="40.66164, -73.99341">Luigi's Pizza</option>
-              <option value="40.83826, -73.82864">Louie & Ernie's</option>
-                <option value="40.83826, -73.82864">Sal and Carmine</option>
-              <input class="sign-up-cta btn btn-primary" type="button" value="Add Stops" id="submit">
-            </select>
-          <input class="sign-up-cta btn btn-primary" type="button" id="buttonid" value="Go!" >
-        </div>
-      <br>
+              <b>Pizzeria Stops:</b>
+              <br>
+                <select multiple id="waypoints">
+                  <option value="40.7321928, -74.0055877"> Bleeker Street Pizza </option>
+                  <option value="40.7224107,-73.9455774">Vinnie's Pizzeria</option>
+                  <option value="40.66164, -73.99341">Luigi's Pizza</option>
+                  <!-- <option value="40.59473, -73.98128">L&B Spumoni Garden</option>
+                  <option value="40.6191502,-74.0322862">Artichoke Basille</option> -->
+                  <!-- <option value="40.62501, -73.96143">Di Fara Pizza</option> -->
+                  <!-- <option value="40.70262, -73.9932">Grimaldi's</option> -->
+                  <!-- <option value="40.70507, -73.93359">Roberta's</option> -->
+                  <!-- <option value="40.83826, -73.82864">Louie & Ernie's</option>
+                  <option value="40.83826, -73.82864">Sal and Carmine</option> -->
+                </select>
+            <input class="sign-up-cta btn btn-primary" type="button" id="buttonid" value="Directions">
+            <input class="sign-up-cta btn btn-primary" type="button" id="gobutton" value="Turn-by-turn"</button>
+          </div>
+          <br>
+      <div id="map"></div>
+      <div id="right-panel"></div>
+
 {% endblock content %}
