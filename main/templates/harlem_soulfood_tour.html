@@ -13,7 +13,7 @@
 <div id = routeheader>
   <h2>Cyqlo's Harlem Soul Food Tour <img src="{% static "/img/soulfood.jpeg" %}"></h2>
 </div>
-<div id ="routecopy"> Taste the cultural dishes of Harlem and enjoy some of the worlds most famous street arts
+<div id ="routecopy"> Taste the cultural dishes of Harlem and enjoy some of the worlds most famous street art!
 </div>
 <!-- </div> -->
       <div class="table-responsive">
@@ -21,8 +21,8 @@
           <thead>
             <tr>
               <th>Location</th>
-              <th>Distance(Miles)</th>
-              <th>Est. Duration</th>
+              <th>Distance</th>
+              <th>Duration</th>
               <th>Difficulty</th>
               <th>Lane Type</th>
               <th>Bike Rack</th>
@@ -40,8 +40,6 @@
           </tbody>
         </table>
         </div>
-    <div id="right-panel"></div>
-      <div id="map"></div>
         <div id="floating-panel">
             <strong>Start:</strong>
               <input id="start" type="text" value="Current Location" readonly="readonly"/></input>
@@ -55,9 +53,11 @@
               <option value="40.8217512,-73.9451764">Jacob Buffet</option>
               <option value="40.8184133,-73.9404458">Sweet Mama's</option>
               <option value="40.8086445,-73.9488564">Sylvia's</option>
-              <input class="sign-up-cta btn btn-primary" type="button" value="Add Stops" id="submit">
             </select>
-          <input class="sign-up-cta btn btn-primary" type="button" id="buttonid" value="Go!" >
-        </div>
+        <input class="sign-up-cta btn btn-primary" type="button" id="buttonid" value="Directions">
+        <input class="sign-up-cta btn btn-primary" type="button" id="gobutton" value="Turn-by-turn"</button>
+      </div>
       <br>
+      <div id="map"></div>
+      <div id="right-panel"></div>
 {% endblock content %}
