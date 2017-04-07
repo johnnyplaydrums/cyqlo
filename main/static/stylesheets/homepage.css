@@ -1,12 +1,12 @@
 #homepage-banner {
-    background: url('../img/bike-trains.jpg') no-repeat fixed top center;
+    background: url('../img/cool_landing.jpg') no-repeat fixed top center;
     background-size: cover;
-    height: 100vh
+    height: 100vh;
 }
 
 #homepage-banner .container {
     position: relative;
-    top: 35%;
+    top: 25%;
     height: 100%;
     text-align: center;
 }
@@ -19,4 +19,5 @@
 #homepage-banner .btn {
   font-size: 22px;
   padding: 8px 30px;
+  background-color: green;
 }
