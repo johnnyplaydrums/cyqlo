@@ -17,8 +17,8 @@
       <thead>
         <tr>
           <th>Location</th>
-          <th>Distance (Miles)</th>
-          <th>Est. Duration</th>
+          <th>Distance</th>
+          <th>Duration</th>
           <th>Difficulty</th>
           <th>Lane Type</th>
           <th>Bike Rack</th>
@@ -36,8 +36,6 @@
       </tbody>
     </table>
     </div>
-    <div id="right-panel"></div>
-      <div id="map"></div>
         <div id="floating-panel">
             <strong>Start:</strong>
               <input id="start" type="text" value="Cunningham Park Trailhead" readonly="readonly"/></input>
@@ -48,10 +46,14 @@
 
           <b>Waypoints:</b> <br>
             <select multiple id="waypoints">
-              <!-- Add waypoints here -->
-              <input class="sign-up-cta btn btn-primary" type="button" value="Add Stops" id="submit">
+              <option value="40.742406, -73.765203"> Start </option>
+              <option value="40.741053, -73.774528"> End </option>
+
             </select>
-          <input class="sign-up-cta btn btn-primary" type="button" id="buttonid" value="Go!" onclick="func()">
-        </div>
+        <input class="sign-up-cta btn btn-primary" type="button" id="buttonid" value="Directions">
+        <input class="sign-up-cta btn btn-primary" type="button" id="gobutton" value="Turn-by-turn"</button>
+      </div>
       <br>
+      <div id="map"></div>
+      <div id="right-panel"></div>
 {% endblock content %}
