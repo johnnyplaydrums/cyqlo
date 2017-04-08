@@ -9,8 +9,8 @@ function initMap() {
   var markers = createMarkers(cityracks),
     mcStyles = [
       { url: "/static/img/blue1.png", width: 45, height: 46, textSize: 10, textColor: '#fff' },
-      { url: "/static/img/blue2.png", width: 55, height: 56, textSize: 11, textColor: '#fff' },
-      { url: "/static/img/blue3.png", width: 65, height: 66, textSize: 12, textColor: '#fff' }
+      // { url: "/static/img/blue2.png", width: 55, height: 56, textSize: 11, textColor: '#fff' },
+      // { url: "/static/img/blue3.png", width: 65, height: 66, textSize: 12, textColor: '#fff' }
     ],
     mcOptions = { gridSize: 81, batchSize: 5000, batchSizeIE: 400, styles: mcStyles },
     mc = new MarkerClusterer(map, markers, mcOptions);
@@ -43,20 +43,23 @@ function initMap() {
     // Browser doesn't support Geolocation
     handleLocationError(false, infoWindow, map.getCenter());
   }
+
   var button = document.getElementById("buttonid");
   var control = document.getElementById('floating-panel');
   control.style.display = 'block';
-  map.controls[google.maps.ControlPosition.TOP_LEFT].push(control);
-
   button.addEventListener("click", function() {
-    calculateAndDisplayRoute(directionsService, directionsDisplay);
-    directionsDisplay.setPanel(document.getElementById('right-panel'));
-  });
+      calculateAndDisplayRoute(directionsService, directionsDisplay);
+      directionsDisplay.setPanel(document.getElementById('right-panel'));
+      });
 
-  document.getElementById('submit').addEventListener('click', function() {
-    calculateAndDisplayRoute(directionsService, directionsDisplay);
-  });
-}
+  calculateAndDisplayRoute(directionsService, directionsDisplay);
+
+  var button = document.getElementById("gobutton");
+        button.onclick = function() {
+            var center = map.getCenter();
+            window.open('http://bit.ly/2paRmQe');
+        }
+  }
 
 function handleLocationError(browserHasGeolocation, infoWindow, pos) {
   infoWindow.setPosition(pos);

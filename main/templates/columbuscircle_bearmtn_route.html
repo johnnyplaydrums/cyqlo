@@ -8,17 +8,17 @@
 </script>
 <script rel ="javascript" src="{% static "javascripts/cityracks.js" %}"></script>
 <script rel ="javascript" src="{% static "javascripts/markerclustererplus_packed.js" %}"></script>
-<div id = routeheader> <h2>Columbus Circle to Bear Mountain</h2> </div>
-<div id ="routecopy">"Be..bea..bear mountain!" If you are looking for a challenging
-  route out of the hecticness of the city. Bear mountain is right for you.
-  Be ready for scenic views and a lot of climbing along the route.</div>
+<div id = routeheader> <h2>Bear Mountain State Park</h2> </div>
+<div id ="routecopy">"Be..bea..bear mountain!" If you are looking for a long ride to escape the hustle and bustle
+  of the city, Bear Mountain is perfect for you! With stunning views throughout the ride, this route is
+  the perfect getaway. </div>
   <div class="table-responsive">
     <table class="table">
       <thead>
         <tr>
           <th>Location</th>
-          <th>Distance (Miles)</th>
-          <th>Est. Duration</th>
+          <th>Distance</th>
+          <th>Duration</th>
           <th>Difficulty</th>
           <th>Lane Type</th>
           <th>Bike Rack</th>
@@ -26,7 +26,7 @@
       </thead>
       <tbody>
         <tr>
-          <td>Manhattan to Bear Mountain</td>
+          <td>Bear Mountain</td>
           <td>45</td>
           <td>5 hours (one-way)</td>
           <td class="alert alert-danger">Advanced</td>
@@ -36,11 +36,9 @@
       </tbody>
     </table>
     </div>
-    <div id="right-panel"></div>
-      <div id="map"></div>
         <div id="floating-panel">
             <strong>Start:</strong>
-              <input id="start" type="text" value="Columbus Circle" readonly="readonly"/></input>
+              <input id="start" type="text" value="Current Location" readonly="readonly"/></input>
             <br>
             <strong>End:</strong>
               <input id="end" type="text" value="Bear Mountain" readonly="readonly"/></input>
@@ -48,14 +46,18 @@
 
           <b>Waypoints:</b> <br>
             <select multiple id="waypoints">
-              <option value="40.8503,-73.9469">Little Red Lighthouse</option>
+              <option value="40.785668, -73.984504">Boat Basin Cafe</option>
+              <option value="40.849425, -73.946225">Little Red Lighthouse</option>
+              <option value="41.2846, -74.0006">Bear Mountain</option>
               <option value="41.0779513,-74.0622196">9W Bike Shop</option>
-              <option value="40.8612, -73.9594">Strcitly Bicycle</option>
               <option value="41.2719293,-73.8810895">Cove Deli</option>
               <option value="40.9935276,-74.0327032">Bunbury's Coffee Shop</option>
-              <input class="sign-up-cta btn btn-primary" type="button" value="Add Stops" id="submit">
             </select>
-          <input class="sign-up-cta btn btn-primary" type="button" id="buttonid" value="Go!" >
-        </div>
+        <input class="sign-up-cta btn btn-primary" type="button" id="buttonid" value="Directions">
+        <input class="sign-up-cta btn btn-primary" type="button" id="gobutton" value="Turn-by-turn"</button>
+      </div>
       <br>
+
+      <div id="map"></div>
+      <div id="right-panel"></div>
 {% endblock content %}

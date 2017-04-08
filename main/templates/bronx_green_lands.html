@@ -13,13 +13,12 @@
   <h2>Bronx Green Lands </h2>
 </div>
 <div id ="routecopy"> Explore the Bronx like never before.
-   This route emphasizes the green parts of the Bronx which are an eye opener.
+   This route emphasizes the green parts of the Bronx which are eye opening.
    Experience the historic scenery of Van Cortlandt's House Museum.
    Then travel to the beautiful New York Botonic Gardens.
    Just a short distance away is the largest metropolitan zoo in the United States, The Bronx Zoo.
    Next enjoy biking through Pelham Bay Park to the historic Bartow-Pell Mansion Museum.
-   Lastly, conclude the bike route with some nice and relaxing breezes on the boardwalk of Orchard Beach.
-   If ever in a jiffy, there are bike shops along the way!
+   Lastly, conclude the ride with some rest and relaxation on the boardwalk of Orchard Beach.
 </div>
 <!-- </div> -->
       <div class="table-responsive">
@@ -27,8 +26,8 @@
           <thead>
             <tr>
               <th>Location</th>
-              <th>Distance (Miles)</th>
-              <th>Est. Duration</th>
+              <th>Distance</th>
+              <th>Duration</th>
               <th>Difficulty</th>
               <th>Lane Type</th>
               <th>Bike Rack</th>
@@ -45,9 +44,7 @@
             </tr>
           </tbody>
         </table>
-        </div>
-    <div id="right-panel"></div>
-      <div id="map"></div>
+      </div>
         <div id="floating-panel">
             <strong>Start:</strong>
               <input id="start" type="text" value="Van Cortlandt House Museum" readonly="readonly"/></input>
@@ -58,17 +55,19 @@
 
           <b>Waypoints:</b> <br>
             <select multiple id="waypoints">
-              <option value="40.8795504,-73.8733528">Boogie Down Bicycles</option>
+              <option value="40.89, -73.896389">Van Cortlandt Museum</option>
               <option value="40.863611,-73.878333">Botanical Gardens</option>
               <option value="40.8505949,-73.8791869">Bronx Zoo</option>
-              <option value="40.8701988,-73.8739714">The Bikelery</option>
-              <option value="40.8519482,-73.8635843">Westchester Bicycle Pro Shop</option>
               <option value="40.8519482,-73.8635843">Pelham Bay Park</option>
               <option value="40.8718417,-73.8080253">Bartow-Pell Mansion Museum</option>
-
-              <input class="sign-up-cta btn btn-primary" type="button" value="Add Stops" id="submit">
+              <option value="40.8657484,-73.794132">Orchard Beach</option>
+              <option value="40.8795504,-73.8733528">Boogie Down Bicycles</option>
             </select>
-          <input class="sign-up-cta btn btn-primary" type="button" id="buttonid" value="Go!" onclick="func()">
-        </div>
+          <input class="sign-up-cta btn btn-primary" type="button" id="buttonid" value="Directions">
+          <input class="sign-up-cta btn btn-primary" type="button" id="gobutton" value="Turn-by-turn"</button>
+          </div>
       <br>
+    <div id="map"></div>
+    <div id="right-panel"></div>
+
 {% endblock content %}
