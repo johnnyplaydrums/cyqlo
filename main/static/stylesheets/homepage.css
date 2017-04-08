@@ -1,18 +1,19 @@
 #homepage-banner {
-    background: url('../img/cool_landing.jpg') no-repeat fixed top center;
+    background: url('../img/FullSizeRender-4.jpg') no-repeat right;
     background-size: cover;
     height: 100vh;
 }
 
 #homepage-banner .container {
     position: relative;
-    top: 25%;
+    top: 10%;
     height: 100%;
     text-align: center;
+
 }
 
 #homepage-banner h2 {
-  color: white;
+  color: #36454f;
   margin-bottom: 30px;
 }
 
