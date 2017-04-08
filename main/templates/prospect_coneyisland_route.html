@@ -16,8 +16,8 @@
       <thead>
         <tr>
           <th>Location</th>
-          <th>Distance (Miles)</th>
-          <th>Est. Duration</th>
+          <th>Distance</th>
+          <th>Duration</th>
           <th>Difficulty</th>
           <th>Lane Type</th>
           <th>Bike Rack</th>
@@ -35,22 +35,24 @@
       </tbody>
     </table>
     </div>
-    <div id="right-panel"></div>
-      <div id="map"></div>
         <div id="floating-panel">
             <strong>Start:</strong>
-              <input id="start" type="text" value="Shore Parkway Start" readonly="readonly"/></input>
+              <input id="start" type="text" value="Prospect Park" readonly="readonly"/></input>
             <br>
             <strong>End:</strong>
-              <input id="end" type="text" value="Shore Parkway End"readonly="readonly"/></input>
+              <input id="end" type="text" value="Coney Island"readonly="readonly"/></input>
               <br>
 
           <b>Waypoints:</b> <br>
             <select multiple id="waypoints">
+              <option value="40.6725962,-73.969597">Prospect Park</option>
+              <option value="40.5710977,-73.9849617">Coney Island</option>
               <option value="40.59473, -73.98128">L&B Spumoni Garden</option>
-              <input class="sign-up-cta btn btn-primary" type="button" value="Add Stops" id="submit">
             </select>
-          <input class="sign-up-cta btn btn-primary" type="button" id="buttonid" value="Go!" >
-        </div>
+        <input class="sign-up-cta btn btn-primary" type="button" id="buttonid" value="Directions">
+        <input class="sign-up-cta btn btn-primary" type="button" id="gobutton" value="Turn-by-turn"</button>
+      </div>
       <br>
+      <div id="map"></div>
+      <div id="right-panel"></div>
 {% endblock content %}
