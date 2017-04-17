@@ -139,6 +139,11 @@ def prospect_coneyisland_route(request):
     """ Serve the Prospect Park to Coney Island Beach Route """
     return render(request, 'prospect_coneyisland_route.html')
 
+def cityisland_route(request):
+    """ Serve the Orchard Beach to City Island Route """
+    return render(request, 'cityisland_route.html')
+
+
 # Cyqlo themed routes
 def pizza_tour_route(request):
     """ Serve the Pizza Tour Route """
@@ -155,3 +160,7 @@ def hamilton_tour(request):
 def ramen_tour(request):
     """ Serve the Ramen Tour """
     return render(request, 'ramen_tour.html')
+
+def cityisland_tour(request):
+    """ Serve the City Island Tour """
+    return render(request, 'cityisland_tour.html')

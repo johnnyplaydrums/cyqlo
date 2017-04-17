@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{%load static %}
+
+{%block content%}
+<script rel ="javascript" src="{% static "javascripts/cityisland.js" %}"></script>
+<script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAde5aRQ262GgOgdqkY8Jiu5KzYQYj2YKg&callback=initMap">
+</script>
+<script rel ="javascript" src="{% static "javascripts/cityracks.js" %}"></script>
+<script rel ="javascript" src="{% static "javascripts/markerclustererplus_packed.js" %}"></script>
+<!-- <div class="row content-margin-top"> -->
+<div id = routeheader>
+  <h2>Orchard Beach to City Island </h2>
+</div>
+<div id ="routecopy"> Enjoy the beach and capture the view of the western long island sound!
+</div>
+<!-- </div> -->
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Location</th>
+              <th>Distance</th>
+              <th>Duration</th>
+              <th>Difficulty</th>
+              <th>Lane Type</th>
+              <th>Bike Rack</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>The Bronx</td>
+              <td>12.9</td>
+              <td>1.16 hours</td>
+              <td class="alert alert-warning">Easy</td>
+              <td class="alert alert-success">Greenway</td>
+              <td><img src="{% static "img/rackicon.png" %}"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+        <div id="floating-panel">
+            <strong>Start:</strong>
+              <input id="start" type="text" value="Orchard Beach" readonly="readonly"/></input>
+            <br>
+            <strong>End:</strong>
+              <input id="end" type="text" value="City Island"readonly="readonly"/></input>
+              <br>
+
+          <b>Waypoints:</b> <br>
+            <select multiple id="waypoints">
+              <option value="40.8657484,-73.794132">Orchard Beach</option>
+              <option value="40.848549,-73.786980">City Island</option>
+              <option value="40.8422124,-73.8408914">Westchester Bicycle Pro Shop</option>
+            </select>
+          <input class="sign-up-cta btn btn-primary" type="button" id="buttonid" value="Directions">
+          <input class="sign-up-cta btn btn-primary" type="button" id="gobutton" value="Turn-by-turn"</button>
+          </div>
+      <br>
+    <div id="map"></div>
+    <div id="right-panel"></div>
+
+{% endblock content %}

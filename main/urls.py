@@ -21,10 +21,12 @@ urlpatterns = [
     url(r'^cunningham_park_trail', views.cunningham_park_trail, name='cunningham_park_trail'),
     url(r'^columbuscircle_bearmtn_route', views.columbuscircle_bearmtn_route, name='columbuscircle_bearmtn_route'),
     url(r'^prospect_coneyisland_route', views.prospect_coneyisland_route, name='prospect_coneyisland_route'),
+    url(r'^cityisland_route', views.cityisland_route, name='cityisland_route'),
 
     # Cyqlo themed routes
     url(r'^pizza_tour_route', views.pizza_tour_route, name='pizza_tour_route'),
     url(r'^harlem_soulfood_tour', views.soulfood_harlem, name='soulfoodHarlem'),
     url(r'^ramen_tour', views.ramen_tour, name='ramen_tour'),
     url(r'^hamilton_tour', views.hamilton_tour, name='hamilton_tour'),
+    url(r'^cityisland_tour', views.cityisland_tour, name='cityisland_tour'),
 ]
