@@ -161,5 +161,9 @@ def central_park_full_loop(request):
     return render(request, 'central_park_full_loop.html')
 
 def central_park_nohill_loop(request):
-    """ Serve the Central Park Full Loop"""
+    """ Serve the Central Park NOHILL Loop"""
     return render(request, 'central_park_nohill_loop.html')
+
+def prospect_park_full_loop(request):
+    """ Serve the Prospect Park Full Loop"""
+    return render(request, 'prospect_park_full_loop.html')
