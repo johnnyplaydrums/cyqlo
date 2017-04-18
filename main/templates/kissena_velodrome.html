@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{%load static %}
+
+{%block content%}
+<script rel ="javascript" src="{% static "javascripts/kissena_velodrome.js" %}"></script>
+<script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAde5aRQ262GgOgdqkY8Jiu5KzYQYj2YKg&callback=initMap">
+</script>
+<script rel ="javascript" src="{% static "javascripts/cityracks.js" %}"></script>
+<script rel ="javascript" src="{% static "javascripts/markerclustererplus_packed.js" %}"></script>
+<div id = routeheader> <h2>Kissena Velodrome</h2> </div>
+<div id ="routecopy">Challenge yourself, go beyond your limit. </div>
+  <div class="table-responsive">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Location</th>
+          <th>Distance</th>
+          <th>Duration</th>
+          <th>Difficulty</th>
+          <th>Lane Type</th>
+          <th>Bike Rack</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Kissena Velodrome</td>
+          <td>0.5</td>
+          <td>2</td>
+          <td class="alert alert-danger">null</td>
+          <td class="alert alert-warning">Track</td>
+          <td><img src="{% static "img/rackicon.png" %}"></td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+        <div id="floating-panel">
+            <strong>Start:</strong>
+              <input id="start" type="text" value="Current Location" readonly="readonly"/></input>
+            <br>
+            <strong>End:</strong>
+              <input id="end" type="text" value="Kissena Velodrome" readonly="readonly"/></input>
+              <br>
+
+          <b>Waypoints:</b> <br>
+            <select multiple id="waypoints">
+                <option value="40.7443645,-73.8093797">Velodrome - Start</option>
+                <option value="40.7451072,-73.8092866">Velodrome - Halfway</option>
+                <option value="40.7443652,-73.8093977">Velodrome - End</option>
+            </select>
+        <input class="sign-up-cta btn btn-primary" type="button" id="buttonid" value="Directions">
+        <input class="sign-up-cta btn btn-primary" type="button" id="gobutton" value="Turn-by-turn"</button>
+      </div>
+      <br>
+
+      <div id="map"></div>
+      <div id="right-panel"></div>
+{% endblock content %}
