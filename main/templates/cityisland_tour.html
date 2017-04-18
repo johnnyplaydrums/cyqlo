@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{%load static %}
+
+{%block content%}
+<script rel ="javascript" src="{% static "javascripts/cityislandseafood.js" %}"></script>
+<script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAde5aRQ262GgOgdqkY8Jiu5KzYQYj2YKg&callback=initMap">
+</script>
+<script rel ="javascript" src="{% static "javascripts/cityracks.js" %}"></script>
+<script rel ="javascript" src="{% static "javascripts/markerclustererplus_packed.js" %}"></script>
+<!-- <div class="row content-margin-top"> -->
+<div id = routeheader>
+  <h2>City Island Seafood Tour <img src="{% static "/img/seafoodicon.jpg" %}"></h2>
+</div>
+<div id ="routecopy"> Enjoy the top Seafood of City Island!
+</div>
+<!-- </div> -->
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Location</th>
+              <th>Distance</th>
+              <th>Duration</th>
+              <th>Difficulty</th>
+              <th>Lane Type</th>
+              <th>Bike Rack</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>The Bronx</td>
+              <td>1.4</td>
+              <td>7 min</td>
+              <td class="alert alert-warning">Easy</td>
+              <td class="alert alert-success">Bike Lane</td>
+              <td><img src="{% static "img/rackicon.png" %}"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+        <div id="floating-panel">
+            <strong>Start:</strong>
+              <input id="start" type="text" value="Orchard Beach" readonly="readonly"/></input>
+            <br>
+            <strong>End:</strong>
+              <input id="end" type="text" value="City Island"readonly="readonly"/></input>
+              <br>
+
+          <b>Waypoints:</b> <br>
+            <select multiple id="waypoints">
+               <option value="40.8567653,-73.791135">City Island Lobster House</option>
+               <option value="40.8496357,-73.7892886">Artie's Steak and Seafood Restaurant</option>
+               <option value="40.8486231,-73.7894759">The Original Crab Shanty</option>
+               <option value="40.8389975,-73.7858496">Sammy's Fish Box</option>
+               <option value="40.8377084,-73.784881">Johnny’s Reef Restaurant</option>
+              <option value="40.8422124,-73.8408914">Westchester Bicycle Pro Shop</option>
+            </select>
+          <input class="sign-up-cta btn btn-primary" type="button" id="buttonid" value="Directions">
+          <input class="sign-up-cta btn btn-primary" type="button" id="gobutton" value="Turn-by-turn"</button>
+          </div>
+      <br>
+    <div id="map"></div>
+    <div id="right-panel"></div>
+
+{% endblock content %}
