@@ -30,12 +30,52 @@ def routes_page(request):
 def route_search(request):
     """ Route search query """
     query = request.POST
-    duration = int(query.__getitem__('time'))
-    durationdiff = duration * .6
-    distance = int(query.__getitem__('distance'))
-    distancediff = distance * .6
+    duration = None
+    distance = None
     difficulty = query.__getitem__('difficulty')
-    if difficulty == 'any':
+
+    try:
+        duration = int(query.__getitem__('time'))
+        durationdiff = duration * .6
+
+    except ValueError:
+        duration='any'
+    try:
+        distance = int(query.__getitem__('distance'))
+        distancediff = distance * .6
+
+    except ValueError:
+        distance = 'any'
+
+    if difficulty == 'any' and duration == 'any' and distance == 'any':
+        routes = Route.objects.filter(tags__contained_by=[''])
+    elif difficulty == 'any' and duration == 'any':
+        routes = Route.objects.filter(
+            distance__range=(distance - distancediff, distance + distancediff),
+            tags__contained_by=['']
+        )
+    elif difficulty == 'any' and distance == 'any':
+        routes = Route.objects.filter(
+            duration__range=(duration - durationdiff, duration + durationdiff),
+            tags__contained_by=['']
+        )
+    elif duration == 'any' and distance== 'any':
+        routes = Route.objects.filter(
+            difficulty=difficulty,
+            tags__contained_by=['']
+        )
+    elif distance == 'any':
+        routes = Route.objects.filter(
+            duration__range=(duration - durationdiff, duration + durationdiff),
+            difficulty=difficulty,
+            tags__contained_by=['']
+        )
+    elif duration == 'any':
+        routes = Route.objects.filter(
+            distance__range=(distance - distancediff, distance + distancediff),
+            tags__contained_by=['']
+        )
+    elif difficulty == 'any':
         routes = Route.objects.filter(
             duration__range=(duration - durationdiff, duration + durationdiff),
             distance__range=(distance - distancediff, distance + distancediff),
@@ -57,6 +97,37 @@ def route_search(request):
 
     themed = Route.objects.filter(tags__contains=['themed'])
     return render(request, 'routes-page.html', {'routes': routes, 'no_results':no_results, 'themed': themed})
+
+# def route_search(request):
+#     """ Route search query """
+#     query = request.POST
+#     duration = int(query.__getitem__('time'))
+#     durationdiff = duration * .6
+#     distance = int(query.__getitem__('distance'))
+#     distancediff = distance * .6
+#     difficulty = query.__getitem__('difficulty')
+#     if difficulty == 'any':
+#         routes = Route.objects.filter(
+#             duration__range=(duration - durationdiff, duration + durationdiff),
+#             distance__range=(distance - distancediff, distance + distancediff),
+#             tags__contained_by=['']
+#         )
+#     else:
+#         routes = Route.objects.filter(
+#             duration__range=(duration - durationdiff, duration + durationdiff),
+#             distance__range=(distance - distancediff, distance + distancediff),
+#             difficulty=difficulty,
+#             tags__contained_by=['']
+#         )
+#
+#     if len(routes) == 0:
+#         no_results = True
+#         routes = Route.objects.filter(tags__contained_by=[''])
+#     else:
+#         no_results = False
+#
+#     themed = Route.objects.filter(tags__contains=['themed'])
+#     return render(request, 'routes-page.html', {'routes': routes, 'no_results':no_results, 'themed': themed})
 
 # Django already have builtin login function, can't reuse login
 def login_view(request):
