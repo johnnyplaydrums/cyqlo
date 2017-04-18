@@ -155,3 +155,7 @@ def hamilton_tour(request):
 def ramen_tour(request):
     """ Serve the Ramen Tour """
     return render(request, 'ramen_tour.html')
+
+def central_park_full_loop(request):
+    """ Serve the Central Park Full Loop"""
+    return render(request, 'central_park_full_loop.html')
