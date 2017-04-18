@@ -159,3 +159,7 @@ def ramen_tour(request):
 def central_park_full_loop(request):
     """ Serve the Central Park Full Loop"""
     return render(request, 'central_park_full_loop.html')
+
+def central_park_nohill_loop(request):
+    """ Serve the Central Park Full Loop"""
+    return render(request, 'central_park_nohill_loop.html')
