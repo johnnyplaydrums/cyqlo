@@ -142,7 +142,12 @@ def prospect_coneyisland_route(request):
 def cityisland_route(request):
     """ Serve the Orchard Beach to City Island Route """
     return render(request, 'cityisland_route.html')
-
+def glenisland_davenport_route(request):
+    """ Serve the Glen Island Park to Davenport Park """
+    return render(request, 'glenisland_davenport.html')
+def bearmt_vancortlandt_route(request):
+    """ Serve the Glen Island Park to Davenport Park """
+    return render(request, 'bearmountain_vancortlandt.html')
 
 # Cyqlo themed routes
 def pizza_tour_route(request):

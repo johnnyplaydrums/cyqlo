@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{%load static %}
+
+{%block content%}
+<script rel ="javascript" src="{% static "javascripts/davenport.js" %}"></script>
+<script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAde5aRQ262GgOgdqkY8Jiu5KzYQYj2YKg&callback=initMap">
+</script>
+<script rel ="javascript" src="{% static "javascripts/cityracks.js" %}"></script>
+<script rel ="javascript" src="{% static "javascripts/markerclustererplus_packed.js" %}"></script>
+<!-- <div class="row content-margin-top"> -->
+<div id = routeheader>
+  <h2>Glen Island Park to Davenport Park </h2>Begin your journey at one of Westchester’s unique jewels Glen Island Park. The second most widely used park in Westchester, New York and finish at Davenport's 20 acre park which is a passive recreation area overlooking Long Island Sound.
+</div>
+<div id ="routecopy">
+</div>
+<!-- </div> -->
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Location</th>
+              <th>Distance</th>
+              <th>Duration</th>
+              <th>Difficulty</th>
+              <th>Lane Type</th>
+              <th>Bike Rack</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>New Rochelle</td>
+              <td>2.4</td>
+              <td>13 minutes</td>
+              <td class="alert alert-warning">Moderate</td>
+              <td class="alert alert-warning">Road</td>
+              <td><img src="{% static "img/rackicon.png" %}"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+        <div id="floating-panel">
+            <strong>Start:</strong>
+              <input id="start" type="text" value="Glen Island Park" readonly="readonly"/></input>
+            <br>
+            <strong>End:</strong>
+              <input id="end" type="text" value="Davenport Park"readonly="readonly"/></input>
+              <br>
+
+          <b>Waypoints:</b> <br>
+            <select multiple id="waypoints">
+              <option value="40.8851165,-73.7838323">Glen Island Park</option>
+              <option value="40.8903775,-73.7850991">Neptune Island</option>
+              <option value="40.8955015,-73.7727786">Davenport Park</option>
+            </select>
+          <input class="sign-up-cta btn btn-primary" type="button" id="buttonid" value="Directions">
+          <input class="sign-up-cta btn btn-primary" type="button" id="gobutton" value="Turn-by-turn"</button>
+          </div>
+      <br>
+    <div id="map"></div>
+    <div id="right-panel"></div>
+
+{% endblock content %}
