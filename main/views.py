@@ -146,7 +146,7 @@ def glenisland_davenport_route(request):
     """ Serve the Glen Island Park to Davenport Park """
     return render(request, 'glenisland_davenport.html')
 def bearmt_vancortlandt_route(request):
-    """ Serve the Glen Island Park to Davenport Park """
+    """ Serve the Bear Mountain State Park to Van Cortlandt Park """
     return render(request, 'bearmountain_vancortlandt.html')
 
 # Cyqlo themed routes
