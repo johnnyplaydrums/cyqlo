@@ -1,29 +1,52 @@
-{% extends "base.html" %}
-{% block content %}
+{% extends "base.html" %} {% block content %}
 
 <div id="about-banner">
   <div class="container" align="center">
-      <div class="row content-margin-top">
-          <div class="panel panel-primary bg-black-transparent" style="width:80%">
-              <div class="panel-body" style="width:90%">
-                <p align="left" class="font-size-16px"> Cyqlo's mission is to make biking around and out of the city more accessible
-                    and enjoyable for novice bikers. Cyqlo provides bikers with curated routes
-                    that bring them to interesting destinations and helps reconnect them with
-                    their environment. </p>
-
-                <p align="left" class="font-size-16px" > As a team who enjoys biking around NYC, we discovered that there are not
-                    many applications that enhance the biking experience and make it more
-                    fulfilling. We understand how inaccessible biking around NYC can feel and
-                    how tough it is to find interesting routes out of the city.
-
-                <p align="left" class="font-size-16px"> With this in mind, we’ve decided to help novice bikers explore untapped
-                    areas and provide them with an enriching biking experience that will also
-                    reconnect them with their surroundings. Cyqlo will take the guess work out of planning weekend excursions and help
-                    users pick a route that is just right for them. </p>
-              </div>
-          </div>
-      </div>
+    <div class="row content-margin-top">
+      <p align="left" class="text-style">
+        <!-- Creating a world where everyone bikes to work, bikes to explore, and bikes for fun. -->
+        CREATING A WORLD WHERE EVERYONE BIKES TO WORK, BIKES TO EXPLORE, AND BIKES FOR FUN.
+      </p>
+    </div>
   </div>
 </div>
+
+<div class="emblem-row">
+  <div class="emblem-col">
+    <div class="icon">
+      <img src="/static/img/bike-safety.jpg">
+    </div>
+    <h2> SAFETY </h2>
+    <p> As a team who loves to bike, we know how trecherous biking around and out of the city can be. That's exactly why we've built Cyqlo: To ease the pain for all types of cyclists.
+      We're tackling the problem of real-time road conditions, to let cyclists unobtrusively know when there are hazardous conditions along their path and when
+      they're approaching notoriously dangerous intersections.
+    </p>
+  </div>
+  <div class="emblem-col">
+    <div class="icon">
+      <img src="/static/img/compass-icon.png">
+    </div>
+    <h2> NAVIGATION </h2>
+    <p> Knowing where to go is a necessary component no matter the mode of travel. When biking, the odds seem a little higher as a misstep, or innacurate directions can lead you on a not so pleasant journey.
+      Road closures and construction add chaos and uncertainty to biking, and we're making sure our riders are armed with the information
+      to make their journeys more comfortable and well-informed.
+    </p>
+  </div>
+  <div class="emblem-col">
+    <div class="icon">
+      <img src="/static/img/explore.png">
+    </div>
+    <h2> EXPLORATION </h2>
+    <p>Whether you haven't biked in years, you're new to a city, or your same old routes are getting stale, Cyqlo wants to help users find and explore new places.
+      We're leverging technology to help reconnect people with nature and helping them discover the beauty in their own backyard, or somewhere completely new.
+      We love the feeling of finding hidden gems and beauty in unexpected places and we want to share that with our riders.
+    </p>
+  </div>
+</div>
+
+<div class="emblem-row" >
+  <div class="team-photo">
+  </div>
+</div
 
 {% endblock content %}
