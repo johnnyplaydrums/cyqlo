@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{%load static %}
+
+{%block content%}
+<script rel ="javascript" src="{% static "javascripts/central_park_full_loop.js" %}"></script>
+<script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAde5aRQ262GgOgdqkY8Jiu5KzYQYj2YKg&callback=initMap">
+</script>
+<script rel ="javascript" src="{% static "javascripts/cityracks.js" %}"></script>
+<script rel ="javascript" src="{% static "javascripts/markerclustererplus_packed.js" %}"></script>
+<div id = routeheader> <h2>Central Park Full Loop</h2> </div>
+<div id ="routecopy">Get away from the city in the city. This is a multi-use park for cyclists, runners, pedestrians and other athletes.</div>
+  <div class="table-responsive">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Location</th>
+          <th>Distance</th>
+          <th>Duration</th>
+          <th>Difficulty</th>
+          <th>Lane Type</th>
+          <th>Bike Rack</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Central Park</td>
+          <td>6.1</td>
+          <td>40</td>
+          <td class="alert alert-danger">Moderate</td>
+          <td class="alert alert-warning">Bike Path</td>
+          <td><img src="{% static "img/rackicon.png" %}"></td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+        <div id="floating-panel">
+            <strong>Start:</strong>
+              <input id="start" type="text" value="Current Location" readonly="readonly"/></input>
+            <br>
+            <strong>End:</strong>
+              <input id="end" type="text" value="Central Park" readonly="readonly"/></input>
+              <br>
+
+          <b>Waypoints:</b> <br>
+            <select multiple id="waypoints">
+                <option value="40.7688953,-73.9799549">Columbus Circle - Central Park</option>
+                <option value="40.7990134,-73.9552733">Uptown - Central Park North</option>
+                <option value="40.7688953,-73.9799549">Columbus Circle - Central Park</option>
+            </select>
+        <input class="sign-up-cta btn btn-primary" type="button" id="buttonid" value="Directions">
+        <input class="sign-up-cta btn btn-primary" type="button" id="gobutton" value="Turn-by-turn"</button>
+      </div>
+      <br>
+
+      <div id="map"></div>
+      <div id="right-panel"></div>
+{% endblock content %}
