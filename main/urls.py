@@ -26,6 +26,7 @@ urlpatterns = [
     url(r'^bearmt_vancortlandt_route', views.bearmt_vancortlandt_route, name='bearmt_vancortlandt_route'),
     url(r'^central_park_full_loop', views.central_park_full_loop, name='central_park_full_loop'),
     url(r'^central_park_nohill_loop', views.central_park_nohill_loop, name='central_park_nohill_loop'),
+    url(r'^prospect_park_full_loop', views.prospect_park_full_loop, name='prospect_park_full_loop'),
 
     # Cyqlo themed routes
     url(r'^pizza_tour_route', views.pizza_tour_route, name='pizza_tour_route'),
