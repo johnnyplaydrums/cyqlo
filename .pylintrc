@@ -3,7 +3,7 @@
 # ignore directories/files
 ignore=migrations, urls.py
 
-disable=line-too-long
+disable=line-too-long, redefined-variable-type
 min-public-methods=0
 
 

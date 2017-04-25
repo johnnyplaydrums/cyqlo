@@ -22,12 +22,13 @@ urlpatterns = [
     url(r'^columbuscircle_bearmtn_route', views.columbuscircle_bearmtn_route, name='columbuscircle_bearmtn_route'),
     url(r'^prospect_coneyisland_route', views.prospect_coneyisland_route, name='prospect_coneyisland_route'),
     url(r'^cityisland_route', views.cityisland_route, name='cityisland_route'),
-    url(r'^glenisland_davenport_route', views.glenisland_davenport_route, name='glenisland_davenport_route'),
-    url(r'^bearmt_vancortlandt_route', views.bearmt_vancortlandt_route, name='bearmt_vancortlandt_route'),
+    url(r'^glenisland_davenport', views.glenisland_davenport, name='glenisland_davenport'),
+    url(r'^bearmountain_vancortlandt', views.bearmountain_vancortlandt, name='bearmountain_vancortlandt'),
     url(r'^central_park_full_loop', views.central_park_full_loop, name='central_park_full_loop'),
     url(r'^central_park_nohill_loop', views.central_park_nohill_loop, name='central_park_nohill_loop'),
     url(r'^prospect_park_full_loop', views.prospect_park_full_loop, name='prospect_park_full_loop'),
     url(r'^kissena_velodrome', views.kissena_velodrome, name='kissena_velodrome'),
+    url(r'^gantry_park_citi_field', views.gantry_park_citi_field, name='gantry_park_citi_field'),
 
     # Cyqlo themed routes
     url(r'^pizza_tour_route', views.pizza_tour_route, name='pizza_tour_route'),
