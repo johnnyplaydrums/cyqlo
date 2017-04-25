@@ -39,7 +39,7 @@ def route_search(request):
         durationdiff = duration * .6
 
     except ValueError:
-        duration='any'
+        duration = 'any'
     try:
         distance = int(query.__getitem__('distance'))
         distancediff = distance * .6
@@ -59,7 +59,7 @@ def route_search(request):
             duration__range=(duration - durationdiff, duration + durationdiff),
             tags__contained_by=['']
         )
-    elif duration == 'any' and distance== 'any':
+    elif duration == 'any' and distance == 'any':
         routes = Route.objects.filter(
             difficulty=difficulty,
             tags__contained_by=['']
@@ -213,12 +213,35 @@ def prospect_coneyisland_route(request):
 def cityisland_route(request):
     """ Serve the Orchard Beach to City Island Route """
     return render(request, 'cityisland_route.html')
-def glenisland_davenport_route(request):
+
+def glenisland_davenport(request):
     """ Serve the Glen Island Park to Davenport Park """
     return render(request, 'glenisland_davenport.html')
-def bearmt_vancortlandt_route(request):
+
+def bearmountain_vancortlandt(request):
     """ Serve the Bear Mountain State Park to Van Cortlandt Park """
     return render(request, 'bearmountain_vancortlandt.html')
+
+def central_park_full_loop(request):
+    """ Serve the Central Park Full Loop """
+    return render(request, 'central_park_full_loop.html')
+
+def central_park_nohill_loop(request):
+    """ Serve the Central Park No Hill Loop """
+    return render(request, 'central_park_nohill_loop.html')
+
+def prospect_park_full_loop(request):
+    """ Serve the Prospect Park Full Loop """
+    return render(request, 'prospect_park_full_loop.html')
+
+def kissena_velodrome(request):
+    """ Serve the Kissena Velodrome Track """
+    return render(request, 'kissena_velodrome.html')
+
+def gantry_park_citi_field(request):
+    """ Serve the Gantry Park to Citi Field Route """
+    return render(request, 'gantry_park_citi_field.html')
+
 
 # Cyqlo themed routes
 def pizza_tour_route(request):
