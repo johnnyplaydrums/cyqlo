@@ -27,6 +27,7 @@ urlpatterns = [
     url(r'^central_park_full_loop', views.central_park_full_loop, name='central_park_full_loop'),
     url(r'^central_park_nohill_loop', views.central_park_nohill_loop, name='central_park_nohill_loop'),
     url(r'^prospect_park_full_loop', views.prospect_park_full_loop, name='prospect_park_full_loop'),
+    url(r'^kissena_velodrome', views.kissena_velodrome, name='kissena_velodrome'),
 
     # Cyqlo themed routes
     url(r'^pizza_tour_route', views.pizza_tour_route, name='pizza_tour_route'),

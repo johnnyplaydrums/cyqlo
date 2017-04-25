@@ -234,6 +234,10 @@ def prospect_park_full_loop(request):
     """ Serve the Prospect Park Full Loop """
     return render(request, 'prospect_park_full_loop.html')
 
+def kissena_velodrome(request):
+    """ Serve the Kissena Velodrome Track """
+    return redner(request, 'kissena_velodrome.html')
+
 # Cyqlo themed routes
 def pizza_tour_route(request):
     """ Serve the Pizza Tour Route """
