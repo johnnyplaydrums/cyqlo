@@ -56,7 +56,7 @@ map.setCenter(pos);
   var button = document.getElementById("gobutton");
         button.onclick = function() {
             var center = map.getCenter();
-            window.open('http://bit.ly/2oLLhL6');
+            window.open('http://bit.ly/2pkjnZX');
         }
 }
 

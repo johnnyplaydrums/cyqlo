@@ -22,6 +22,8 @@ urlpatterns = [
     url(r'^columbuscircle_bearmtn_route', views.columbuscircle_bearmtn_route, name='columbuscircle_bearmtn_route'),
     url(r'^prospect_coneyisland_route', views.prospect_coneyisland_route, name='prospect_coneyisland_route'),
     url(r'^cityisland_route', views.cityisland_route, name='cityisland_route'),
+    url(r'^glenisland_davenport_route', views.glenisland_davenport_route, name='glenisland_davenport_route'),
+    url(r'^bearmt_vancortlandt_route', views.bearmt_vancortlandt_route, name='bearmt_vancortlandt_route'),
 
     # Cyqlo themed routes
     url(r'^pizza_tour_route', views.pizza_tour_route, name='pizza_tour_route'),
