@@ -226,6 +226,10 @@ def central_park_full_loop(request):
     """ Serve the Central Park Full Loop """
     return render(request, 'central_park_full_loop.html')
 
+def central_park_nohill_loop(request):
+    """ Serve the Central Park No Hill Loop """
+    return render(request, 'central_park_nohill_loop.html')
+
 # Cyqlo themed routes
 def pizza_tour_route(request):
     """ Serve the Pizza Tour Route """
