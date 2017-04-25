@@ -236,7 +236,7 @@ def prospect_park_full_loop(request):
 
 def kissena_velodrome(request):
     """ Serve the Kissena Velodrome Track """
-    return redner(request, 'kissena_velodrome.html')
+    return render(request, 'kissena_velodrome.html')
 
 # Cyqlo themed routes
 def pizza_tour_route(request):
