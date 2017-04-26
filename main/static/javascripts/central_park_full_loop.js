@@ -74,6 +74,21 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
 
     var waypts = [];
     var checkboxArray = document.getElementById('waypoints');
+
+    //free api allows a max of 9 total stops including the start and end address
+    //premier allows a total of 25 stops.
+    // add start of route as first waypoint
+    var items = ["40.768808, -73.979916", "40.780029, -73.964794", "40.769970, -73.971397", "40.797715, -73.954320"];
+    for (var i = 0; i < items.length; i++) {
+        var address = items[i];
+        if (address !== "") {
+            waypts.push({
+                location: address,
+                stopover: true
+            });
+        }
+    }
+
     for (var i = 0; i < checkboxArray.length; i++) {
       if (checkboxArray.options[i].selected) {
         waypts.push({
@@ -86,8 +101,11 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
         directionsService.route({
           origin: {lat: position.coords.latitude, lng: position.coords.longitude},
           // origin: {lat:40.7535965,lng:-73.9832326},
-          // destination: {lat: 40.6191502, lng:-74.0322862},
-          destination: finaldestination,
+          destination: {
+              lat: 40.768808,
+              lng: -73.979916
+          },
+          // destination: finaldestination,
           waypoints:waypts,
           optimizeWaypoints:true,
           travelMode: 'BICYCLING'

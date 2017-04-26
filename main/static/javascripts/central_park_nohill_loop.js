@@ -87,7 +87,6 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
         }
     }
 
-
     for (var i = 0; i < checkboxArray.length; i++) {
       if (checkboxArray.options[i].selected) {
         waypts.push({
@@ -101,8 +100,8 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
           origin: {lat: position.coords.latitude, lng: position.coords.longitude},
           // origin: {lat:40.7535965,lng:-73.9832326},
           destination: {
-              lat: 40.7688953,
-              lng: -73.9799549
+              lat: 40.768808,
+              lng: -73.979916
           },
           // destination: finaldestination,
           waypoints:waypts,
