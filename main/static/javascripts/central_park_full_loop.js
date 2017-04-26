@@ -95,7 +95,7 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
         //premier allows a total of 25 stops.
         // add start of route as first waypoint
         // items = [address1, address2]; so for a loop, we can gather couple waypoints along the route and generate a loop
-        var items = ["40.768808, -73.979916", "40.780029, -73.964794", "40.769970, -73.971397", "40.797715, -73.954320"];
+        var items = ["40.768808, -73.979916", "40.780029, -73.964794", "40.769970, -73.971397", "40.795799, -73.953409", "40.797715, -73.954320"];
         for (var i = 0; i < items.length; i++) {
             var address = items[i];
             if (address !== "") {
