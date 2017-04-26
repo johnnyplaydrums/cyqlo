@@ -92,10 +92,16 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
     var checkboxArray = document.getElementById('waypoints');
 
     // add start of route as first waypoint
-    waypts.push({
-      location: "40.785668, -73.984504",
-      stopover: true
-    });
+    var items = ["40.785668, -73.984504", "40.848230, -73.946526"]
+    for (var i = 0; i < items.length; i++) {
+        var address = items[i];
+        if (address !== "") {
+            waypts.push({
+                location: address,
+                stopover: true
+            });
+        }
+    }
 
     for (var i = 0; i < checkboxArray.length; i++) {
       if (checkboxArray.options[i].selected) {
