@@ -91,6 +91,7 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
             });
         }
     }
+    
     for (var i = 0; i < checkboxArray.length; i++) {
       if (checkboxArray.options[i].selected) {
         waypts.push({

@@ -78,11 +78,21 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
     var waypts = [];
     var checkboxArray = document.getElementById('waypoints');
 
+    //free api allows a max of 9 total stops including the start and end address
+    //premier allows a total of 25 stops.
     // add start of route as first waypoint
-    waypts.push({
-      location: "40.6710587,-73.9702677",
-      stopover: true
-    });
+
+    // items = [address1, address2]; so for a loop, we can gather couple waypoints along the route and generate a loop
+    var items = ["40.671046, -73.970306", "40.670153, -73.971088", "40.6521446,-73.9712551", "40.665236, -73.966110"];
+    for (var i = 0; i < items.length; i++) {
+        var address = items[i];
+        if (address !== "") {
+            waypts.push({
+                location: address,
+                stopover: true
+            });
+        }
+    }
 
     for (var i = 0; i < checkboxArray.length; i++) {
       if (checkboxArray.options[i].selected) {
@@ -97,8 +107,8 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
           origin: {lat: position.coords.latitude, lng: position.coords.longitude},
           // origin: {lat:40.7535965,lng:-73.9832326},
           destination: {
-              lat: 40.6710587,
-              lng: -73.9702677
+              lat: 40.671046,
+              lng: -73.970306
           },
           // destination: finaldestination,
           waypoints:waypts,
