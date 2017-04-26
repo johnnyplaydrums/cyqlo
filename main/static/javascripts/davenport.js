@@ -74,6 +74,12 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
 
     var waypts = [];
     var checkboxArray = document.getElementById('waypoints');
+    // add start of route as first waypoint
+    waypts.push({
+      location: "40.8851165,-73.7838323",
+      stopover: true
+    });
+
     for (var i = 0; i < checkboxArray.length; i++) {
       if (checkboxArray.options[i].selected) {
         waypts.push({
@@ -87,7 +93,10 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
           origin: {lat: position.coords.latitude, lng: position.coords.longitude},
           // origin: {lat:40.7535965,lng:-73.9832326},
           // destination: {lat: 40.6191502, lng:-74.0322862},
-          destination: finaldestination,
+          destination: {
+            lat: 40.848549,
+            lng: -73.786980
+          },
           waypoints:waypts,
           optimizeWaypoints:true,
           travelMode: 'BICYCLING'
