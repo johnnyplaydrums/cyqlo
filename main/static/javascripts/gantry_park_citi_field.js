@@ -1,162 +1,181 @@
 function initMap() {
 
-  var directionsService = new google.maps.DirectionsService;
-  var directionsDisplay = new google.maps.DirectionsRenderer;
-  var map = new google.maps.Map(document.getElementById('map'), {
-    center: {
-        lat: 40.774022,
-        lng: -73.970599
-    },
-    zoom: 12
-  });
-
-  var markers = createMarkers(cityracks),
-    mcStyles = [
-      { url: "/static/img/blue1.png", width: 45, height: 46, textSize: 10, textColor: '#fff' },
-      // { url: "/static/img/blue2.png", width: 55, height: 56, textSize: 11, textColor: '#fff' },
-      // { url: "/static/img/blue3.png", width: 65, height: 66, textSize: 12, textColor: '#fff' }
-    ],
-    mcOptions = { gridSize: 81, batchSize: 5000, batchSizeIE: 400, styles: mcStyles },
-    mc = new MarkerClusterer(map, markers, mcOptions);
-
-  directionsDisplay.setMap(map);
-  //var infoWindow = new google.maps.InfoWindow({map: map});
-
-  // Try HTML5 geolocation.
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(function(position) {
-      var pos = {
-        lat: position.coords.latitude,
-        lng: position.coords.longitude
-      };
-      var im = 'http://www.robotwoods.com/dev/misc/bluecircle.png';
-      // var im = '/static/img/currentlocation.png';
-      var userMarker = new google.maps.Marker({
-            position: pos,
-            map: map,
-            icon: im
-        });
-
-map.setCenter(pos);
-    }, function() {
-      handleLocationError(true, infoWindow, map.getCenter());
+    var directionsService = new google.maps.DirectionsService;
+    var directionsDisplay = new google.maps.DirectionsRenderer;
+    var map = new google.maps.Map(document.getElementById('map'), {
+        center: {
+            lat: 40.774022,
+            lng: -73.970599
+        },
+        zoom: 12
     });
-  } else {
-    // Browser doesn't support Geolocation
-    handleLocationError(false, infoWindow, map.getCenter());
-  }
 
-  var button = document.getElementById("buttonid");
-  var control = document.getElementById('floating-panel');
-  control.style.display = 'block';
-  button.addEventListener("click", function() {
-      calculateAndDisplayRoute(directionsService, directionsDisplay);
-      directionsDisplay.setPanel(document.getElementById('right-panel'));
-      });
+    var markers = createMarkers(cityracks),
+        mcStyles = [{
+                url: "/static/img/blue1.png",
+                width: 45,
+                height: 46,
+                textSize: 10,
+                textColor: '#fff'
+            },
+            // { url: "/static/img/blue2.png", width: 55, height: 56, textSize: 11, textColor: '#fff' },
+            // { url: "/static/img/blue3.png", width: 65, height: 66, textSize: 12, textColor: '#fff' }
+        ],
+        mcOptions = {
+            gridSize: 81,
+            batchSize: 5000,
+            batchSizeIE: 400,
+            styles: mcStyles
+        },
+        mc = new MarkerClusterer(map, markers, mcOptions);
 
-  calculateAndDisplayRoute(directionsService, directionsDisplay);
+    directionsDisplay.setMap(map);
+    //var infoWindow = new google.maps.InfoWindow({map: map});
 
-  var button = document.getElementById("gobutton");
-        button.onclick = function() {
-            var center = map.getCenter();
-            window.open('http://bit.ly/2nXNGR3');
-        }
+    // Try HTML5 geolocation.
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function(position) {
+            var pos = {
+                lat: position.coords.latitude,
+                lng: position.coords.longitude
+            };
+            var im = 'http://www.robotwoods.com/dev/misc/bluecircle.png';
+            // var im = '/static/img/currentlocation.png';
+            var userMarker = new google.maps.Marker({
+                position: pos,
+                map: map,
+                icon: im
+            });
+
+            map.setCenter(pos);
+        }, function() {
+            handleLocationError(true, infoWindow, map.getCenter());
+        });
+    } else {
+        // Browser doesn't support Geolocation
+        handleLocationError(false, infoWindow, map.getCenter());
+    }
+
+    var button = document.getElementById("buttonid");
+    var control = document.getElementById('floating-panel');
+    control.style.display = 'block';
+    button.addEventListener("click", function() {
+        calculateAndDisplayRoute(directionsService, directionsDisplay);
+        directionsDisplay.setPanel(document.getElementById('right-panel'));
+    });
+
+    calculateAndDisplayRoute(directionsService, directionsDisplay);
+
+    var button = document.getElementById("gobutton");
+    button.onclick = function() {
+        var center = map.getCenter();
+        window.open('http://bit.ly/2nXNGR3');
+    }
 }
 
 function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-  infoWindow.setPosition(pos);
-  infoWindow.setContent(browserHasGeolocation ?
-                        'Error: The Geolocation service failed.' :
-                        'Error: Your browser doesn\'t support geolocation.');
+    infoWindow.setPosition(pos);
+    infoWindow.setContent(browserHasGeolocation ?
+        'Error: The Geolocation service failed.' :
+        'Error: Your browser doesn\'t support geolocation.');
 }
 
 function calculateAndDisplayRoute(directionsService, directionsDisplay) {
 
-  navigator.geolocation.getCurrentPosition(function(position) {
-    var pos = { lat: position.coords.latitude, lng: position.coords.longitude };
+    navigator.geolocation.getCurrentPosition(function(position) {
+        var pos = {
+            lat: position.coords.latitude,
+            lng: position.coords.longitude
+        };
 
-    var waypts = [];
-    var checkboxArray = document.getElementById('waypoints');
+        var waypts = [];
+        var checkboxArray = document.getElementById('waypoints');
 
-    // add start of route as first waypoint
-    waypts.push({
-      location: "40.745523, -73.958742",
-      stopover: true
-    });
-
-    for (var i = 0; i < checkboxArray.length; i++) {
-      if (checkboxArray.options[i].selected) {
+        // add start of route as first waypoint
         waypts.push({
-          location: checkboxArray[i].value,
-          stopover: true
+            location: "40.745523, -73.958742",
+            stopover: true
         });
-        var finaldestination = checkboxArray[i].value;
-      }
-    }
+
+        for (var i = 0; i < checkboxArray.length; i++) {
+            if (checkboxArray.options[i].selected) {
+                waypts.push({
+                    location: checkboxArray[i].value,
+                    stopover: true
+                });
+                var finaldestination = checkboxArray[i].value;
+            }
+        }
         directionsService.route({
-          origin: {lat: position.coords.latitude, lng: position.coords.longitude},
-          // origin: {lat:40.7535965,lng:-73.9832326},
-          destination: {
-              lat: 40.756711,
-              lng: -73.847091
-          },
-          // destination: finaldestination,
-          waypoints:waypts,
-          optimizeWaypoints:true,
-          travelMode: 'BICYCLING'
+            origin: {
+                lat: position.coords.latitude,
+                lng: position.coords.longitude
+            },
+            // origin: {lat:40.7535965,lng:-73.9832326},
+            destination: {
+                lat: 40.756711,
+                lng: -73.847091
+            },
+            // destination: finaldestination,
+            waypoints: waypts,
+            optimizeWaypoints: true,
+            travelMode: 'BICYCLING'
         }, function(response, status) {
-          if (status === 'OK') {
-            directionsDisplay.setDirections(response);
-          } else {
-            window.alert('Directions request failed due to ' + status);
-          }
+            if (status === 'OK') {
+                directionsDisplay.setDirections(response);
+            } else {
+                window.alert('Directions request failed due to ' + status);
+            }
         });
-      })
-    }
+    })
+}
 
 var infowindow;
 
 function createMarkers(points) {
-  var image = new google.maps.MarkerImage("/static/img/blue-dot.png",
-    new google.maps.Size(16, 16), // size
-    new google.maps.Point(0, 0), // origin
-    new google.maps.Point(8, 7) // anchor
-  ),
-    shape = {coords: [5,0,24,19], type: 'rect'},
-    i = points.length - 1,
-    point,
-    markers = [];
-  do {
-    point = points[i];
-    latlng = new google.maps.LatLng(point[0], point[1]);
-    var marker = new google.maps.Marker({
-      position: latlng,
-      icon: image,
-      shape: shape,
-      title: point[2]
-    });
+    var image = new google.maps.MarkerImage("/static/img/blue-dot.png",
+            new google.maps.Size(16, 16), // size
+            new google.maps.Point(0, 0), // origin
+            new google.maps.Point(8, 7) // anchor
+        ),
+        shape = {
+            coords: [5, 0, 24, 19],
+            type: 'rect'
+        },
+        i = points.length - 1,
+        point,
+        markers = [];
+    do {
+        point = points[i];
+        latlng = new google.maps.LatLng(point[0], point[1]);
+        var marker = new google.maps.Marker({
+            position: latlng,
+            icon: image,
+            shape: shape,
+            title: point[2]
+        });
 
-    var content = '<strong>' + point[2] + '</strong><br>';
-    // infowindow
-    if (point[3] == 1) {
-      content = content + 'one rack';
-    } else {
-      content = content + point[3] + ' racks';
-    }
-    makeInfowindow(marker, content);
-    markers.push(marker);
-  } while (--i >= 0);
-  return markers;
+        var content = '<strong>' + point[2] + '</strong><br>';
+        // infowindow
+        if (point[3] == 1) {
+            content = content + 'one rack';
+        } else {
+            content = content + point[3] + ' racks';
+        }
+        makeInfowindow(marker, content);
+        markers.push(marker);
+    } while (--i >= 0);
+    return markers;
 };
 
 function makeInfowindow(marker, content) {
-  google.maps.event.addListener(marker, 'click', function() {
-    if (infowindow) {
-      infowindow.close();
-    }
-    infowindow = new google.maps.InfoWindow({
-      content: content
+    google.maps.event.addListener(marker, 'click', function() {
+        if (infowindow) {
+            infowindow.close();
+        }
+        infowindow = new google.maps.InfoWindow({
+            content: content
+        });
+        infowindow.open(marker.get('map'), this);
     });
-    infowindow.open(marker.get('map'), this);
-  });
 }
