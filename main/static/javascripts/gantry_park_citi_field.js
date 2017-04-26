@@ -3,7 +3,10 @@ function initMap() {
   var directionsService = new google.maps.DirectionsService;
   var directionsDisplay = new google.maps.DirectionsRenderer;
   var map = new google.maps.Map(document.getElementById('map'), {
-    center: {lat: 40.774022, lng: -73.970599},
+    center: {
+        lat: 40.774022,
+        lng: -73.970599
+    },
     zoom: 12
   });
 
@@ -74,6 +77,13 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
 
     var waypts = [];
     var checkboxArray = document.getElementById('waypoints');
+
+    // add start of route as first waypoint
+    waypts.push({
+      location: "40.745523, -73.958742",
+      stopover: true
+    });
+
     for (var i = 0; i < checkboxArray.length; i++) {
       if (checkboxArray.options[i].selected) {
         waypts.push({
@@ -86,8 +96,11 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
         directionsService.route({
           origin: {lat: position.coords.latitude, lng: position.coords.longitude},
           // origin: {lat:40.7535965,lng:-73.9832326},
-          // destination: {lat: 40.6191502, lng:-74.0322862},
-          destination: finaldestination,
+          destination: {
+              lat: 40.756711,
+              lng: -73.847091
+          },
+          // destination: finaldestination,
           waypoints:waypts,
           optimizeWaypoints:true,
           travelMode: 'BICYCLING'
