@@ -5,24 +5,28 @@
 @import url('routes.css');
 @import url('route-search.css');
 @import url('routes-module.css');
+@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
 
 body {
-    font-family: 'Open Sans', sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 #site-wrapper {
   padding-top: 50px;
 }
 
+
 /* Stock class */
 
 .bg-black-transparent {
-    background-color: rgba(0,0,0,.4);
-    color: white;
+  background-color: rgba(0, 0, 0, .4);
+  color: white;
 }
 
 .content-margin-top {
-    margin-top: 90px;
+  margin-top: 50%;
+  position: absolute;
+  bottom: 0;
 }
 
 .title {
@@ -30,26 +34,91 @@ body {
 }
 
 #login-signup-banner {
-    background: url('../img/biking-banner.jpg') no-repeat fixed top center;
-    background-size: cover;
-    height: 94vh
-}
-
-#about-banner{
-  background: url('../img/about-banner.jpg') no-repeat fixed top center;
+  background: url('../img/biking-banner.jpg') no-repeat fixed top center;
   background-size: cover;
   height: 94vh
 }
 
-#login-signup-banner .panel {
-    background-color: transparent;
+#about-banner {
+  background: url('../img/about-banner.jpg') no-repeat fixed top center;
+  background-size: cover;
+  height: 94vh;
+  position: relative
 }
+
+#login-signup-banner .panel {
+  background-color: transparent;
+}
+
 
 /* Bootstrap overrides */
+
 .container-fluid {
-    padding: 0;
+  padding: 0;
 }
 
-.font-size-16px {
-  font-size: 16px
+.text-style {
+  font-size: 40px;
+  font-family: 'Montserrat', sans-serif;
+  color: white;
+}
+
+.team-photo{
+  background: url('../img/team.jpeg');
+  background-size: cover;
+  height: 150vh;
+  position: relative
+}
+
+.icon {}
+
+.emblem-row {
+  display: block;
+  float: left;
+  margin-right: 4.4%;
+  width: 100%;
+}
+
+.emblem-row:last-child {
+  margin-right: 0;
+}
+
+.emblem-row .emblem-col {
+  width: 33.33%;
+  display: block;
+  margin: 0px;
+  float: left;
+  padding: 40px 30px 50px;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.emblem-row .emblem-col .icon {
+  width: 160px;
+  height: 160px;
+  margin: 0 auto;
+  margin-bottom: 30px;
+}
+
+.emblem-row .emblem-col p {
+  margin-bottom: 20px;
+  max-width: 300px;
+  margin: 20px auto 0 auto;
+}
+
+@media screen and (max-width: 480px) {
+  .emblem-row .emblem-col {
+    display: block;
+    float: left;
+    margin-right: 14.47368%;
+    width: 100%;
+    padding: 25px 30px;
+  }
+  .emblem-row .emblem-col:last-child {
+    margin-right: 0;
+  }
+  .emblem-row .emblem-col p {
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
 }
