@@ -53,6 +53,11 @@ body {
 
 /* Bootstrap overrides */
 
+/* Centering Navbar Brand Logo */
+.navbar-brand {
+    margin-top: -7px;
+}
+
 .container-fluid {
   padding: 0;
 }
