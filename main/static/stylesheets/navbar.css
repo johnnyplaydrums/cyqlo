@@ -9,3 +9,8 @@
 .navbar-default .navbar-nav>li>a {
     color: black
 }
+
+/* Centering Navbar Brand Logo */
+.navbar-brand {
+    margin-top: -7px;
+}
