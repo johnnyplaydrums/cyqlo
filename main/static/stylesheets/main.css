@@ -29,6 +29,12 @@ body {
   bottom: 0;
 }
 
+.about-content {
+  margin-top: 70%;
+  position: relative;
+  bottom: 0;
+}
+
 .title {
   margin-bottom: 30px;
 }
