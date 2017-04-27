@@ -5,7 +5,7 @@
 @import url('routes.css');
 @import url('route-search.css');
 @import url('routes-module.css');
-@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
 
 body {
   font-family: 'Montserrat', sans-serif;
