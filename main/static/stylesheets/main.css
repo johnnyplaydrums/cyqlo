@@ -30,8 +30,8 @@ body {
 }
 
 .about-content {
-  margin-top: 70%;
-  position: relative;
+  margin-top: 50%;
+  position: absolute;
   bottom: 0;
 }
 
@@ -46,7 +46,7 @@ body {
 }
 
 #about-banner {
-  background: url('../img/about-banner.jpg') no-repeat fixed top center;
+  background: url('../img/about-banner.jpg') no-repeat fixed top right;
   background-size: cover;
   height: 94vh;
   position: relative
